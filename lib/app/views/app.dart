@@ -34,12 +34,15 @@ class _AppState extends ConsumerState<App> {
 
   @override
   Widget build(BuildContext context) {
-    final themeMode = ref.watch(themeModeSettingProvider);
+    final themeMode = ref.watch(themeModeSettingProviderProvider);
 
-    final lightColorScheme =
-        ColorScheme.fromSeed(seedColor: const Color(0xFF76ff00));
+    final lightColorScheme = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF76ff00),
+    );
     final darkColorScheme = ColorScheme.fromSeed(
       seedColor: const Color(0xFF76ff00),
+      primary: const Color(0xFF76ff00),
+      surface: const Color(0xFF1F2023),
       brightness: Brightness.dark,
     );
 

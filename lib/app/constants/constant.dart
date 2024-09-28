@@ -4,3 +4,5 @@ final class Constant {
   static const double tabletBreakpoint = 800;
   static const double desktopBreakpoint = 1200;
 }
+
+const baseCdnUrl = 'https://f005.backblazeb2.com/file/azlir-public';

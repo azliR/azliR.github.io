@@ -5,13 +5,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'settings_provider.g.dart';
 
 @riverpod
-class ThemeModeSetting extends _$ThemeModeSetting {
+class ThemeModeSettingProvider extends _$ThemeModeSettingProvider {
   @override
   ThemeMode build() {
     return LocalStorageService.getThemeMode() ?? ThemeMode.system;
   }
 
-  void setTheme(ThemeMode themeMode) {
+  void setThemeMode(ThemeMode themeMode) {
     LocalStorageService.setThemeMode(themeMode);
 
     state = themeMode;

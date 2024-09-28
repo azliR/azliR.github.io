@@ -10,14 +10,18 @@ environment:
 dependencies:
   animations: ^2.0.11
   auto_route: ^9.2.2
+  cached_network_image: ^3.4.1
+  carousel_slider: ^5.0.0
   dartx: ^1.2.0
   dynamic_color: ^1.7.0
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.3.10
   flutter_riverpod: ^2.5.1
+  font_awesome_flutter: ^10.7.0
   get_it: ^7.6.7
   google_fonts: ^6.2.1
   hive_ce: ^2.4.4
@@ -30,6 +34,7 @@ dependencies:
   package_info_plus: ^8.0.2
   path: ^1.9.0
   path_provider: ^2.1.2
+  responsive_builder: ^0.7.1
   riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
 

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dartx/dartx_io.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_azlir/app/routes/app_router.gr.dart';
+import 'package:flutter_azlir/settings/provider/settings_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
@@ -192,27 +193,28 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   }
 }
 
-class _TopNavigationBar extends StatefulWidget {
+class _TopNavigationBar extends ConsumerStatefulWidget {
   const _TopNavigationBar({
     required this.selectedTab,
     required this.onSelected,
-    super.key,
   });
 
   final NavigationTab? selectedTab;
   final void Function(int index) onSelected;
 
   @override
-  State<_TopNavigationBar> createState() => _TopNavigationBarState();
+  ConsumerState<_TopNavigationBar> createState() => _TopNavigationBarState();
 }
 
-class _TopNavigationBarState extends State<_TopNavigationBar> {
+class _TopNavigationBarState extends ConsumerState<_TopNavigationBar> {
   NavigationTab? _hoveredTab;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+
+    final themeMode = ref.watch(themeModeSettingProviderProvider);
 
     return SizedBox(
       height: kToolbarHeight,
@@ -252,16 +254,6 @@ class _TopNavigationBarState extends State<_TopNavigationBar> {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          color: widget.selectedTab == tab || _hoveredTab == tab
-                              ? colorScheme.primary
-                              : Colors.transparent,
-                          width: 2,
-                        ),
-                      ),
-                    ),
                     child: Text(
                       switch (tab) {
                         NavigationTab.home => 'Home',
@@ -276,46 +268,79 @@ class _TopNavigationBarState extends State<_TopNavigationBar> {
             },
           ),
           const Spacer(),
-          SizedBox(
+          const SizedBox(
             height: double.infinity,
             width: 256,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
+              padding: EdgeInsets.symmetric(vertical: 8),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',
-                  prefixIcon: const Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(64),
-                    borderSide: BorderSide(
-                      color: colorScheme.outline,
-                    ),
-                  ),
-                  filled: false,
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                  prefixIcon: Icon(Icons.search),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16),
                 ),
               ),
             ),
           ),
           const SizedBox(width: 8),
+          // SizedBox(
+          //   height: kToolbarHeight,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(8),
+          //     child: DropdownButton<ThemeMode>(
+          //       value: themeMode,
+          //       underline: const SizedBox(),
+          //       onChanged: (value) {
+          //         ref
+          //             .read(themeModeSettingProviderProvider.notifier)
+          //             .setThemeMode(value!);
+          //       },
+          //       items: ThemeMode.values.map(
+          //         (themeMode) {
+          //           return DropdownMenuItem(
+          //             value: themeMode,
+          //             child: Text(
+          //               switch (themeMode) {
+          //                 ThemeMode.system => 'System',
+          //                 ThemeMode.light => 'Light',
+          //                 ThemeMode.dark => 'Dark',
+          //               },
+          //             ),
+          //           );
+          //         },
+          //       ).toList(),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
-            height: double.infinity,
+            height: kToolbarHeight,
+            width: 160,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              child: OutlinedButton(
-                onPressed: () {},
-                child: const Text('Share your work'),
+              padding: const EdgeInsets.all(8),
+              child: DropdownMenu<ThemeMode>(
+                enableSearch: false,
+                requestFocusOnTap: false,
+                initialSelection: themeMode,
+                expandedInsets: const EdgeInsets.symmetric(horizontal: 8),
+                dropdownMenuEntries: ThemeMode.values.map(
+                  (themeMode) {
+                    return DropdownMenuEntry(
+                      value: themeMode,
+                      label: switch (themeMode) {
+                        ThemeMode.system => 'System',
+                        ThemeMode.light => 'Light',
+                        ThemeMode.dark => 'Dark',
+                      },
+                    );
+                  },
+                ).toList(),
+                onSelected: (value) {
+                  ref
+                      .read(themeModeSettingProviderProvider.notifier)
+                      .setThemeMode(value!);
+                },
               ),
             ),
-          ),
-          const SizedBox(width: 8),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Symbols.message),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Symbols.notifications),
           ),
         ],
       ),

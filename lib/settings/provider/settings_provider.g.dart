@@ -6,21 +6,22 @@ part of 'settings_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$themeModeSettingHash() => r'1f5a4ced71e15d61b439a65e3b4c09b796da951a';
+String _$themeModeSettingProviderHash() =>
+    r'cead5e346645749db7d23479d6cc02dfd1f2d143';
 
-/// See also [ThemeModeSetting].
-@ProviderFor(ThemeModeSetting)
-final themeModeSettingProvider =
-    AutoDisposeNotifierProvider<ThemeModeSetting, ThemeMode>.internal(
-  ThemeModeSetting.new,
-  name: r'themeModeSettingProvider',
+/// See also [ThemeModeSettingProvider].
+@ProviderFor(ThemeModeSettingProvider)
+final themeModeSettingProviderProvider =
+    AutoDisposeNotifierProvider<ThemeModeSettingProvider, ThemeMode>.internal(
+  ThemeModeSettingProvider.new,
+  name: r'themeModeSettingProviderProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$themeModeSettingHash,
+      : _$themeModeSettingProviderHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ThemeModeSetting = AutoDisposeNotifier<ThemeMode>;
+typedef _$ThemeModeSettingProvider = AutoDisposeNotifier<ThemeMode>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_azlir/app/l10n/l10n.dart';
-import 'package:flutter_azlir/app/themes/app_theme.dart';
 
 class ConfirmationDialog extends StatelessWidget {
   const ConfirmationDialog({
@@ -35,11 +34,11 @@ class ConfirmationDialog extends StatelessWidget {
     final theme = Theme.of(context);
 
     return AlertDialog(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       surfaceTintColor: theme.colorScheme.surfaceTint,
-      shape: RoundedRectangleBorder(
-        borderRadius: AppTheme.defaultBoardRadius,
-      ),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: AppTheme.defaultBoardRadius,
+      // ),
       title: title != null
           ? Text(title!, style: theme.textTheme.titleMedium)
           : null,
