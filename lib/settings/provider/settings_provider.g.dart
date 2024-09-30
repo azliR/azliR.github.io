@@ -7,7 +7,7 @@ part of 'settings_provider.dart';
 // **************************************************************************
 
 String _$themeModeSettingProviderHash() =>
-    r'cead5e346645749db7d23479d6cc02dfd1f2d143';
+    r'0e03ee1c3506c4c9a3980b974c39bd68c503f1eb';
 
 /// See also [ThemeModeSettingProvider].
 @ProviderFor(ThemeModeSettingProvider)

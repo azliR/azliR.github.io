@@ -18,6 +18,9 @@ class AppRouter extends RootStackRouter {
           ),
         ],
       ),
+      AutoRoute(
+        page: ImagePreviewerRoute.page,
+      ),
     ];
   }
 }

@@ -171,22 +171,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 onSelected: _onNavigationChanged,
               )
             : const Text('azlir.dev'),
-        actions: [
-          if (navigationType != NavigationType.top) ...[
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Symbols.search),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Symbols.message),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Symbols.notifications),
-            ),
-          ],
-        ],
       ),
       body: AutoRouter(key: _innerRouteKey),
     );
@@ -283,35 +267,6 @@ class _TopNavigationBarState extends ConsumerState<_TopNavigationBar> {
             ),
           ),
           const SizedBox(width: 8),
-          // SizedBox(
-          //   height: kToolbarHeight,
-          //   child: Padding(
-          //     padding: const EdgeInsets.all(8),
-          //     child: DropdownButton<ThemeMode>(
-          //       value: themeMode,
-          //       underline: const SizedBox(),
-          //       onChanged: (value) {
-          //         ref
-          //             .read(themeModeSettingProviderProvider.notifier)
-          //             .setThemeMode(value!);
-          //       },
-          //       items: ThemeMode.values.map(
-          //         (themeMode) {
-          //           return DropdownMenuItem(
-          //             value: themeMode,
-          //             child: Text(
-          //               switch (themeMode) {
-          //                 ThemeMode.system => 'System',
-          //                 ThemeMode.light => 'Light',
-          //                 ThemeMode.dark => 'Dark',
-          //               },
-          //             ),
-          //           );
-          //         },
-          //       ).toList(),
-          //     ),
-          //   ),
-          // ),
           SizedBox(
             height: kToolbarHeight,
             width: 160,

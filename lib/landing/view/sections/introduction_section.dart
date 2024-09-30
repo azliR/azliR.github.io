@@ -89,7 +89,6 @@ class IntroductionSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 80),
         ],
       ),
     );

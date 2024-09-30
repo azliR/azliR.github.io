@@ -42,6 +42,7 @@ class _AppState extends ConsumerState<App> {
     final darkColorScheme = ColorScheme.fromSeed(
       seedColor: const Color(0xFF76ff00),
       primary: const Color(0xFF76ff00),
+      secondary: const Color(0xFF55ad4b),
       surface: const Color(0xFF1F2023),
       brightness: Brightness.dark,
     );

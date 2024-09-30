@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 final class AppTheme {
   static ThemeData _baseTheme({
@@ -9,10 +10,16 @@ final class AppTheme {
       ThemeData(
         brightness: brightness,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.ptMonoTextTheme().apply(
-          bodyColor: colorScheme.primary,
-          displayColor: colorScheme.primary,
-        ),
+        textTheme: switch (brightness) {
+          Brightness.dark => GoogleFonts.ptMonoTextTheme().apply(
+              bodyColor: colorScheme.primary,
+              displayColor: colorScheme.primary,
+            ),
+          Brightness.light => GoogleFonts.robotoTextTheme().apply(
+              bodyColor: colorScheme.onSurface,
+              displayColor: colorScheme.onSurface,
+            ),
+        },
       );
 
   static ThemeData generateThemeData({
@@ -122,6 +129,52 @@ final class AppTheme {
             clipBehavior: Clip.antiAlias,
           ),
       },
+      filledButtonTheme: switch (brightness) {
+        Brightness.dark => FilledButtonThemeData(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(48, 48),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+              ),
+              backgroundColor: colorScheme.secondary,
+            ),
+          ),
+        Brightness.light => FilledButtonThemeData(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(48, 48),
+            ),
+          ),
+      },
+    );
+  }
+}
+
+typedef WidgetBuilder = Widget Function(BuildContext context, Widget? child);
+
+class ScreenTypeBuilder extends StatelessWidget {
+  const ScreenTypeBuilder({
+    required this.mobile,
+    this.watch,
+    this.tablet,
+    this.desktop,
+    this.child,
+    super.key,
+  });
+
+  final WidgetBuilder? watch;
+  final WidgetBuilder mobile;
+  final WidgetBuilder? tablet;
+  final WidgetBuilder? desktop;
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    return getValueForScreenType(
+      context: context,
+      mobile: mobile(context, child),
+      tablet: tablet == null ? null : tablet!(context, child),
+      desktop: desktop == null ? null : desktop!(context, child),
+      watch: watch == null ? null : watch!(context, child),
     );
   }
 }
