@@ -100,13 +100,14 @@ class MlProjectsSection extends StatelessWidget {
         children: [
           Text(
             'Machine Learning Projects',
+            textAlign: TextAlign.center,
             style: textTheme.headlineLarge,
           ),
           const SizedBox(height: 16),
           Text(
             'Not only do I work on Flutter projects, but I also have a passion for Machine Learning. Here are some of the projects that I have worked on.',
-            style: textTheme.bodyMedium,
             textAlign: TextAlign.center,
+            style: textTheme.bodyMedium,
           ),
           const SizedBox(height: 56),
           ..._projects.mapIndexed(
@@ -131,139 +132,144 @@ class MlProjectsSection extends StatelessWidget {
                   ),
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: _reverseIf(isLeftAligned, [
-                    ScreenTypeBuilder(
-                      mobile: (context, child) => child!,
-                      desktop: (context, child) => Expanded(
-                        child: child!,
+                  children: _reverseIf(
+                      getValueForScreenType(
+                        context: context,
+                        mobile: true,
+                        desktop: isLeftAligned,
                       ),
-                      child: Align(
-                        alignment: getValueForScreenType(
-                          context: context,
-                          mobile: Alignment.centerLeft,
-                          desktop: Alignment.centerRight,
-                        ),
-                        child: Card(
-                          child: MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: GestureDetector(
-                              onTap: () => context.router.push(
-                                ImagePreviewerRoute(
-                                  url: project.imageUrl,
-                                ),
-                              ),
-                              child: Hero(
-                                tag: project.imageUrl,
-                                child: CachedNetworkImage(
-                                  imageUrl: project.imageUrl,
-                                  width: 480,
+                      [
+                        ScreenTypeBuilder(
+                          desktop: (context, child) => Expanded(
+                            child: child!,
+                          ),
+                          child: Align(
+                            alignment: getValueForScreenType(
+                              context: context,
+                              mobile: Alignment.centerLeft,
+                              desktop: Alignment.centerRight,
+                            ),
+                            child: Card.outlined(
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () => context.router.push(
+                                    NetworkImageViewerRoute(
+                                      urls: [project.imageUrl],
+                                    ),
+                                  ),
+                                  child: Hero(
+                                    tag: project.imageUrl,
+                                    child: CachedNetworkImage(
+                                      imageUrl: project.imageUrl,
+                                      width: 480,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    getValueForScreenType(
-                      context: context,
-                      mobile: const SizedBox(height: 32),
-                      desktop: const SizedBox(width: 32),
-                    ),
-                    ScreenTypeBuilder(
-                      mobile: (context, child) => child!,
-                      desktop: (context, child) => Expanded(
-                        child: child!,
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
+                        getValueForScreenType(
+                          context: context,
+                          mobile: const SizedBox(height: 32),
+                          desktop: const SizedBox(width: 32),
+                        ),
+                        ScreenTypeBuilder(
+                          desktop: (context, child) => Expanded(
+                            child: child!,
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IconTheme(
-                                data: IconThemeData(
-                                  color: colorScheme.primary,
-                                  size: 32,
-                                ),
-                                child: project.icon,
-                              ),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                child: Text(
-                                  project.name,
-                                  style: textTheme.headlineMedium,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 24),
-                          Text(
-                            project.shortDescription,
-                            style: textTheme.bodyMedium,
-                          ),
-                          const SizedBox(height: 16),
-                          ...project.features.map(
-                            (feature) {
-                              return Row(
+                              Row(
                                 children: [
-                                  Icon(
-                                    Symbols.check,
-                                    color: colorScheme.primary,
+                                  IconTheme(
+                                    data: IconThemeData(
+                                      color: colorScheme.primary,
+                                      size: 32,
+                                    ),
+                                    child: project.icon,
                                   ),
-                                  const SizedBox(width: 8),
+                                  const SizedBox(width: 16),
                                   Expanded(
-                                    child: HtmlWidget(
-                                      feature,
-                                      onTapUrl: launchUrlString,
-                                      customStylesBuilder: (element) {
-                                        if (element.localName == 'a') {
-                                          return {
-                                            'color': 'blue',
-                                            'text-decoration': 'underline',
-                                          };
-                                        }
-                                        return null;
-                                      },
-                                      textStyle: textTheme.bodySmall?.copyWith(
-                                        color: colorScheme.secondary,
-                                      ),
+                                    child: Text(
+                                      project.name,
+                                      style: textTheme.headlineMedium,
                                     ),
                                   ),
                                 ],
-                              );
-                            },
-                          ),
-                          const SizedBox(height: 24),
-                          Wrap(
-                            spacing: 8,
-                            runSpacing: 8,
-                            children: [
-                              if (project.demoUrl != null)
-                                FilledButton.icon(
-                                  onPressed: () =>
-                                      launchUrlString(project.demoUrl!),
-                                  icon: const Icon(
-                                      Symbols.laptop_chromebook_rounded),
-                                  label: const Text('Demo'),
-                                ),
-                              FilledButton.icon(
-                                onPressed: () =>
-                                    launchUrlString(project.journalUrl),
-                                icon: const Icon(Symbols.article_rounded),
-                                label: const Text('Journal'),
                               ),
-                              FilledButton.icon(
-                                onPressed: () =>
-                                    launchUrlString(project.githubUrl),
-                                icon: const Icon(FontAwesomeIcons.github),
-                                label: const Text('GitHub'),
+                              const SizedBox(height: 24),
+                              Text(
+                                project.shortDescription,
+                                style: textTheme.bodyMedium,
+                              ),
+                              const SizedBox(height: 16),
+                              ...project.features.map(
+                                (feature) {
+                                  return Row(
+                                    children: [
+                                      Icon(
+                                        Symbols.check,
+                                        color: colorScheme.primary,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: HtmlWidget(
+                                          feature,
+                                          onTapUrl: launchUrlString,
+                                          customStylesBuilder: (element) {
+                                            if (element.localName == 'a') {
+                                              return {
+                                                'color': 'blue',
+                                                'text-decoration': 'underline',
+                                              };
+                                            }
+                                            return null;
+                                          },
+                                          textStyle:
+                                              textTheme.bodySmall?.copyWith(
+                                            color: colorScheme.secondary,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
+                              const SizedBox(height: 24),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: [
+                                  if (project.demoUrl != null)
+                                    OutlinedButton.icon(
+                                      onPressed: () =>
+                                          launchUrlString(project.demoUrl!),
+                                      icon: const Icon(
+                                          Symbols.laptop_chromebook_rounded),
+                                      label: const Text('Demo'),
+                                    ),
+                                  OutlinedButton.icon(
+                                    onPressed: () =>
+                                        launchUrlString(project.journalUrl),
+                                    icon: const Icon(Symbols.article_rounded),
+                                    label: const Text('Journal'),
+                                  ),
+                                  OutlinedButton.icon(
+                                    onPressed: () =>
+                                        launchUrlString(project.githubUrl),
+                                    icon: const Icon(FontAwesomeIcons.github),
+                                    label: const Text('GitHub'),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                    ),
-                  ]),
+                        ),
+                      ]),
                 ),
               );
             },

@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_azlir/landing/view/sections/backend_projects_section.dart';
+import 'package:flutter_azlir/landing/view/sections/flutter_projects_section.dart';
+import 'package:flutter_azlir/landing/view/sections/footer_section.dart';
 import 'package:flutter_azlir/landing/view/sections/introduction_section.dart';
 import 'package:flutter_azlir/landing/view/sections/ml_projects_section.dart';
-import 'package:flutter_azlir/landing/view/sections/backend_projects_section.dart';
 
 @RoutePage()
 class LandingScreen extends StatelessWidget {
@@ -16,13 +18,16 @@ class LandingScreen extends StatelessWidget {
     return Scaffold(
       body: SelectionArea(
         child: ListView(
-          children: [
+          children: const [
             IntroductionSection(),
-            const SizedBox(height: 128),
+            SizedBox(height: 128),
+            FlutterProjectsSection(),
+            SizedBox(height: 128),
             BackendProjectsSection(),
-            const SizedBox(height: 128),
+            SizedBox(height: 128),
             MlProjectsSection(),
-            const SizedBox(height: 128),
+            SizedBox(height: 128),
+            FooterSection(),
           ],
         ),
       ),

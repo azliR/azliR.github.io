@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 final class AppTheme {
@@ -26,8 +27,10 @@ final class AppTheme {
     required ColorScheme colorScheme,
     required Brightness brightness,
   }) {
-    return _baseTheme(colorScheme: colorScheme, brightness: brightness)
-        .copyWith(
+    final baseTheme =
+        _baseTheme(colorScheme: colorScheme, brightness: brightness);
+
+    return baseTheme.copyWith(
       colorScheme: colorScheme,
       scaffoldBackgroundColor: colorScheme.surface,
       menuButtonTheme: MenuButtonThemeData(
@@ -87,6 +90,14 @@ final class AppTheme {
           ),
         Brightness.light => const AppBarTheme(),
       },
+      drawerTheme: switch (brightness) {
+        Brightness.dark => DrawerThemeData(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: colorScheme.primary, width: 2),
+            ),
+          ),
+        Brightness.light => const DrawerThemeData(),
+      },
       dropdownMenuTheme: switch (brightness) {
         Brightness.dark => DropdownMenuThemeData(
             inputDecorationTheme: InputDecorationTheme(
@@ -118,10 +129,19 @@ final class AppTheme {
             style: MenuStyle(),
           ),
       },
+      dividerTheme: switch (brightness) {
+        Brightness.dark => DividerThemeData(
+            color: colorScheme.primary,
+          ),
+        Brightness.light => const DividerThemeData(),
+      },
       cardTheme: switch (brightness) {
         Brightness.dark => CardTheme(
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: colorScheme.primary),
+              side: BorderSide(
+                color: colorScheme.primary,
+                width: 2,
+              ),
             ),
             clipBehavior: Clip.antiAlias,
           ),
@@ -133,8 +153,8 @@ final class AppTheme {
         Brightness.dark => FilledButtonThemeData(
             style: FilledButton.styleFrom(
               minimumSize: const Size(48, 48),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(2)),
               ),
               backgroundColor: colorScheme.secondary,
             ),
@@ -145,6 +165,38 @@ final class AppTheme {
             ),
           ),
       },
+      outlinedButtonTheme: switch (brightness) {
+        Brightness.dark => OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size(48, 48),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+              ),
+              side: BorderSide(color: colorScheme.primary),
+            ),
+          ),
+        Brightness.light => OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size(48, 48),
+            ),
+          ),
+      },
+      actionIconTheme: ActionIconThemeData(
+        backButtonIconBuilder: (context) =>
+            const Icon(Symbols.arrow_back_rounded),
+        closeButtonIconBuilder: (context) => Icon(
+          Symbols.close_rounded,
+          color: colorScheme.primary,
+        ),
+        drawerButtonIconBuilder: (context) => Icon(
+          Symbols.menu_rounded,
+          color: colorScheme.primary,
+        ),
+        endDrawerButtonIconBuilder: (context) => Icon(
+          Symbols.menu_rounded,
+          color: colorScheme.primary,
+        ),
+      ),
     );
   }
 }
@@ -153,16 +205,16 @@ typedef WidgetBuilder = Widget Function(BuildContext context, Widget? child);
 
 class ScreenTypeBuilder extends StatelessWidget {
   const ScreenTypeBuilder({
-    required this.mobile,
+    this.child,
+    this.mobile,
     this.watch,
     this.tablet,
     this.desktop,
-    this.child,
     super.key,
   });
 
   final WidgetBuilder? watch;
-  final WidgetBuilder mobile;
+  final WidgetBuilder? mobile;
   final WidgetBuilder? tablet;
   final WidgetBuilder? desktop;
   final Widget? child;
@@ -171,7 +223,8 @@ class ScreenTypeBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return getValueForScreenType(
       context: context,
-      mobile: mobile(context, child),
+      mobile:
+          mobile == null ? child ?? const SizedBox() : mobile!(context, child),
       tablet: tablet == null ? null : tablet!(context, child),
       desktop: desktop == null ? null : desktop!(context, child),
       watch: watch == null ? null : watch!(context, child),

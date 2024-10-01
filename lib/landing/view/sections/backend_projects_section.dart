@@ -52,13 +52,14 @@ class BackendProjectsSection extends StatelessWidget {
       children: [
         Text(
           'Backend Projects',
+          textAlign: TextAlign.center,
           style: textTheme.headlineLarge,
         ),
         const SizedBox(height: 16),
         Text(
           "After Flutter, backend projects are my favorite. I've built a few and had fun doing it!",
-          style: textTheme.bodyMedium,
           textAlign: TextAlign.center,
+          style: textTheme.bodyMedium,
         ),
         const SizedBox(height: 36),
         const ContinuousProjectListView(

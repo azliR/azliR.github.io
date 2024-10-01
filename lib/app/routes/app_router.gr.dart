@@ -8,69 +8,37 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i5;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_azlir/app/views/main_screen.dart' as _i3;
-import 'package:flutter_azlir/image_previewer/view/image_previewer_screen.dart'
-    as _i1;
+import 'package:flutter_azlir/contact_us/view/contact_us_screen.dart' as _i1;
+import 'package:flutter_azlir/image_viewer/view/network_image_viewer_screen.dart'
+    as _i4;
 import 'package:flutter_azlir/landing/view/landing_screen.dart' as _i2;
 
 /// generated route for
-/// [_i1.ImagePreviewerScreen]
-class ImagePreviewerRoute extends _i4.PageRouteInfo<ImagePreviewerRouteArgs> {
-  ImagePreviewerRoute({
-    required String url,
-    String? heroTag,
-    _i5.Key? key,
-    List<_i4.PageRouteInfo>? children,
-  }) : super(
-          ImagePreviewerRoute.name,
-          args: ImagePreviewerRouteArgs(
-            url: url,
-            heroTag: heroTag,
-            key: key,
-          ),
+/// [_i1.ContactUsScreen]
+class ContactUsRoute extends _i5.PageRouteInfo<void> {
+  const ContactUsRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          ContactUsRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ImagePreviewerRoute';
+  static const String name = 'ContactUsRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<ImagePreviewerRouteArgs>();
-      return _i1.ImagePreviewerScreen(
-        url: args.url,
-        heroTag: args.heroTag,
-        key: args.key,
-      );
+      return const _i1.ContactUsScreen();
     },
   );
 }
 
-class ImagePreviewerRouteArgs {
-  const ImagePreviewerRouteArgs({
-    required this.url,
-    this.heroTag,
-    this.key,
-  });
-
-  final String url;
-
-  final String? heroTag;
-
-  final _i5.Key? key;
-
-  @override
-  String toString() {
-    return 'ImagePreviewerRouteArgs{url: $url, heroTag: $heroTag, key: $key}';
-  }
-}
-
 /// generated route for
 /// [_i2.LandingScreen]
-class LandingRoute extends _i4.PageRouteInfo<void> {
-  const LandingRoute({List<_i4.PageRouteInfo>? children})
+class LandingRoute extends _i5.PageRouteInfo<void> {
+  const LandingRoute({List<_i5.PageRouteInfo>? children})
       : super(
           LandingRoute.name,
           initialChildren: children,
@@ -78,7 +46,7 @@ class LandingRoute extends _i4.PageRouteInfo<void> {
 
   static const String name = 'LandingRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
       return const _i2.LandingScreen();
@@ -88,11 +56,11 @@ class LandingRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.MainScreen]
-class MainRoute extends _i4.PageRouteInfo<MainRouteArgs> {
+class MainRoute extends _i5.PageRouteInfo<MainRouteArgs> {
   MainRoute({
     _i3.NavigationTab initialNavigation = _i3.NavigationTab.home,
-    _i5.Key? key,
-    List<_i4.PageRouteInfo>? children,
+    _i6.Key? key,
+    List<_i5.PageRouteInfo>? children,
   }) : super(
           MainRoute.name,
           args: MainRouteArgs(
@@ -104,7 +72,7 @@ class MainRoute extends _i4.PageRouteInfo<MainRouteArgs> {
 
   static const String name = 'MainRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
       final args =
@@ -125,10 +93,63 @@ class MainRouteArgs {
 
   final _i3.NavigationTab initialNavigation;
 
-  final _i5.Key? key;
+  final _i6.Key? key;
 
   @override
   String toString() {
     return 'MainRouteArgs{initialNavigation: $initialNavigation, key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i4.NetworkImageViewerScreen]
+class NetworkImageViewerRoute
+    extends _i5.PageRouteInfo<NetworkImageViewerRouteArgs> {
+  NetworkImageViewerRoute({
+    required List<String> urls,
+    String? heroTag,
+    _i6.Key? key,
+    List<_i5.PageRouteInfo>? children,
+  }) : super(
+          NetworkImageViewerRoute.name,
+          args: NetworkImageViewerRouteArgs(
+            urls: urls,
+            heroTag: heroTag,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NetworkImageViewerRoute';
+
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<NetworkImageViewerRouteArgs>();
+      return _i4.NetworkImageViewerScreen(
+        urls: args.urls,
+        heroTag: args.heroTag,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class NetworkImageViewerRouteArgs {
+  const NetworkImageViewerRouteArgs({
+    required this.urls,
+    this.heroTag,
+    this.key,
+  });
+
+  final List<String> urls;
+
+  final String? heroTag;
+
+  final _i6.Key? key;
+
+  @override
+  String toString() {
+    return 'NetworkImageViewerRouteArgs{urls: $urls, heroTag: $heroTag, key: $key}';
   }
 }

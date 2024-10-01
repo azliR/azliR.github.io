@@ -16,10 +16,13 @@ class AppRouter extends RootStackRouter {
             page: LandingRoute.page,
             initial: true,
           ),
+          AutoRoute(
+            page: ContactUsRoute.page,
+          ),
         ],
       ),
       AutoRoute(
-        page: ImagePreviewerRoute.page,
+        page: NetworkImageViewerRoute.page,
       ),
     ];
   }

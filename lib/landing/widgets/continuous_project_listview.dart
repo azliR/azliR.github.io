@@ -139,7 +139,7 @@ class _ProjectCardState extends State<_ProjectCard> {
           onTap: () {
             print('tapped');
           },
-          child: Card(
+          child: Card.filled(
             margin: const EdgeInsets.symmetric(horizontal: 16),
             child: Padding(
               padding: const EdgeInsets.all(16),
