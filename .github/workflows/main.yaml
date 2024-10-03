@@ -1,9 +1,5 @@
 name: flutter_azlir
 
-concurrency:
-  group: $-$
-  cancel-in-progress: true
-
 on:
   push:
     branches: [main]
