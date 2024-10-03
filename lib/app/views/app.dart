@@ -37,7 +37,7 @@ class _AppState extends ConsumerState<App> {
     final themeMode = ref.watch(themeModeSettingProviderProvider);
 
     final lightColorScheme = ColorScheme.fromSeed(
-      seedColor: const Color(0xFF76ff00),
+      seedColor: Colors.blue,
     );
     final darkColorScheme = ColorScheme.fromSeed(
       seedColor: const Color(0xFF76ff00),

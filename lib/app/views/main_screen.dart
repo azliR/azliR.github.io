@@ -101,6 +101,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       drawer: navigationType == NavigationType.drawer
           ? Drawer(
               elevation: 0,
+              width: 256,
               child: Column(
                 children: [
                   SizedBox(height: padding.top + 8),
@@ -112,8 +113,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                           'azlir.dev',
                           style: theme.textTheme.headlineSmall,
                         ),
-                        Spacer(),
-                        CloseButton(),
+                        const Spacer(),
+                        const CloseButton(),
                       ],
                     ),
                   ),
@@ -169,9 +170,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       child: FilledButton(
                         style: FilledButton.styleFrom(
                           minimumSize: const Size(64, 64),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                          ),
                           textStyle: theme.textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
@@ -179,7 +177,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         onPressed: () {
                           context.router.push(const ContactUsRoute());
                         },
-                        child: Text('Contact Us'),
+                        child: const Text('Contact Us'),
                       ),
                     ),
                   ),

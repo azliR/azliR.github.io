@@ -8,7 +8,7 @@ part 'settings_provider.g.dart';
 class ThemeModeSettingProvider extends _$ThemeModeSettingProvider {
   @override
   ThemeMode build() {
-    return LocalStorageService.getThemeMode() ?? ThemeMode.system;
+    return LocalStorageService.getThemeMode() ?? ThemeMode.dark;
   }
 
   void setThemeMode(ThemeMode themeMode) {

@@ -36,7 +36,7 @@
         devShell =
           with pkgs; mkShell rec {
             buildInputs = [
-              flutter322
+              flutter
               jdk17
               androidPlatformTools
             ];
