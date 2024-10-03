@@ -2,7 +2,7 @@ name: flutter_azlir
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
