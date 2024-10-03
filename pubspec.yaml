@@ -44,7 +44,7 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: ^9.0.0
-  build_runner: any
+  build_runner: 2.4.13
   custom_lint: any
   dependency_validator: ^4.1.0
   flutter_gen_runner: any
