@@ -116,7 +116,7 @@ class FlutterProjectsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    // final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Padding(
@@ -137,10 +137,16 @@ class FlutterProjectsSection extends StatelessWidget {
           ),
           const SizedBox(height: 36),
           ScreenTypeBuilder(
-            desktop: (context, child) => IntrinsicHeight(
+            desktop: (context, child) => SizedBox(
+              height: 740,
               child: child,
             ),
             child: Flex(
+              crossAxisAlignment: getValueForScreenType(
+                context: context,
+                mobile: CrossAxisAlignment.center,
+                desktop: CrossAxisAlignment.center,
+              ),
               direction: getValueForScreenType(
                 context: context,
                 mobile: Axis.vertical,
@@ -155,7 +161,9 @@ class FlutterProjectsSection extends StatelessWidget {
                       ),
                       child: child,
                     ),
-                    desktop: (context, child) => Expanded(child: child!),
+                    desktop: (context, child) => Expanded(
+                      child: child!,
+                    ),
                     child: _ProjectCard(
                       project: project,
                       expands: getValueForScreenType(

@@ -181,6 +181,22 @@ final class AppTheme {
             ),
           ),
       },
+      // iconButtonTheme: switch (brightness) {
+      //   Brightness.dark => IconButtonThemeData(
+      //       style: IconButton.styleFrom(
+      //         side: BorderSide(color: colorScheme.primary, width: 2),
+      //       ),
+      //     ),
+      //   Brightness.light => IconButtonThemeData(),
+      // },
+      dialogTheme: switch (brightness) {
+        Brightness.dark => DialogTheme(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: colorScheme.primary),
+            ),
+          ),
+        Brightness.light => const DialogTheme(),
+      },
       actionIconTheme: ActionIconThemeData(
         backButtonIconBuilder: (context) =>
             const Icon(Symbols.arrow_back_rounded),

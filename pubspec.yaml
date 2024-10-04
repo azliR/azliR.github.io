@@ -23,7 +23,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   flutter_widget_from_html: ^0.15.2
   font_awesome_flutter: ^10.7.0
-  get_it: ^7.6.7
+  get_it: ^8.0.0
   google_fonts: ^6.2.1
   hive_ce: ^2.4.4
   hive_ce_flutter: ^2.1.0

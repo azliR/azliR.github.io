@@ -5,15 +5,16 @@ import 'package:flutter_azlir/landing/view/sections/flutter_projects_section.dar
 import 'package:flutter_azlir/landing/view/sections/footer_section.dart';
 import 'package:flutter_azlir/landing/view/sections/introduction_section.dart';
 import 'package:flutter_azlir/landing/view/sections/ml_projects_section.dart';
+import 'package:flutter_azlir/landing/view/sections/reviews_section.dart';
 
-@RoutePage()
+@RoutePage(deferredLoading: true)
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final size = MediaQuery.sizeOf(context);
+    // final textTheme = Theme.of(context).textTheme;
+    // final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
       body: SelectionArea(
@@ -26,6 +27,8 @@ class LandingScreen extends StatelessWidget {
             BackendProjectsSection(),
             SizedBox(height: 128),
             MlProjectsSection(),
+            SizedBox(height: 128),
+            ReviewsSection(),
             SizedBox(height: 128),
             FooterSection(),
           ],

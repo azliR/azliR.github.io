@@ -11,10 +11,11 @@
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
 import 'package:flutter_azlir/app/views/main_screen.dart' as _i3;
-import 'package:flutter_azlir/contact_us/view/contact_us_screen.dart' as _i1;
+import 'package:flutter_azlir/contact_us/view/contact_us_screen.dart'
+    deferred as _i1;
 import 'package:flutter_azlir/image_viewer/view/network_image_viewer_screen.dart'
-    as _i4;
-import 'package:flutter_azlir/landing/view/landing_screen.dart' as _i2;
+    deferred as _i4;
+import 'package:flutter_azlir/landing/view/landing_screen.dart' deferred as _i2;
 
 /// generated route for
 /// [_i1.ContactUsScreen]
@@ -30,7 +31,10 @@ class ContactUsRoute extends _i5.PageRouteInfo<void> {
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i1.ContactUsScreen();
+      return _i5.DeferredWidget(
+        _i1.loadLibrary,
+        () => _i1.ContactUsScreen(),
+      );
     },
   );
 }
@@ -49,7 +53,10 @@ class LandingRoute extends _i5.PageRouteInfo<void> {
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i2.LandingScreen();
+      return _i5.DeferredWidget(
+        _i2.loadLibrary,
+        () => _i2.LandingScreen(),
+      );
     },
   );
 }
@@ -106,7 +113,7 @@ class MainRouteArgs {
 class NetworkImageViewerRoute
     extends _i5.PageRouteInfo<NetworkImageViewerRouteArgs> {
   NetworkImageViewerRoute({
-    required List<String> urls,
+    List<String>? urls,
     String? heroTag,
     _i6.Key? key,
     List<_i5.PageRouteInfo>? children,
@@ -117,6 +124,7 @@ class NetworkImageViewerRoute
             heroTag: heroTag,
             key: key,
           ),
+          rawQueryParams: {'url': urls},
           initialChildren: children,
         );
 
@@ -125,11 +133,17 @@ class NetworkImageViewerRoute
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<NetworkImageViewerRouteArgs>();
-      return _i4.NetworkImageViewerScreen(
-        urls: args.urls,
-        heroTag: args.heroTag,
-        key: args.key,
+      final queryParams = data.queryParams;
+      final args = data.argsAs<NetworkImageViewerRouteArgs>(
+          orElse: () =>
+              NetworkImageViewerRouteArgs(urls: queryParams.optList('url')));
+      return _i5.DeferredWidget(
+        _i4.loadLibrary,
+        () => _i4.NetworkImageViewerScreen(
+          urls: args.urls,
+          heroTag: args.heroTag,
+          key: args.key,
+        ),
       );
     },
   );
@@ -137,12 +151,12 @@ class NetworkImageViewerRoute
 
 class NetworkImageViewerRouteArgs {
   const NetworkImageViewerRouteArgs({
-    required this.urls,
+    this.urls,
     this.heroTag,
     this.key,
   });
 
-  final List<String> urls;
+  final List<String>? urls;
 
   final String? heroTag;
 

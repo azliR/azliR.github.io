@@ -2,14 +2,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_azlir/app/themes/app_theme.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
-@RoutePage()
+@RoutePage(deferredLoading: true)
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    // final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
@@ -101,6 +102,15 @@ class ContactUsScreen extends StatelessWidget {
             child: FilledButton(
               onPressed: () {},
               child: const Text('Contact Us'),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Center(
+            child: TextButton(
+              onPressed: () {
+                launchUrlString('https://www.fiverr.com/rizalhadiyansah');
+              },
+              child: const Text('Or reach us on Fiverr'),
             ),
           ),
         ],

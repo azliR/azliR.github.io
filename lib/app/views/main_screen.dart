@@ -109,9 +109,23 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Row(
                       children: [
-                        Text(
-                          'azlir.dev',
-                          style: theme.textTheme.headlineSmall,
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () {
+                              if (context.router
+                                  .isRouteActive(LandingRoute.name)) {
+                                return;
+                              }
+
+                              Navigator.pop(context);
+                              context.router.push(const LandingRoute());
+                            },
+                            child: Text(
+                              'azlir.dev',
+                              style: theme.textTheme.headlineSmall,
+                            ),
+                          ),
                         ),
                         const Spacer(),
                         const CloseButton(),
@@ -120,16 +134,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   ),
                   const SizedBox(height: 8),
                   const Divider(height: 0),
-                  // ..._destinations.mapIndexed(
-                  //   (index, destination) => ListTile(
-                  //     onTap: () {
-                  //       Navigator.pop(context);
-                  //       _onNavigationChanged(index);
-                  //     },
-                  //     title: Text(destination.label),
-
-                  //   ),
-                  // ),
                   const Spacer(),
                   SizedBox(
                     height: 64,
@@ -175,6 +179,12 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                           ),
                         ),
                         onPressed: () {
+                          if (context.router
+                              .isRouteActive(ContactUsRoute.name)) {
+                            return;
+                          }
+
+                          Navigator.pop(context);
                           context.router.push(const ContactUsRoute());
                         },
                         child: const Text('Contact Us'),
@@ -196,7 +206,17 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 selectedTab: navigationTab,
                 onSelected: _onNavigationChanged,
               )
-            : const Text('azlir.dev'),
+            : MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    if (context.router.isRouteActive(LandingRoute.name)) return;
+
+                    context.router.push(const LandingRoute());
+                  },
+                  child: const Text('azlir.dev'),
+                ),
+              ),
         actions: [
           const SizedBox(width: 8),
           if (navigationType == NavigationType.top)
@@ -270,13 +290,8 @@ class _TopNavigationBar extends ConsumerStatefulWidget {
 }
 
 class _TopNavigationBarState extends ConsumerState<_TopNavigationBar> {
-  NavigationTab? _hoveredTab;
-
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return SizedBox(
       height: kToolbarHeight,
       child: Row(
@@ -285,62 +300,15 @@ class _TopNavigationBarState extends ConsumerState<_TopNavigationBar> {
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
               onTap: () {
+                if (context.router.isRouteActive(LandingRoute.name)) return;
+
                 context.router.push(const LandingRoute());
               },
               child: const Text('azlir.dev'),
             ),
           ),
           const SizedBox(width: 16),
-          // ...NavigationTab.values.mapIndexed(
-          //   (index, tab) {
-          //     return MouseRegion(
-          //       cursor: SystemMouseCursors.click,
-          //       onHover: (event) {
-          //         setState(() {
-          //           _hoveredTab = tab;
-          //         });
-          //       },
-          //       onExit: (event) {
-          //         setState(() {
-          //           _hoveredTab = null;
-          //         });
-          //       },
-          //       child: GestureDetector(
-          //         onTap: () => widget.onSelected(index),
-          //         child: AnimatedContainer(
-          //           duration: const Duration(milliseconds: 200),
-          //           height: kToolbarHeight,
-          //           padding: const EdgeInsets.symmetric(horizontal: 8),
-          //           margin: const EdgeInsets.symmetric(horizontal: 8),
-          //           alignment: Alignment.center,
-          //           child: Text(
-          //             switch (tab) {
-          //               NavigationTab.home => 'Home',
-          //             },
-          //             style: textTheme.bodyMedium?.copyWith(
-          //               fontWeight: FontWeight.bold,
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     );
-          //   },
-          // ),
           const Spacer(),
-          // const SizedBox(
-          //   height: double.infinity,
-          //   width: 256,
-          //   child: Padding(
-          //     padding: EdgeInsets.symmetric(vertical: 8),
-          //     child: TextField(
-          //       decoration: InputDecoration(
-          //         hintText: 'Search',
-          //         prefixIcon: Icon(Icons.search),
-          //         contentPadding: EdgeInsets.symmetric(horizontal: 16),
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
