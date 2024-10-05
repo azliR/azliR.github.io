@@ -181,6 +181,21 @@ final class AppTheme {
             ),
           ),
       },
+      textButtonTheme: switch (brightness) {
+        Brightness.dark => TextButtonThemeData(
+            style: TextButton.styleFrom(
+              minimumSize: const Size(48, 48),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(4)),
+              ),
+            ),
+          ),
+        Brightness.light => TextButtonThemeData(
+            style: TextButton.styleFrom(
+              minimumSize: const Size(48, 48),
+            ),
+          ),
+      },
       // iconButtonTheme: switch (brightness) {
       //   Brightness.dark => IconButtonThemeData(
       //       style: IconButton.styleFrom(

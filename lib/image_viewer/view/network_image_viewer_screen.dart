@@ -1,21 +1,40 @@
 import 'package:animations/animations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_azlir/landing/widgets/blurhash_placeholder.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-@RoutePage(deferredLoading: true)
+class ImageData extends Equatable {
+  const ImageData({
+    required this.url,
+    required this.hash,
+    required this.width,
+    required this.height,
+  });
+
+  final String url;
+  final String hash;
+  final double width;
+  final double height;
+
+  @override
+  List<Object?> get props => [url, hash];
+}
+
+@RoutePage()
 class NetworkImageViewerScreen extends StatefulWidget {
   const NetworkImageViewerScreen({
-    @QueryParam('url') List<String>? urls,
+    required this.imageDatas,
     this.heroTag,
     super.key,
-  }) : urls = urls ?? const [];
+  });
 
-  final List<String> urls;
+  final List<ImageData> imageDatas;
   final String? heroTag;
 
   @override
@@ -46,7 +65,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
           }
         },
         const SingleActivator(LogicalKeyboardKey.arrowRight): () {
-          if (_currentPage < widget.urls.length - 1) {
+          if (_currentPage < widget.imageDatas.length - 1) {
             setState(() {
               _currentPage++;
             });
@@ -119,15 +138,26 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
             children: [
               PhotoViewGallery.builder(
                 pageController: _pageController,
-                itemCount: widget.urls.length,
+                itemCount: widget.imageDatas.length,
+                loadingBuilder: (context, event) {
+                  return BlurHashPlaceholder(
+                    imageData: widget.imageDatas[_currentPage],
+                  );
+                },
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
                 builder: (context, index) {
                   return PhotoViewGalleryPageOptions(
                     minScale: PhotoViewComputedScale.contained,
                     heroAttributes: PhotoViewHeroAttributes(
-                      tag: widget.heroTag ?? widget.urls[index],
+                      tag: widget.heroTag ?? widget.imageDatas[index],
                     ),
-                    imageProvider:
-                        CachedNetworkImageProvider(widget.urls[index]),
+                    imageProvider: CachedNetworkImageProvider(
+                      widget.imageDatas[index].url,
+                    ),
                     errorBuilder: (context, error, stackTrace) {
                       return const Center(
                         child: Icon(
@@ -141,7 +171,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
                   );
                 },
               ),
-              if (widget.urls.length > 1) ...[
+              if (widget.imageDatas.length > 1) ...[
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -169,7 +199,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: IconButton.filledTonal(
-                      onPressed: _currentPage == widget.urls.length - 1
+                      onPressed: _currentPage == widget.imageDatas.length - 1
                           ? null
                           : () {
                               setState(() {

@@ -22,24 +22,24 @@ class ShowcaseImage extends StatefulWidget {
 class ShowcaseImageState extends State<ShowcaseImage>
     with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
+
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
-  double _currentImageHeight = 300; // Default height
-  double _currentImageWidth = 300; // Default width
+
+  double _currentImageHeight = 300;
+  double _currentImageWidth = 300;
 
   CachedNetworkImageProvider? image;
 
   @override
   void initState() {
-    super.initState();
-
     _controller = AnimationController(
       duration: const Duration(seconds: 3),
       vsync: this,
     );
 
     _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
     _controller
@@ -56,6 +56,8 @@ class ShowcaseImageState extends State<ShowcaseImage>
       ..repeat(reverse: true);
 
     _loadImage(widget.imageUrls[_currentIndex]);
+
+    super.initState();
   }
 
   void _loadImage(String imageUrl) {

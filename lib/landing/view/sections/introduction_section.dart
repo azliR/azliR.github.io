@@ -70,7 +70,7 @@ class IntroductionSection extends StatelessWidget {
                         desktop: Alignment.centerLeft,
                       ),
                       child: Text(
-                        'Fullstack Developer',
+                        'Mobile & Backend Developer',
                         style: textTheme.bodyMedium,
                       ),
                     ),
@@ -89,8 +89,10 @@ class IntroductionSection extends StatelessWidget {
                   duration: Duration(seconds: 2),
                   imageUrls: [
                     'https://f005.backblazeb2.com/file/azlir-public/flutter_sholawatan/flutter_sholawatan-0.webp',
-                    'https://f005.backblazeb2.com/file/azlir-public/flutter_sholawatan/flutter_sholawatan-1.webp',
-                    'https://f005.backblazeb2.com/file/azlir-public/flutter_sholawatan/flutter_sholawatan-2.webp',
+                    'https://f005.backblazeb2.com/file/azlir-public/flutter_outclass/flutter_outclass-0.webp',
+                    'https://raw.githubusercontent.com/azliR/flutter_sholat_ml/refs/heads/main/docs/assets/flutter_sholat_ml-0.webp',
+                    'https://f005.backblazeb2.com/file/azlir-public/flutter_compress_it/flutter_compress_it-0.webp',
+                    'https://raw.githubusercontent.com/azliR/flutter_murojaah-web/refs/heads/master/docs/assets/flutter_murojaah-web-0.webp',
                   ],
                 ),
               ),

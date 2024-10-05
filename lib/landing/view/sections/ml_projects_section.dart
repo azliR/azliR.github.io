@@ -5,6 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_azlir/app/routes/app_router.gr.dart';
 import 'package:flutter_azlir/app/themes/app_theme.dart';
+import 'package:flutter_azlir/image_viewer/view/network_image_viewer_screen.dart';
+import 'package:flutter_azlir/landing/widgets/blurhash_placeholder.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_symbols_icons/symbols.dart';
@@ -18,7 +20,7 @@ class Project extends Equatable {
   final String? demoUrl;
   final String journalUrl;
   final String githubUrl;
-  final String imageUrl;
+  final ImageData imageData;
   final Widget icon;
   final List<String> features;
 
@@ -28,7 +30,7 @@ class Project extends Equatable {
     required this.shortDescription,
     required this.journalUrl,
     required this.githubUrl,
-    required this.imageUrl,
+    required this.imageData,
     required this.icon,
     required this.features,
     this.demoUrl,
@@ -42,7 +44,7 @@ class Project extends Equatable {
         demoUrl,
         journalUrl,
         githubUrl,
-        imageUrl,
+        imageData,
         icon,
         features,
       ];
@@ -56,8 +58,13 @@ const _projects = [
         '🤲🏻 A machine learning model to detect prayer movements',
     githubUrl: 'https://github.com/azliR/sholat-ml',
     journalUrl: 'https://digilib.uinsgd.ac.id/98494/',
-    imageUrl:
-        'https://raw.githubusercontent.com/azliR/flutter_sholat_ml/refs/heads/main/docs/assets/flutter_sholat_ml-0.webp',
+    imageData: ImageData(
+      url:
+          'https://raw.githubusercontent.com/azliR/flutter_sholat_ml/refs/heads/main/docs/assets/flutter_sholat_ml-0.webp',
+      hash: 'UMQTMw00D%M{IUD%E1RjtQ-:oyj?%M-;xuof',
+      width: 799,
+      height: 549,
+    ),
     icon: Icon(Symbols.watch_screentime_rounded),
     features: [
       'Uses accelerometer data from Xiaomi Mi Band 5',
@@ -75,8 +82,13 @@ const _projects = [
     githubUrl: 'https://github.com/azliR/murojaah-ml',
     journalUrl: 'https://doi.org/10.15575/kjrt.v1i2.235',
     demoUrl: 'https://murojaah.netlify.app/',
-    imageUrl:
-        'https://raw.githubusercontent.com/azliR/flutter_murojaah-web/refs/heads/master/docs/assets/flutter_murojaah-web-0.webp',
+    imageData: ImageData(
+      url:
+          'https://raw.githubusercontent.com/azliR/flutter_murojaah-web/refs/heads/master/docs/assets/flutter_murojaah-web-0.webp',
+      hash: r'U14.9]D$$-9E=~9Y?cE0xuD$%3IURiR%xuWA',
+      width: 1366,
+      height: 655,
+    ),
     icon: FaIcon(FontAwesomeIcons.bookQuran),
     features: [
       'Classifies Quranic recitations with 89.06% accuracy',
@@ -155,13 +167,18 @@ class MlProjectsSection extends StatelessWidget {
                                 child: GestureDetector(
                                   onTap: () => context.router.push(
                                     NetworkImageViewerRoute(
-                                      urls: [project.imageUrl],
+                                      imageDatas: [_projects[index].imageData],
                                     ),
                                   ),
                                   child: Hero(
-                                    tag: project.imageUrl,
+                                    tag: project.imageData,
                                     child: CachedNetworkImage(
-                                      imageUrl: project.imageUrl,
+                                      imageUrl: project.imageData.url,
+                                      placeholder: (context, url) {
+                                        return BlurHashPlaceholder(
+                                          imageData: project.imageData,
+                                        );
+                                      },
                                       width: 480,
                                     ),
                                   ),
@@ -249,7 +266,8 @@ class MlProjectsSection extends StatelessWidget {
                                       onPressed: () =>
                                           launchUrlString(project.demoUrl!),
                                       icon: const Icon(
-                                          Symbols.laptop_chromebook_rounded),
+                                        Symbols.laptop_chromebook_rounded,
+                                      ),
                                       label: const Text('Demo'),
                                     ),
                                   OutlinedButton.icon(

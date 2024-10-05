@@ -133,7 +133,7 @@ class ReviewsSection extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         const _ContinuousReviewListView(reviews: _reviews),
-        const SizedBox(height: 16),
+        const SizedBox(height: 24),
         OutlinedButton(
           onPressed: () {
             launchUrlString('https://www.fiverr.com/rizalhadiyansah');
