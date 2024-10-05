@@ -554,7 +554,8 @@ class _ProjectCardState extends State<_ProjectCard> {
               child: GestureDetector(
                 onTap: () => context.router.push(
                   NetworkImageViewerRoute(
-                    imageDatas: widget.project.imageDatas,
+                    imageUrls:
+                        widget.project.imageDatas.map((e) => e.url).toList(),
                   ),
                 ),
                 child: SizedBox(
@@ -582,7 +583,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                         ? CrossFadeState.showSecond
                         : CrossFadeState.showFirst,
                     firstChild: Hero(
-                      tag: widget.project.imageDatas[0],
+                      tag: widget.project.imageDatas[0].url,
                       child: CachedNetworkImage(
                         imageUrl: widget.project.imageDatas[0].url,
                         placeholder: (context, url) {

@@ -14,7 +14,7 @@ import 'package:flutter_azlir/app/views/main_screen.dart' as _i3;
 import 'package:flutter_azlir/contact_us/view/contact_us_screen.dart'
     deferred as _i1;
 import 'package:flutter_azlir/image_viewer/view/network_image_viewer_screen.dart'
-    as _i4;
+    deferred as _i4;
 import 'package:flutter_azlir/landing/view/landing_screen.dart' deferred as _i2;
 
 /// generated route for
@@ -113,17 +113,18 @@ class MainRouteArgs {
 class NetworkImageViewerRoute
     extends _i5.PageRouteInfo<NetworkImageViewerRouteArgs> {
   NetworkImageViewerRoute({
-    required List<_i4.ImageData> imageDatas,
+    required List<String>? imageUrls,
     String? heroTag,
     _i6.Key? key,
     List<_i5.PageRouteInfo>? children,
   }) : super(
           NetworkImageViewerRoute.name,
           args: NetworkImageViewerRouteArgs(
-            imageDatas: imageDatas,
+            imageUrls: imageUrls,
             heroTag: heroTag,
             key: key,
           ),
+          rawQueryParams: {'imageUrls': imageUrls},
           initialChildren: children,
         );
 
@@ -132,11 +133,17 @@ class NetworkImageViewerRoute
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<NetworkImageViewerRouteArgs>();
-      return _i4.NetworkImageViewerScreen(
-        imageDatas: args.imageDatas,
-        heroTag: args.heroTag,
-        key: args.key,
+      final queryParams = data.queryParams;
+      final args = data.argsAs<NetworkImageViewerRouteArgs>(
+          orElse: () => NetworkImageViewerRouteArgs(
+              imageUrls: queryParams.optList('imageUrls')));
+      return _i5.DeferredWidget(
+        _i4.loadLibrary,
+        () => _i4.NetworkImageViewerScreen(
+          imageUrls: args.imageUrls,
+          heroTag: args.heroTag,
+          key: args.key,
+        ),
       );
     },
   );
@@ -144,12 +151,12 @@ class NetworkImageViewerRoute
 
 class NetworkImageViewerRouteArgs {
   const NetworkImageViewerRouteArgs({
-    required this.imageDatas,
+    required this.imageUrls,
     this.heroTag,
     this.key,
   });
 
-  final List<_i4.ImageData> imageDatas;
+  final List<String>? imageUrls;
 
   final String? heroTag;
 
@@ -157,6 +164,6 @@ class NetworkImageViewerRouteArgs {
 
   @override
   String toString() {
-    return 'NetworkImageViewerRouteArgs{imageDatas: $imageDatas, heroTag: $heroTag, key: $key}';
+    return 'NetworkImageViewerRouteArgs{imageUrls: $imageUrls, heroTag: $heroTag, key: $key}';
   }
 }

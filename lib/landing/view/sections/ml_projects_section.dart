@@ -167,11 +167,13 @@ class MlProjectsSection extends StatelessWidget {
                                 child: GestureDetector(
                                   onTap: () => context.router.push(
                                     NetworkImageViewerRoute(
-                                      imageDatas: [_projects[index].imageData],
+                                      imageUrls: [
+                                        _projects[index].imageData.url
+                                      ],
                                     ),
                                   ),
                                   child: Hero(
-                                    tag: project.imageData,
+                                    tag: project.imageData.url,
                                     child: CachedNetworkImage(
                                       imageUrl: project.imageData.url,
                                       placeholder: (context, url) {

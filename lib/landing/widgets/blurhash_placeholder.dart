@@ -14,12 +14,24 @@ class BlurHashPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final width = constraints.maxWidth;
-        final height = width * imageData.height / imageData.width;
+        final aspectRatio = imageData.width / imageData.height;
+
+        var newWidth = constraints.maxWidth;
+        var newHeight = constraints.maxHeight;
+
+        if (imageData.width > constraints.maxWidth) {
+          newWidth = constraints.maxWidth;
+          newHeight = constraints.maxWidth / aspectRatio;
+        }
+
+        if (newHeight > constraints.maxHeight) {
+          newHeight = constraints.maxHeight;
+          newWidth = constraints.maxHeight * aspectRatio;
+        }
 
         return SizedBox(
-          width: width,
-          height: height,
+          width: newWidth,
+          height: newHeight,
           child: BlurHash(
             hash: imageData.hash,
           ),

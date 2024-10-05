@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_azlir/landing/widgets/blurhash_placeholder.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
@@ -26,15 +25,15 @@ class ImageData extends Equatable {
   List<Object?> get props => [url, hash];
 }
 
-@RoutePage()
+@RoutePage(deferredLoading: true)
 class NetworkImageViewerScreen extends StatefulWidget {
   const NetworkImageViewerScreen({
-    required this.imageDatas,
+    @queryParam required List<String>? imageUrls,
     this.heroTag,
     super.key,
-  });
+  }) : imageUrls = imageUrls ?? const [];
 
-  final List<ImageData> imageDatas;
+  final List<String> imageUrls;
   final String? heroTag;
 
   @override
@@ -65,7 +64,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
           }
         },
         const SingleActivator(LogicalKeyboardKey.arrowRight): () {
-          if (_currentPage < widget.imageDatas.length - 1) {
+          if (_currentPage < widget.imageUrls.length - 1) {
             setState(() {
               _currentPage++;
             });
@@ -138,12 +137,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
             children: [
               PhotoViewGallery.builder(
                 pageController: _pageController,
-                itemCount: widget.imageDatas.length,
-                loadingBuilder: (context, event) {
-                  return BlurHashPlaceholder(
-                    imageData: widget.imageDatas[_currentPage],
-                  );
-                },
+                itemCount: widget.imageUrls.length,
                 onPageChanged: (index) {
                   setState(() {
                     _currentPage = index;
@@ -153,10 +147,10 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
                   return PhotoViewGalleryPageOptions(
                     minScale: PhotoViewComputedScale.contained,
                     heroAttributes: PhotoViewHeroAttributes(
-                      tag: widget.heroTag ?? widget.imageDatas[index],
+                      tag: widget.heroTag ?? widget.imageUrls[index],
                     ),
                     imageProvider: CachedNetworkImageProvider(
-                      widget.imageDatas[index].url,
+                      widget.imageUrls[index],
                     ),
                     errorBuilder: (context, error, stackTrace) {
                       return const Center(
@@ -171,7 +165,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
                   );
                 },
               ),
-              if (widget.imageDatas.length > 1) ...[
+              if (widget.imageUrls.length > 1) ...[
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -199,7 +193,7 @@ class _NetworkImageViewerScreenState extends State<NetworkImageViewerScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: IconButton.filledTonal(
-                      onPressed: _currentPage == widget.imageDatas.length - 1
+                      onPressed: _currentPage == widget.imageUrls.length - 1
                           ? null
                           : () {
                               setState(() {

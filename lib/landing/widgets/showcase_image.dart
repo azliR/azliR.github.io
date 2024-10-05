@@ -98,7 +98,7 @@ class ShowcaseImageState extends State<ShowcaseImage>
             if (_currentImageWidth > constraints.maxWidth) {
               newWidth = constraints.maxWidth;
               newHeight = constraints.maxWidth / aspectRatio;
-            } else {}
+            }
 
             if (newHeight > constraints.maxHeight) {
               newHeight = constraints.maxHeight;
