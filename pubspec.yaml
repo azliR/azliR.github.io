@@ -43,6 +43,9 @@ dependencies:
   riverpod_annotation: ^2.3.5
   url_launcher: ^6.3.0
 
+  blurhash_generator:
+    path: ./packages/blurhash_generator
+
 dev_dependencies:
   auto_route_generator: ^9.0.0
   build_runner: any

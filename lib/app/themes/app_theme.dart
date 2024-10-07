@@ -196,6 +196,22 @@ final class AppTheme {
             ),
           ),
       },
+      expansionTileTheme: switch (brightness) {
+        Brightness.dark => ExpansionTileThemeData(
+            backgroundColor: colorScheme.surface,
+            iconColor: colorScheme.primary,
+            textColor: colorScheme.primary,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: colorScheme.primary, width: 2),
+            ),
+            collapsedIconColor: colorScheme.primary,
+            collapsedTextColor: colorScheme.primary,
+            collapsedShape: RoundedRectangleBorder(
+              side: BorderSide(color: colorScheme.primary),
+            ),
+          ),
+        Brightness.light => const ExpansionTileThemeData(),
+      },
       // iconButtonTheme: switch (brightness) {
       //   Brightness.dark => IconButtonThemeData(
       //       style: IconButton.styleFrom(

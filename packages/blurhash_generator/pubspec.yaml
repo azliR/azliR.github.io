@@ -1,0 +1,21 @@
+name: blurhash_generator
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+  flutter: ^3.24.0
+
+dependencies:
+  blurhash_dart: ^1.2.1
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  image: ^4.2.0
+  isolate_manager: ^5.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^6.0.0
