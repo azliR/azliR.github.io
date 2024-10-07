@@ -37,8 +37,8 @@ class AppRouter extends RootStackRouter {
             page: ToolsRoute.page,
             path: 'tools',
             transitionsBuilder: _customTransition,
-            durationInMilliseconds: 300,
-            reverseDurationInMilliseconds: 300,
+            durationInMilliseconds: 500,
+            reverseDurationInMilliseconds: 500,
           ),
           CustomRoute<dynamic>(
             page: BlurHashGeneratorRoute.page,
