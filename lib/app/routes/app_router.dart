@@ -42,7 +42,7 @@ class AppRouter extends RootStackRouter {
           ),
           CustomRoute<dynamic>(
             page: BlurHashGeneratorRoute.page,
-            path: 'contact',
+            path: 'blurhash-generator',
             transitionsBuilder: _customTransition,
             durationInMilliseconds: 500,
             reverseDurationInMilliseconds: 500,
