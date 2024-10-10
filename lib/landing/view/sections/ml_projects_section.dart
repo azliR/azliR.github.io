@@ -162,16 +162,14 @@ class MlProjectsSection extends StatelessWidget {
                               desktop: Alignment.centerRight,
                             ),
                             child: Card.outlined(
-                              child: MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () => context.router.push(
-                                    NetworkImageViewerRoute(
-                                      imageUrls: [
-                                        _projects[index].imageData.url
-                                      ],
-                                    ),
+                              child: GestureDetector(
+                                onTap: () => context.router.push(
+                                  NetworkImageViewerRoute(
+                                    imageUrls: [_projects[index].imageData.url],
                                   ),
+                                ),
+                                child: MouseRegion(
+                                  cursor: SystemMouseCursors.click,
                                   child: Hero(
                                     tag: project.imageData.url,
                                     child: CachedNetworkImage(

@@ -136,22 +136,22 @@ class _ProjectCardState extends State<_ProjectCard> {
 
     return SizedBox(
       width: 400,
-      child: MouseRegion(
-        onEnter: (event) {
-          setState(() {
-            _isHovered = true;
-          });
-        },
-        onExit: (event) {
-          setState(() {
-            _isHovered = false;
-          });
-        },
-        child: Card.filled(
-          margin: EdgeInsets.zero,
-          child: InkWell(
-            onTap: () {
-              launchUrlString(widget.project.githubUrl);
+      child: Card.filled(
+        margin: EdgeInsets.zero,
+        child: InkWell(
+          onTap: () {
+            launchUrlString(widget.project.githubUrl);
+          },
+          child: MouseRegion(
+            onEnter: (event) {
+              setState(() {
+                _isHovered = true;
+              });
+            },
+            onExit: (event) {
+              setState(() {
+                _isHovered = false;
+              });
             },
             child: Padding(
               padding: const EdgeInsets.all(16),

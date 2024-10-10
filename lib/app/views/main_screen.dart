@@ -128,15 +128,15 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 selectedTab: navigationTab,
                 onSelected: _onNavigationChanged,
               )
-            : MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    if (context.router.isRouteActive(LandingRoute.name)) return;
+            : GestureDetector(
+                onTap: () {
+                  if (context.router.isRouteActive(LandingRoute.name)) return;
 
-                    context.router.push(const LandingRoute());
-                  },
-                  child: const Text('azlir.dev'),
+                  context.router.push(const LandingRoute());
+                },
+                child: const MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: Text('azlir.dev'),
                 ),
               ),
         actions: [
@@ -234,17 +234,17 @@ class _DrawerMainState extends ConsumerState<_DrawerMain> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Row(
               children: [
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      if (context.router.isRouteActive(LandingRoute.name)) {
-                        return;
-                      }
+                GestureDetector(
+                  onTap: () {
+                    if (context.router.isRouteActive(LandingRoute.name)) {
+                      return;
+                    }
 
-                      Navigator.pop(context);
-                      context.router.push(const LandingRoute());
-                    },
+                    Navigator.pop(context);
+                    context.router.push(const LandingRoute());
+                  },
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
                     child: Text(
                       'azlir.dev',
                       style: textTheme.headlineSmall,
@@ -378,34 +378,34 @@ class _TopNavigationBarState extends ConsumerState<_TopNavigationBar> {
       height: kToolbarHeight,
       child: Row(
         children: [
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: GestureDetector(
-              onTap: () {
-                if (context.router.isRouteActive(LandingRoute.name)) return;
+          GestureDetector(
+            onTap: () {
+              if (context.router.isRouteActive(LandingRoute.name)) return;
 
-                context.router.push(const LandingRoute());
-              },
-              child: const Text('azlir.dev'),
+              context.router.push(const LandingRoute());
+            },
+            child: const MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Text('azlir.dev'),
             ),
           ),
           const SizedBox(width: 36),
           ...NavigationTab.values.mapIndexed(
             (index, tab) {
-              return MouseRegion(
-                cursor: SystemMouseCursors.click,
-                onHover: (event) {
-                  setState(() {
-                    _hoveredTab = tab;
-                  });
-                },
-                onExit: (event) {
-                  setState(() {
-                    _hoveredTab = null;
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () => widget.onSelected(index),
+              return GestureDetector(
+                onTap: () => widget.onSelected(index),
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  onHover: (event) {
+                    setState(() {
+                      _hoveredTab = tab;
+                    });
+                  },
+                  onExit: (event) {
+                    setState(() {
+                      _hoveredTab = null;
+                    });
+                  },
                   child: Container(
                     height: kToolbarHeight,
                     margin: const EdgeInsets.symmetric(

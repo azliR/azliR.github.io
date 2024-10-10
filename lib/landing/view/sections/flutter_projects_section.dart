@@ -549,15 +549,15 @@ class _ProjectCardState extends State<_ProjectCard> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => context.router.push(
-                  NetworkImageViewerRoute(
-                    imageUrls:
-                        widget.project.imageDatas.map((e) => e.url).toList(),
-                  ),
+            GestureDetector(
+              onTap: () => context.router.push(
+                NetworkImageViewerRoute(
+                  imageUrls:
+                      widget.project.imageDatas.map((e) => e.url).toList(),
                 ),
+              ),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
                 child: SizedBox(
                   height: 280,
                   child: AnimatedCrossFade(

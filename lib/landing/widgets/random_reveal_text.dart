@@ -32,6 +32,7 @@ class _RandomRevealTextState extends State<RandomRevealText>
 
   int _currentTextIndex = 0;
   Timer? _randomUpdateTimer;
+  Timer? _resetTimer;
 
   @override
   void initState() {
@@ -61,7 +62,7 @@ class _RandomRevealTextState extends State<RandomRevealText>
     _controller
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          Future.delayed(
+          _resetTimer = Timer(
             _currentTextIndex == widget.texts.length - 1
                 ? widget.waitDuration
                 : widget.transitionDuration,
@@ -74,24 +75,25 @@ class _RandomRevealTextState extends State<RandomRevealText>
 
   @override
   void dispose() {
+    _randomUpdateTimer?.cancel();
+    _resetTimer?.cancel();
+
     _controller.dispose();
     super.dispose();
   }
 
   void _resetAnimation() {
-    setState(() {
-      _currentTextIndex = (_currentTextIndex + 1) % widget.texts.length;
-      _controller.reset();
-      _animation = Tween<double>(
-        begin: 0,
-        end: widget.texts[_currentTextIndex].length.toDouble(),
-      ).animate(
-        CurvedAnimation(
-          parent: _controller,
-          curve: widget.curve,
-        ),
-      );
-    });
+    _currentTextIndex = (_currentTextIndex + 1) % widget.texts.length;
+    _controller.reset();
+    _animation = Tween<double>(
+      begin: 0,
+      end: widget.texts[_currentTextIndex].length.toDouble(),
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: widget.curve,
+      ),
+    );
 
     _controller.forward();
   }

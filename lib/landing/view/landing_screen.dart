@@ -16,22 +16,24 @@ class LandingScreen extends StatelessWidget {
     // final textTheme = Theme.of(context).textTheme;
     // final size = MediaQuery.sizeOf(context);
 
-    return Scaffold(
-      body: SelectionArea(
-        child: ListView(
-          children: const [
-            IntroductionSection(),
-            SizedBox(height: 128),
-            FlutterProjectsSection(),
-            SizedBox(height: 128),
-            BackendProjectsSection(),
-            SizedBox(height: 128),
-            MlProjectsSection(),
-            SizedBox(height: 128),
-            ReviewsSection(),
-            SizedBox(height: 128),
-            FooterSection(),
-          ],
+    return SelectionArea(
+      child: Scaffold(
+        body: SelectionArea(
+          child: ListView(
+            children: const [
+              IntroductionSection(),
+              SizedBox(height: 128),
+              FlutterProjectsSection(),
+              SizedBox(height: 128),
+              BackendProjectsSection(),
+              SizedBox(height: 128),
+              MlProjectsSection(),
+              SizedBox(height: 128),
+              ReviewsSection(),
+              SizedBox(height: 128),
+              FooterSection(),
+            ],
+          ),
         ),
       ),
     );
