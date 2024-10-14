@@ -21,7 +21,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.3.10
-  flutter_riverpod: ^2.5.1
+  flutter_riverpod: ^2.5.3
   flutter_widget_from_html: ^0.15.2
   font_awesome_flutter: ^10.7.0
   get_it: ^8.0.0
