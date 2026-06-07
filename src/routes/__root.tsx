@@ -3,7 +3,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import appCss from "../styles/globals.css?url";
 
-const THEME_INIT_SCRIPT = `(function(){try{var root=document.documentElement;root.classList.remove('light','dark');root.classList.add('dark');root.style.colorScheme='dark';}catch(e){}})();`;
+const THEME_INIT_SCRIPT = `(function(){try{var root=document.documentElement;root.classList.remove('light','dark');root.classList.add('light');root.style.colorScheme='light';}catch(e){}})();`;
 
 export const Route = createRootRoute({
   head: () => ({
@@ -36,7 +36,7 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
