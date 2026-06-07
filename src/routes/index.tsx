@@ -14,17 +14,19 @@ export const Route = createFileRoute("/")({ component: App });
 
 function App() {
   return (
-    <>
+    <div className="mx-auto w-full max-w-[1280px] border-x border-border bg-background min-h-screen flex flex-col">
       <Header />
-      <HeroSection />
-      <TrustMetricsSection />
-      <SelectedWorkSection />
-      <CapabilitiesSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
+      <main className="flex-1 divide-y divide-border">
+        <HeroSection />
+        <TrustMetricsSection />
+        <SelectedWorkSection />
+        <CapabilitiesSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <CTASection />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
