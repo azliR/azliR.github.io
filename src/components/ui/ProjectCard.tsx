@@ -31,7 +31,7 @@ export default function ProjectCard({
       target={href ? "_blank" : undefined}
       rel={href ? "noopener noreferrer" : undefined}
       className={cn(
-        "group block rounded-3xl border border-border bg-card p-8 md:p-10 lg:p-12 transition-all duration-300 hover:border-accent/30 hover:-translate-y-0.5",
+        "group block rounded-none border border-border bg-card p-8 md:p-10 lg:p-12 transition-colors duration-300 hover:bg-accent",
         isFeatured ? "col-span-full" : "",
         className,
       )}
@@ -44,9 +44,7 @@ export default function ProjectCard({
       >
         <div className="flex-1 space-y-6">
           <div className="space-y-3">
-            <h3 className="text-2xl md:text-3xl font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
-              {title}
-            </h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground">{title}</h3>
             <p className="text-sm md:text-base leading-relaxed text-muted max-w-xl">
               {description}
             </p>
@@ -60,7 +58,7 @@ export default function ProjectCard({
               <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-foreground">
                 {builtItems.map((item) => (
                   <li key={item} className="flex items-center gap-2.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                    <span className="h-1.5 w-1.5 bg-foreground shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -72,7 +70,7 @@ export default function ProjectCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-lg bg-background px-3.5 py-1.5 text-xs font-mono text-muted border border-border"
+                className="rounded-none bg-background px-3.5 py-1.5 text-xs font-mono text-muted border border-border"
               >
                 {tag}
               </span>
@@ -80,7 +78,7 @@ export default function ProjectCard({
           </div>
 
           {isFeatured && impact && (
-            <p className="text-xs font-mono text-accent/80 pt-2 tracking-wide">{impact}</p>
+            <p className="text-xs font-mono text-muted pt-2 tracking-wide">{impact}</p>
           )}
         </div>
 
@@ -90,10 +88,10 @@ export default function ProjectCard({
             isFeatured ? "lg:pl-8 lg:border-l lg:border-border/40" : "",
           )}
         >
-          <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
+          <span className="text-sm font-semibold text-foreground group-hover:underline">
             {ctaText}
           </span>
-          <ArrowUpRight className="h-5 w-5 text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+          <ArrowUpRight className="h-5 w-5 text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
         </div>
       </div>
     </CardWrapper>
