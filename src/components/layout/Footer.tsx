@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border bg-background py-12 md:py-16 text-muted">
+    <footer className="w-full border-t border-border bg-card py-12 md:py-16 text-muted">
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
           <div className="font-sans text-lg font-extrabold tracking-tight text-foreground">
@@ -43,7 +43,7 @@ export default function Footer() {
           >
             Fiverr
           </a>
-          <span className="text-xs text-muted/50 font-mono pl-4 border-l border-border/60">
+          <span className="text-xs text-muted/50 font-mono pl-4 border-l border-border">
             &copy; {year} azlir.dev
           </span>
         </div>
