@@ -10,7 +10,7 @@ export default function MetricCard({ value, label, className }: MetricCardProps)
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border bg-card p-8 text-left space-y-3 transition-colors duration-300 hover:border-accent/30",
+        "bg-card p-8 text-left space-y-3 transition-colors duration-300 hover:bg-accent/40 rounded-none",
         className,
       )}
     >
