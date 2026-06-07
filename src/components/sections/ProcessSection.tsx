@@ -1,4 +1,3 @@
-import Container from "../layout/Container";
 import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -22,8 +21,8 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="py-24 lg:py-28 border-t border-border">
-      <Container>
+    <section className="w-full">
+      <div className="p-6 md:p-8 lg:p-12">
         <AnimatedSection>
           <SectionHeading
             kicker="Process"
@@ -31,23 +30,23 @@ export default function ProcessSection() {
             description="A focused engineering process designed to move fast without sacrificing quality."
           />
         </AnimatedSection>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
-          {steps.map((item, index) => (
-            <AnimatedSection key={item.step} delay={0.1 + index * 0.1}>
-              <div className="rounded-3xl border border-border bg-card p-8 md:p-10 space-y-4 transition-all duration-300 hover:border-accent/30 hover:-translate-y-0.5 h-full">
-                <span className="font-mono text-4xl font-extrabold text-accent/20 block">
-                  {item.step}
-                </span>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted">{item.description}</p>
-                </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border-t border-border w-full">
+        {steps.map((item, index) => (
+          <AnimatedSection key={item.step} delay={0.1 + index * 0.1}>
+            <div className="bg-card p-8 md:p-10 space-y-6 transition-colors duration-300 hover:bg-accent rounded-none h-full">
+              <span className="font-mono text-4xl font-extrabold text-muted/30 block">
+                {item.step}
+              </span>
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{item.description}</p>
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </Container>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
     </section>
   );
 }
