@@ -6,10 +6,8 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-border bg-card py-12 md:py-16 text-muted">
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-2">
-          <div className="font-sans text-lg font-extrabold tracking-tight text-foreground">
-            azlir.dev
-          </div>
+        <div className="space-y-3">
+          <img src="/logo.svg" alt="azlir.dev" className="h-6 w-auto" />
           <p className="text-sm leading-relaxed max-w-xs">Engineering scalable products.</p>
         </div>
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">

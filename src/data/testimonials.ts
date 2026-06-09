@@ -6,18 +6,20 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    id: "t1",
-    quote: "Professional, reliable, and consistently delivered production-ready work.",
-    author: "Founder",
+    id: "venom96",
+    quote:
+      "Rizal H exceeded my expectations in every aspect! The professionalism and bug-free delivery were top-notch, and his attention to detail was impeccable. Working with him was an absolute pleasure—the fluency in communication and his level of cooperation were truly outstanding.",
+    author: "venom96 (Nepal)",
   },
   {
-    id: "t2",
-    quote: "Fast execution with strong technical understanding.",
-    author: "Startup Client",
+    id: "drivooo",
+    quote:
+      "Amazing person and very experienced person. Know exactly what he is doing and don't let any chance of improvement go away. Always giving suggestions about how we can improve. Highly recommended. Loved working with him. He is quite experienced and knows his job.",
+    author: "drivooo (United States)",
   },
   {
-    id: "t3",
-    quote: "Clear communication and excellent delivery quality.",
-    author: "Product Team",
+    id: "amineandaloussi",
+    quote: "Quick, honest, very friendly; the price is great. Really recommended",
+    author: "amineandaloussi (Morocco)",
   },
 ];
