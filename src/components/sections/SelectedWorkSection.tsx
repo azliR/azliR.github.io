@@ -2,8 +2,10 @@ import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/projects";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function SelectedWorkSection() {
+  const { t } = useLanguage();
   const featuredProject = projects.find((p) => p.isFeatured);
   const regularProjects = projects.filter((p) => !p.isFeatured);
 
@@ -11,10 +13,7 @@ export default function SelectedWorkSection() {
     <section id="work" className="w-full">
       <div className="p-6 md:p-8 lg:p-12">
         <AnimatedSection>
-          <SectionHeading
-            kicker="Selected Work"
-            title="A showcase of production systems, platforms, and products built for real users."
-          />
+          <SectionHeading kicker={t("workKicker")} title={t("workTitle")} />
         </AnimatedSection>
       </div>
 

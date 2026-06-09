@@ -2,8 +2,10 @@ import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 import { capabilities } from "../../data/capabilities";
 import { Smartphone, Server, Zap, Cpu } from "lucide-react";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function CapabilitiesSection() {
+  const { lang, t } = useLanguage();
   const getIcon = (name: string) => {
     switch (name) {
       case "Smartphone":
@@ -23,10 +25,7 @@ export default function CapabilitiesSection() {
     <section id="capabilities" className="w-full">
       <div className="p-6 md:p-8 lg:p-12">
         <AnimatedSection>
-          <SectionHeading
-            kicker="Capabilities"
-            title="Engineering systems across mobile, backend, realtime infrastructure, and AI."
-          />
+          <SectionHeading kicker={t("capabilities")} title={t("capabilitiesTitle")} />
         </AnimatedSection>
       </div>
 
@@ -38,8 +37,8 @@ export default function CapabilitiesSection() {
                 {getIcon(cap.iconName)}
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-foreground">{cap.title}</h3>
-                <p className="text-sm leading-relaxed text-muted">{cap.description}</p>
+                <h3 className="text-xl font-semibold text-foreground">{cap.title[lang]}</h3>
+                <p className="text-sm leading-relaxed text-muted">{cap.description[lang]}</p>
               </div>
             </div>
           </AnimatedSection>

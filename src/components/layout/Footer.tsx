@@ -1,6 +1,8 @@
 import Container from "./Container";
+import { useLanguage } from "./LanguageProvider";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -8,7 +10,7 @@ export default function Footer() {
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="space-y-3">
           <img src="/logo.svg" alt="azlir.dev" className="h-6 w-auto" />
-          <p className="text-sm leading-relaxed max-w-xs">Engineering scalable products.</p>
+          <p className="text-sm leading-relaxed max-w-xs">{t("footerDesc")}</p>
         </div>
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
           <a

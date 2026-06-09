@@ -1,23 +1,38 @@
 export interface Metric {
   value: string;
-  label: string;
+  label: {
+    en: string;
+    id: string;
+  };
 }
 
 export const metrics: Metric[] = [
   {
     value: "39K+",
-    label: "Users served",
+    label: {
+      en: "Users served",
+      id: "Pengguna terlayani",
+    },
   },
   {
     value: "450K+",
-    label: "Daily actions",
+    label: {
+      en: "Daily actions",
+      id: "Aksi harian",
+    },
   },
   {
     value: "5,859+",
-    label: "Polling stations",
+    label: {
+      en: "Polling stations",
+      id: "Tempat pemungutan suara (TPS)",
+    },
   },
   {
     value: "99.99%",
-    label: "Accuracy",
+    label: {
+      en: "Accuracy",
+      id: "Akurasi",
+    },
   },
 ];

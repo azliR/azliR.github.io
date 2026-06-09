@@ -1,4 +1,5 @@
 import AnimatedSection from "../ui/AnimatedSection";
+import { useLanguage } from "../layout/LanguageProvider";
 
 const companies = [
   { name: "Bedas", logo: "/companies/bedas.webp" },
@@ -10,6 +11,7 @@ const companies = [
 ];
 
 export default function TrustedBySection() {
+  const { t } = useLanguage();
   const duplicatedCompanies = [...companies, ...companies];
 
   return (
@@ -17,7 +19,7 @@ export default function TrustedBySection() {
       <AnimatedSection className="w-full">
         <div className="text-center mb-8 px-6">
           <span className="text-xs font-mono uppercase tracking-widest text-muted font-bold">
-            Trusted by innovative companies
+            {t("trustedBy")}
           </span>
         </div>
         <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">

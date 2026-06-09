@@ -3,6 +3,8 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import appCss from "../styles/globals.css?url";
 
+import { LanguageProvider, useLanguage } from "../components/layout/LanguageProvider";
+
 const THEME_INIT_SCRIPT = `(function(){try{var root=document.documentElement;root.classList.remove('light','dark');root.classList.add('light');root.style.colorScheme='light';}catch(e){}})();`;
 
 export const Route = createRootRoute({
@@ -55,9 +57,10 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
 });
 
-function RootDocument() {
+function RootDocumentContent() {
+  const { lang } = useLanguage();
   return (
-    <html lang="en" className="light" style={{ colorScheme: "light" }}>
+    <html lang={lang} className="light" style={{ colorScheme: "light" }}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
@@ -78,5 +81,13 @@ function RootDocument() {
         <Scripts />
       </body>
     </html>
+  );
+}
+
+function RootDocument() {
+  return (
+    <LanguageProvider>
+      <RootDocumentContent />
+    </LanguageProvider>
   );
 }

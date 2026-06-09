@@ -1,16 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "#/lib/cn";
+import { useLanguage } from "../layout/LanguageProvider";
 
 interface ProjectCardProps {
   title: string;
-  description: string;
+  description: {
+    en: string;
+    id: string;
+  };
   tags: string[];
   href?: string;
   className?: string;
   isFeatured?: boolean;
-  builtItems?: string[];
-  impact?: string;
-  ctaText?: string;
+  builtItems?: {
+    en: string;
+    id: string;
+  }[];
+  impact?: {
+    en: string;
+    id: string;
+  };
+  ctaText?: {
+    en: string;
+    id: string;
+  };
 }
 
 export default function ProjectCard({
@@ -22,9 +35,19 @@ export default function ProjectCard({
   isFeatured = false,
   builtItems = [],
   impact,
-  ctaText = "View Case Study",
+  ctaText,
 }: ProjectCardProps) {
+  const { lang, t } = useLanguage();
   const CardWrapper = href ? "a" : "div";
+
+  const resolvedDescription = description[lang];
+  const resolvedImpact = impact ? impact[lang] : undefined;
+  const resolvedCtaText = ctaText
+    ? ctaText[lang]
+    : lang === "en"
+      ? "View Case Study"
+      : "Lihat Studi Kasus";
+
   return (
     <CardWrapper
       href={href}
@@ -46,20 +69,20 @@ export default function ProjectCard({
           <div className="space-y-3">
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground">{title}</h3>
             <p className="text-sm md:text-base leading-relaxed text-muted max-w-xl">
-              {description}
+              {resolvedDescription}
             </p>
           </div>
 
           {isFeatured && builtItems.length > 0 && (
             <div className="space-y-3 pt-2">
               <span className="text-xs font-mono uppercase tracking-widest text-muted">
-                Scope of Work:
+                {t("scopeOfWork")}
               </span>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-foreground pt-2">
                 {builtItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5">
+                  <li key={item.en} className="flex items-center gap-2.5">
                     <span className="h-1.5 w-1.5 bg-foreground shrink-0" />
-                    <span>{item}</span>
+                    <span>{item[lang]}</span>
                   </li>
                 ))}
               </ul>
@@ -77,8 +100,8 @@ export default function ProjectCard({
             ))}
           </div>
 
-          {isFeatured && impact && (
-            <p className="text-xs font-mono text-muted pt-2 tracking-wide">{impact}</p>
+          {isFeatured && resolvedImpact && (
+            <p className="text-xs font-mono text-muted pt-2 tracking-wide">{resolvedImpact}</p>
           )}
         </div>
 
@@ -89,7 +112,7 @@ export default function ProjectCard({
           )}
         >
           <span className="text-sm font-semibold text-foreground group-hover:underline">
-            {ctaText}
+            {resolvedCtaText}
           </span>
           <ArrowUpRight className="h-5 w-5 text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
         </div>

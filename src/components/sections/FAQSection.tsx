@@ -3,8 +3,10 @@ import SectionHeading from "../ui/SectionHeading";
 import { faqItems } from "../../data/faq";
 import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function FAQSection() {
+  const { lang, t } = useLanguage();
   const [openId, setOpenId] = React.useState<string | null>(null);
 
   const toggleItem = (id: string) => {
@@ -15,9 +17,9 @@ export default function FAQSection() {
     <section id="faq" className="w-full">
       <div className="p-6 md:p-8 lg:p-12">
         <SectionHeading
-          kicker="FAQ"
-          title="Frequently asked questions"
-          description="Clear answers about our engineering capabilities, process, and setups."
+          kicker={t("faqKicker")}
+          title={t("faqTitle")}
+          description={t("faqDescription")}
         />
       </div>
 
@@ -32,7 +34,7 @@ export default function FAQSection() {
                   className="flex w-full items-center justify-between text-left font-semibold text-lg text-foreground hover:underline transition-colors duration-200"
                   aria-expanded={isOpen}
                 >
-                  <span>{faq.question}</span>
+                  <span>{faq.question[lang]}</span>
                   <span className="ml-4 shrink-0 p-1.5 rounded-none border border-border bg-card">
                     {isOpen ? (
                       <Minus className="h-4 w-4 text-muted" />
@@ -50,7 +52,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-3 text-sm leading-relaxed text-muted">{faq.answer}</p>
+                      <p className="pt-3 text-sm leading-relaxed text-muted">{faq.answer[lang]}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

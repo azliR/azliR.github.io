@@ -1,22 +1,25 @@
 import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function ProcessSection() {
+  const { t } = useLanguage();
+
   const steps = [
     {
       step: "01",
-      title: "Discovery",
-      description: "Understanding product goals, constraints, and technical direction.",
+      title: t("step1Title"),
+      description: t("step1Desc"),
     },
     {
       step: "02",
-      title: "Engineering",
-      description: "Building scalable, maintainable, production-ready systems.",
+      title: t("step2Title"),
+      description: t("step2Desc"),
     },
     {
       step: "03",
-      title: "Launch & Iterate",
-      description: "Deployment, monitoring, improvements, and iteration.",
+      title: t("step3Title"),
+      description: t("step3Desc"),
     },
   ];
 
@@ -25,9 +28,9 @@ export default function ProcessSection() {
       <div className="p-6 md:p-8 lg:p-12">
         <AnimatedSection>
           <SectionHeading
-            kicker="Process"
-            title="How we work"
-            description="A focused engineering process designed to move fast without sacrificing quality."
+            kicker={t("processKicker")}
+            title={t("processTitle")}
+            description={t("processDescription")}
           />
         </AnimatedSection>
       </div>

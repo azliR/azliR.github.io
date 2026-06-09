@@ -1,6 +1,9 @@
 import AnimatedSection from "../ui/AnimatedSection";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function HeroSection() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="relative overflow-hidden w-full">
       <AnimatedSection className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] divide-y lg:divide-y-0 lg:divide-x divide-border w-full">
@@ -10,28 +13,39 @@ export default function HeroSection() {
               Flutter &bull; Go &bull; Real-time &bull; AI
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[72px] leading-[0.95] md:leading-[0.95]">
-              Engineering scalable
-              <br />
-              mobile apps
-              <br />
-              &amp; backend systems.
+              {lang === "en" ? (
+                <>
+                  Engineering scalable
+                  <br />
+                  mobile apps
+                  <br />
+                  &amp; backend systems.
+                </>
+              ) : (
+                <>
+                  Merekayasa aplikasi
+                  <br />
+                  mobile &amp; sistem
+                  <br />
+                  backend yang scalable.
+                </>
+              )}
             </h1>
             <p className="text-lg text-muted md:text-[20px] leading-relaxed max-w-xl">
-              Production-ready products for startups, real-time platforms, and high-performance
-              systems.
+              {t("heroDescription")}
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <a
                 href="mailto:hello@azlir.dev"
                 className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"
               >
-                Start a Project
+                {t("startProject")}
               </a>
               <a
                 href="#work"
                 className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"
               >
-                Selected Work
+                {t("heroCTASelectedWork")}
               </a>
             </div>
           </div>
@@ -42,7 +56,7 @@ export default function HeroSection() {
                 39K+
               </div>
               <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                Users served
+                {t("usersServed")}
               </div>
             </div>
             <div className="p-6 md:p-8">
@@ -50,7 +64,7 @@ export default function HeroSection() {
                 450K+
               </div>
               <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                Daily actions
+                {t("dailyActions")}
               </div>
             </div>
             <div className="p-6 md:p-8">
@@ -58,7 +72,7 @@ export default function HeroSection() {
                 10+
               </div>
               <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                Production systems
+                {t("productionSystems")}
               </div>
             </div>
           </div>
@@ -67,13 +81,13 @@ export default function HeroSection() {
         <div className="bg-card p-6 md:p-8 lg:p-12 flex flex-col justify-between gap-12 font-mono">
           <div className="space-y-4">
             <div className="text-xs text-muted uppercase tracking-widest font-semibold">
-              01 / Selected Focus
+              {t("selectedFocus")}
             </div>
             <div className="flex flex-col gap-2 text-sm text-foreground">
-              <div>Mobile Engineering</div>
-              <div>Backend Systems</div>
-              <div>Real-time Platforms</div>
-              <div>AI Integration</div>
+              <div>{lang === "en" ? "Mobile Engineering" : "Rekayasa Mobile"}</div>
+              <div>{lang === "en" ? "Backend Systems" : "Sistem Backend"}</div>
+              <div>{lang === "en" ? "Real-time Platforms" : "Platform Real-time"}</div>
+              <div>{lang === "en" ? "AI Integration" : "Integrasi AI"}</div>
             </div>
           </div>
 
@@ -81,7 +95,7 @@ export default function HeroSection() {
 
           <div className="space-y-4">
             <div className="text-xs text-muted uppercase tracking-widest font-semibold">
-              02 / Core Stack
+              {t("coreStack")}
             </div>
             <div className="flex flex-wrap gap-2 text-xs">
               {["Flutter", "React", "Go", "TanStack", "Postgres", "Redis"].map((tech) => (
@@ -99,12 +113,12 @@ export default function HeroSection() {
 
           <div className="space-y-4">
             <div className="text-xs text-muted uppercase tracking-widest font-semibold">
-              03 / Recent Work
+              {t("recentWork")}
             </div>
             <div className="flex flex-col gap-2 text-sm text-foreground">
-              <div>39K+ users platform</div>
-              <div>Election real-count system</div>
-              <div>VoIP infrastructure</div>
+              <div>{t("recentWork1")}</div>
+              <div>{t("recentWork2")}</div>
+              <div>{t("recentWork3")}</div>
             </div>
           </div>
         </div>

@@ -1,16 +1,19 @@
 import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 import { testimonials } from "../../data/testimonials";
+import { useLanguage } from "../layout/LanguageProvider";
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="reviews" className="w-full">
       <div className="p-6 md:p-8 lg:p-12">
         <AnimatedSection>
           <SectionHeading
-            kicker="Reviews"
-            title="Trusted by founders"
-            description="Selected feedback from clients and collaborators."
+            kicker={t("reviewsKicker")}
+            title={t("reviewsTitle")}
+            description={t("reviewsDescription")}
           />
         </AnimatedSection>
       </div>
