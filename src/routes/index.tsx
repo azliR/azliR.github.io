@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Header from "../components/layout/Header";
 import HeroSection from "../components/sections/HeroSection";
+import TrustedBySection from "../components/sections/TrustedBySection";
 import TrustMetricsSection from "../components/sections/TrustMetricsSection";
 import SelectedWorkSection from "../components/sections/SelectedWorkSection";
 import CapabilitiesSection from "../components/sections/CapabilitiesSection";
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <main className="flex-1 divide-y divide-border">
         <HeroSection />
+        <TrustedBySection />
         <TrustMetricsSection />
         <SelectedWorkSection />
         <CapabilitiesSection />
