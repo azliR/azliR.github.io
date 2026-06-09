@@ -55,7 +55,7 @@ export default function ProjectCard({
               <span className="text-xs font-mono uppercase tracking-widest text-muted">
                 Scope of Work:
               </span>
-              <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-foreground">
+              <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-foreground pt-2">
                 {builtItems.map((item) => (
                   <li key={item} className="flex items-center gap-2.5">
                     <span className="h-1.5 w-1.5 bg-foreground shrink-0" />

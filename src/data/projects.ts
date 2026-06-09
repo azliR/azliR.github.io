@@ -12,7 +12,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "inclass-platform",
+    id: "inclass",
     title: "InClass",
     description:
       "An AI-powered, real-time classroom management and digital education platform with deep AI integration and real-time collaboration.",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     href: "https://app.inclass.azlir.dev/",
   },
   {
-    id: "wake-up-call",
+    id: "wucs",
     title: "Wake Up Call Service",
     description:
       "An ecosystem of mobile applications and backend services for a VoIP-based scheduled wake-up call service.",
@@ -40,6 +40,16 @@ export const projects: Project[] = [
     isFeatured: false,
     ctaText: "Visit Website",
     href: "https://realwakeupcalls.com/",
+  },
+  {
+    id: "isiu-ai",
+    title: "iSIU.AI",
+    description:
+      "A mobile companion application for Green Grid Inc.'s iSIU® (Instant Situational Insights®) platform, designed for electric utilities and substation operators.",
+    tags: ["Flutter", "Computer Vision", "AI", "Edge Intelligence"],
+    isFeatured: false,
+    ctaText: "Visit Website",
+    href: "https://isiu.ai/",
   },
   {
     id: "mutualan",
@@ -52,16 +62,6 @@ export const projects: Project[] = [
     href: "https://mutualan.com/",
   },
   {
-    id: "bandung-bedas",
-    title: "Bandung Bedas",
-    description:
-      "A secure mobile app and real-time backend vote tallying system used by thousands of poll watchers across 5,859 voting stations during the 2024 Indonesian Regional Elections.",
-    tags: ["Flutter", "Go", "GoFiber", "Real-Time Dashboard"],
-    isFeatured: false,
-    ctaText: "View Post",
-    href: "https://www.linkedin.com/posts/rizki-aryandi-257590203_sebagai-ketua-tim-it-saya-sangat-bangga-ugcPost-7270220686621630464-OIZA/",
-  },
-  {
     id: "morp-sdk",
     title: "Morp SDK",
     description:
@@ -71,13 +71,13 @@ export const projects: Project[] = [
     ctaText: "View Case Study",
   },
   {
-    id: "isiu-ai",
-    title: "iSIU.AI",
+    id: "bandung-bedas",
+    title: "Bandung Bedas",
     description:
-      "A mobile companion application for Green Grid Inc.'s iSIU® (Instant Situational Insights®) platform, designed for electric utilities and substation operators.",
-    tags: ["Flutter", "Computer Vision", "AI", "Edge Intelligence"],
+      "A secure mobile app and real-time backend vote tallying system used by thousands of poll watchers across 5,859 voting stations during the 2024 Indonesian Regional Elections.",
+    tags: ["Flutter", "Go", "GoFiber", "Real-Time Dashboard"],
     isFeatured: false,
-    ctaText: "Visit Website",
-    href: "https://isiu.ai/",
+    ctaText: "View Post",
+    href: "https://www.linkedin.com/posts/rizki-aryandi-257590203_sebagai-ketua-tim-it-saya-sangat-bangga-ugcPost-7270220686621630464-OIZA/",
   },
 ];

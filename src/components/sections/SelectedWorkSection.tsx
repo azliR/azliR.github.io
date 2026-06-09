@@ -1,3 +1,4 @@
+import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/projects";
@@ -9,41 +10,44 @@ export default function SelectedWorkSection() {
   return (
     <section id="work" className="w-full">
       <div className="p-6 md:p-8 lg:p-12">
-        <SectionHeading
-          kicker="Selected Work"
-          title="A showcase of production systems, platforms, and products built for real users."
-        />
+        <AnimatedSection>
+          <SectionHeading
+            kicker="Selected Work"
+            title="A showcase of production systems, platforms, and products built for real users."
+          />
+        </AnimatedSection>
       </div>
 
-      <div className="flex flex-col divide-y divide-border border-t border-border bg-card/10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border-t border-border w-full">
         {featuredProject && (
-          <ProjectCard
-            title={featuredProject.title}
-            description={featuredProject.description}
-            tags={featuredProject.tags}
-            href={featuredProject.href}
-            isFeatured={true}
-            builtItems={featuredProject.builtItems}
-            impact={featuredProject.impact}
-            ctaText={featuredProject.ctaText}
-            className="border-0 bg-transparent"
-          />
+          <AnimatedSection className="col-span-1 md:col-span-2">
+            <ProjectCard
+              title={featuredProject.title}
+              description={featuredProject.description}
+              tags={featuredProject.tags}
+              href={featuredProject.href}
+              isFeatured={true}
+              builtItems={featuredProject.builtItems}
+              impact={featuredProject.impact}
+              ctaText={featuredProject.ctaText}
+              className="border-0 h-full"
+            />
+          </AnimatedSection>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
-          {regularProjects.map((project) => (
+        {regularProjects.map((project, index) => (
+          <AnimatedSection key={project.id} delay={0.1 + index * 0.1} className="h-full">
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               tags={project.tags}
               href={project.href}
               isFeatured={false}
               ctaText={project.ctaText}
-              className="border-0 bg-transparent h-full"
+              className="border-0 h-full"
             />
-          ))}
-        </div>
+          </AnimatedSection>
+        ))}
       </div>
     </section>
   );
