@@ -92,7 +92,7 @@ function AboutComponent() {
   return (
     <div className="mx-auto w-full max-w-[1280px] border-x border-border bg-background min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 py-12">
+      <main className="flex-1 py-12 flex flex-col gap-16">
         <Container>
           <div className="mb-10">
             <Link
@@ -138,7 +138,7 @@ function AboutComponent() {
             </div>
           </div>
 
-          <div className="mb-16">
+          <div>
             <h2 className="text-2xl font-bold tracking-tight mb-8">
               {lang === "en" ? "Technical Expertise" : "Keahlian Teknis"}
             </h2>
@@ -152,9 +152,11 @@ function AboutComponent() {
               ))}
             </div>
           </div>
+        </Container>
 
-          <div>
-            <div className="flex items-center justify-between mb-8 border-b border-border pb-4">
+        <div className="border-t border-border pt-12 flex flex-col gap-8">
+          <Container>
+            <div className="flex items-center justify-between border-b border-border pb-4">
               <h2 className="text-2xl font-bold tracking-tight">
                 {lang === "en" ? "Fiverr Client Feedback" : "Umpan Balik Klien Fiverr"}
               </h2>
@@ -167,26 +169,27 @@ function AboutComponent() {
                 {t("fiverrRatingText")}
               </a>
             </div>
-            <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-28 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-28 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
-              <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
-                {[...testimonials, ...testimonials].map((test, idx) => (
-                  <div
-                    key={idx}
-                    className="w-[300px] md:w-[360px] flex-shrink-0 p-6 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
-                  >
-                    <p className="text-sm text-muted italic mb-6 leading-relaxed">
-                      "{test.review}"
-                    </p>
-                    <div>
-                      <h4 className="font-bold text-foreground text-sm">{test.author}</h4>
-                      <p className="text-xs text-muted">{test.location}</p>
-                    </div>
+          </Container>
+
+          <div className="relative w-full overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
+              {[...testimonials, ...testimonials].map((test, idx) => (
+                <div
+                  key={idx}
+                  className="w-[300px] md:w-[360px] flex-shrink-0 p-6 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
+                >
+                  <p className="text-sm text-muted italic mb-6 leading-relaxed">"{test.review}"</p>
+                  <div>
+                    <h4 className="font-bold text-foreground text-sm">{test.author}</h4>
+                    <p className="text-xs text-muted">{test.location}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
-        </Container>
+        </div>
       </main>
       <Footer />
     </div>
