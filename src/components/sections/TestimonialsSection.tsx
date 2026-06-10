@@ -18,13 +18,18 @@ export default function TestimonialsSection() {
         </AnimatedSection>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border-t border-border w-full">
-        {testimonials.map((item, index) => (
-          <AnimatedSection key={item.id} delay={0.1 + index * 0.1}>
-            <div className="bg-card p-8 md:p-10 space-y-6 transition-colors duration-300 hover:bg-accent rounded-none h-full flex flex-col justify-between">
+      <div className="relative w-full overflow-hidden border-t border-border">
+        <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
+          {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+            <div
+              key={`${item.id}-${index}`}
+              className="w-[300px] md:w-[360px] flex-shrink-0 p-6 md:p-8 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
+            >
               <div className="space-y-4">
                 <div className="text-foreground tracking-widest text-sm">★★★★★</div>
-                <p className="text-base leading-relaxed text-foreground">
+                <p className="text-sm md:text-base leading-relaxed text-foreground">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
@@ -32,8 +37,8 @@ export default function TestimonialsSection() {
                 &mdash; {item.author}
               </div>
             </div>
-          </AnimatedSection>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
