@@ -167,19 +167,23 @@ function AboutComponent() {
                 {t("fiverrRatingText")}
               </a>
             </div>
-            <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-muted/30 scrollbar-track-transparent">
-              {testimonials.map((test, idx) => (
-                <div
-                  key={idx}
-                  className="min-w-[300px] md:min-w-[360px] max-w-[400px] snap-start p-6 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
-                >
-                  <p className="text-sm text-muted italic mb-6 leading-relaxed">"{test.review}"</p>
-                  <div>
-                    <h4 className="font-bold text-foreground text-sm">{test.author}</h4>
-                    <p className="text-xs text-muted">{test.location}</p>
+            <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
+              <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
+                {[...testimonials, ...testimonials].map((test, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[300px] md:w-[360px] flex-shrink-0 p-6 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
+                  >
+                    <p className="text-sm text-muted italic mb-6 leading-relaxed">
+                      "{test.review}"
+                    </p>
+                    <div>
+                      <h4 className="font-bold text-foreground text-sm">{test.author}</h4>
+                      <p className="text-xs text-muted">{test.location}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </Container>
