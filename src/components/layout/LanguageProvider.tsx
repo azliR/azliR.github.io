@@ -13,6 +13,18 @@ const LanguageContext = React.createContext<LanguageContextType | undefined>(und
 export const translations = {
   en: {
     work: "Work",
+    works: "Works",
+    products: "Products",
+    about: "About",
+    viewAllWorks: "View All Works",
+    featuredProduct: "Featured Product",
+    liveBadge: "Live",
+    inClassDesc: "AI-powered, real-time classroom management & digital education platform.",
+    inClassDetailedDesc:
+      "An AI-powered classroom ecosystem with automated grading, real-time proctored exams, and instant student-teacher sync.",
+    visitWebsite: "Website",
+    openWebApp: "Web App",
+    getPlayStore: "Play Store",
     capabilities: "Capabilities",
     capabilitiesTitle:
       "Engineering systems across mobile, backend, realtime infrastructure, and AI.",
@@ -60,9 +72,48 @@ export const translations = {
       "Whether you're building an MVP, improving an existing platform, or scaling infrastructure — azlir.dev can help.",
     viewWork: "View Work",
     footerDesc: "Engineering scalable products.",
+    aboutTitle: "About Rizal",
+    aboutBio:
+      "I am Rizal Hadiyansah (azliR), a Mobile & Backend Developer passionate about building high-fidelity product ecosystems. I handle everything from native-performance frontend/mobile apps to secure, low-latency, real-time backends.",
+    aboutSubtitle: "Building premium product ecosystems from scratch.",
+    pillarFullstackTitle: "Full-Stack Systems",
+    pillarFullstackDesc:
+      "Engineering complete web and mobile ecosystems with smooth integrations and real-time syncing.",
+    pillarMobileTitle: "Mobile Apps",
+    pillarMobileDesc:
+      "Developing high-fidelity iOS & Android applications using Flutter and React Native (Expo).",
+    pillarBackendTitle: "Scalable Backends",
+    pillarBackendDesc:
+      "Building secure APIs, custom matchmaking systems, and realtime architectures in Go and Node.",
+    pillarMLTitle: "Machine Learning",
+    pillarMLDesc:
+      "Designing and deploying optimized RNN and CNN models for edge devices and mobile platforms.",
+    fiverrRatingText: "5.0 ★ Rated Developer on Fiverr",
+    viewFiverrProfile: "Fiverr Profile",
+    worksTitle: "All Works",
+    worksDescription:
+      "A complete list of production systems, platforms, and products built for clients and independent projects.",
+    allCategory: "All",
+    webCategory: "Full-Stack & Web",
+    mobileCategory: "Flutter & Mobile",
+    backendCategory: "Backend",
+    mlCategory: "Machine Learning",
+    keyHighlights: "Key Highlights",
   },
   id: {
     work: "Karya",
+    works: "Karya",
+    products: "Produk",
+    about: "Tentang",
+    viewAllWorks: "Lihat Semua Karya",
+    featuredProduct: "Produk Unggulan",
+    liveBadge: "Aktif",
+    inClassDesc: "Platform manajemen kelas & pendidikan digital real-time berbasis AI.",
+    inClassDetailedDesc:
+      "Ekosistem kelas berbasis AI dengan penilaian otomatis, ujian terproktor waktu nyata, dan sinkronisasi instan siswa-guru.",
+    visitWebsite: "Website",
+    openWebApp: "Web App",
+    getPlayStore: "Play Store",
     capabilities: "Kapabilitas",
     capabilitiesTitle:
       "Merekayasa sistem di seluruh infrastruktur mobile, backend, real-time, dan AI.",
@@ -83,7 +134,7 @@ export const translations = {
     recentWork2: "Sistem hitung cepat pemilu",
     recentWork3: "Infrastruktur VoIP",
     trustedBy: "Dipercaya oleh perusahaan inovatif",
-    metricsKicker: "Metrik",
+    metricsKicker: "Metrics",
     metricsTitle: "Performa dalam angka",
     metricsDescription: "Dibangun untuk skalabilitas, keandalan, dan penggunaan dunia nyata.",
     workKicker: "Karya Pilihan",
@@ -110,6 +161,33 @@ export const translations = {
       "Baik Anda sedang membangun MVP, meningkatkan platform yang ada, atau menskalakan infrastruktur — azlir.dev dapat membantu.",
     viewWork: "Lihat Karya",
     footerDesc: "Merekayasa produk yang scalable.",
+    aboutTitle: "Tentang Rizal",
+    aboutBio:
+      "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang berdedikasi untuk membangun ekosistem produk berkualitas tinggi. Saya menangani segalanya mulai dari aplikasi mobile/frontend berkinerja tinggi hingga backend real-time yang aman dan berlatensi rendah.",
+    aboutSubtitle: "Membangun ekosistem produk premium dari awal.",
+    pillarFullstackTitle: "Sistem Full-Stack",
+    pillarFullstackDesc:
+      "Merekayasa ekosistem web dan mobile lengkap dengan integrasi lancar dan sinkronisasi real-time.",
+    pillarMobileTitle: "Aplikasi Mobile",
+    pillarMobileDesc:
+      "Mengembangkan aplikasi iOS & Android berkualitas tinggi menggunakan Flutter dan React Native (Expo).",
+    pillarBackendTitle: "Backend yang Scalable",
+    pillarBackendDesc:
+      "Membangun API yang aman, algoritma pencarian kecocokan, dan arsitektur realtime di Go dan Node.",
+    pillarMLTitle: "Machine Learning",
+    pillarMLDesc:
+      "Merancang dan menerapkan model RNN dan CNN teroptimasi untuk perangkat mobile dan edge.",
+    fiverrRatingText: "Developer Bintang 5.0 di Fiverr",
+    viewFiverrProfile: "Profil Fiverr",
+    worksTitle: "Semua Karya",
+    worksDescription:
+      "Daftar lengkap sistem produksi, platform, dan produk yang dibangun untuk klien serta proyek independen.",
+    allCategory: "Semua",
+    webCategory: "Full-Stack & Web",
+    mobileCategory: "Flutter & Mobile",
+    backendCategory: "Backend",
+    mlCategory: "Machine Learning",
+    keyHighlights: "Sorotan Utama",
   },
 };
 
