@@ -63,7 +63,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutComponent() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const capabilitiesList = [
     {
@@ -116,7 +116,7 @@ function AboutComponent() {
                   href="mailto:rizalhadiyansah@gmail.com"
                   className="inline-flex items-center gap-2 text-sm font-bold text-foreground hover:underline"
                 >
-                  Email me
+                  {t("emailMe")}
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
                 <a
@@ -125,7 +125,7 @@ function AboutComponent() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-bold text-foreground hover:underline"
                 >
-                  Fiverr Profile
+                  {t("viewFiverrProfile")}
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -133,9 +133,7 @@ function AboutComponent() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold tracking-tight mb-8">
-              {lang === "en" ? "Technical Expertise" : "Keahlian Teknis"}
-            </h2>
+            <h2 className="text-2xl font-bold tracking-tight mb-8">{t("technicalExpertise")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {capabilitiesList.map((pillar, idx) => (
                 <div key={idx} className="p-6 border border-border bg-card/30">
@@ -151,9 +149,7 @@ function AboutComponent() {
         <div className="border-t border-border pt-12 flex flex-col gap-8">
           <Container>
             <div className="flex items-center justify-between border-b border-border pb-4">
-              <h2 className="text-2xl font-bold tracking-tight">
-                {lang === "en" ? "Fiverr Client Feedback" : "Umpan Balik Klien Fiverr"}
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight">{t("fiverrClientFeedback")}</h2>
               <a
                 href="https://www.fiverr.com/rizalhadiyansah"
                 target="_blank"

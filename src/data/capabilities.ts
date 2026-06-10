@@ -16,11 +16,11 @@ export const capabilities: Capability[] = [
     id: "mobile-engineering",
     title: {
       en: "Mobile Engineering",
-      id: "Rekayasa Mobile",
+      id: "Mobile Engineering",
     },
     description: {
       en: "Production-ready mobile apps for Android and iOS using Flutter with scalable architecture.",
-      id: "Aplikasi mobile siap rilis untuk Android dan iOS menggunakan Flutter dengan arsitektur yang scalable.",
+      id: "Pengembangan aplikasi Android dan iOS berbasis Flutter dengan arsitektur yang skalabel dan siap digunakan di lingkungan produksi.",
     },
     iconName: "Smartphone",
   },
@@ -28,11 +28,11 @@ export const capabilities: Capability[] = [
     id: "backend-systems",
     title: {
       en: "Backend Systems",
-      id: "Sistem Backend",
+      id: "Backend Systems",
     },
     description: {
       en: "High-performance APIs, scalable services, and infrastructure for modern products.",
-      id: "API berkinerja tinggi, layanan scalable, dan infrastruktur untuk produk modern.",
+      id: "Pengembangan API berperforma tinggi, layanan backend yang skalabel, serta infrastruktur untuk produk digital modern.",
     },
     iconName: "Server",
   },
@@ -44,7 +44,7 @@ export const capabilities: Capability[] = [
     },
     description: {
       en: "Realtime sync, dashboards, collaborative systems, notifications, and streaming data.",
-      id: "Sinkronisasi real-time, dasbor, sistem kolaboratif, notifikasi, dan data streaming.",
+      id: "Sinkronisasi real-time, dashboard interaktif, sistem kolaboratif, notifikasi, dan pemrosesan data streaming.",
     },
     iconName: "Zap",
   },
@@ -56,7 +56,7 @@ export const capabilities: Capability[] = [
     },
     description: {
       en: "AI-powered workflows, assistants, intelligent automation, and product features.",
-      id: "Alur kerja berbasis AI, asisten, otomasi cerdas, dan fitur produk pintar.",
+      id: "Integrasi AI untuk workflow otomatis, intelligent assistant, automasi cerdas, dan fitur produk berbasis kecerdasan buatan.",
     },
     iconName: "Cpu",
   },

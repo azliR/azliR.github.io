@@ -9,7 +9,7 @@ import { Globe, Github, Smartphone } from "lucide-react";
 interface Project {
   title: string;
   description: { en: string; id: string };
-  platforms: string;
+  platforms: { en: string; id: string };
   highlights: { en: string[]; id: string[] };
   tech: string[];
   category: "web" | "mobile" | "backend" | "ml";
@@ -26,7 +26,10 @@ const projectsData: Project[] = [
   {
     title: "InClass",
     category: "web",
-    platforms: "Mobile (React Native / Expo), Web (React / Vite+), Backend (Convex)",
+    platforms: {
+      en: "Mobile (React Native / Expo), Web (React / Vite+), Backend (Convex)",
+      id: "Mobile (React Native / Expo), Web (React / Vite+), Backend (Convex)",
+    },
     tech: ["React Native", "Expo", "React", "Vite+", "Convex", "Real-time", "AI Grading"],
     description: {
       en: "An AI-powered, real-time classroom management and digital education platform, similar to Google Classroom but with deep AI integration and real-time collaboration.",
@@ -55,7 +58,10 @@ const projectsData: Project[] = [
   {
     title: "Wake Up Call Service",
     category: "web",
-    platforms: "Mobile (Flutter), Web Dashboard, Backend (Go / GoFiber)",
+    platforms: {
+      en: "Mobile (Flutter), Web Dashboard, Backend (Go / GoFiber)",
+      id: "Seluler (Flutter), Dasbor Web, Backend (Go / GoFiber)",
+    },
     tech: ["Flutter", "Go", "GoFiber", "VoIP", "Daily.co", "RevenueCat", "PostHog", "FCM"],
     description: {
       en: "An ecosystem of mobile applications and backend services for a VoIP-based scheduled wake-up call service.",
@@ -82,7 +88,10 @@ const projectsData: Project[] = [
   {
     title: "iSIU.AI",
     category: "mobile",
-    platforms: "Mobile (Android/iOS)",
+    platforms: {
+      en: "Mobile (Android/iOS)",
+      id: "Seluler (Android/iOS)",
+    },
     tech: ["Flutter", "Computer Vision", "Real-Time Alerts", "Edge Intelligence"],
     description: {
       en: "A mobile companion app for Green Grid Inc.'s iSIU® platform, monitoring powerlines using computer vision.",
@@ -107,7 +116,10 @@ const projectsData: Project[] = [
   {
     title: "mutualan.com",
     category: "web",
-    platforms: "Mobile (Flutter), Web Admin, Backend (Go / GoFiber)",
+    platforms: {
+      en: "Mobile (Flutter), Web Admin, Backend (Go / GoFiber)",
+      id: "Seluler (Flutter), Admin Web, Backend (Go / GoFiber)",
+    },
     tech: ["Flutter", "Go", "GoFiber", "Redis", "MySQL", "Scalability"],
     description: {
       en: "A free, secure follow-for-follow platform for TikTok and Instagram designed to help users grow their social media presence.",
@@ -132,7 +144,10 @@ const projectsData: Project[] = [
   {
     title: "Morp SDK",
     category: "web",
-    platforms: "Android SDK (Kotlin), Backend (Go), Admin Dashboard (Flutter)",
+    platforms: {
+      en: "Android SDK (Kotlin), Backend (Go), Admin Dashboard (Flutter)",
+      id: "Android SDK (Kotlin), Backend (Go), Dasbor Admin (Flutter)",
+    },
     tech: ["Kotlin", "Android SDK", "Fat-AAR", "Go", "Flutter", "B2B Licensing"],
     description: {
       en: "A Kotlin-based Android SDK and B2B licensing ecosystem integrating third-party mobile security engines for enterprise clients.",
@@ -153,7 +168,10 @@ const projectsData: Project[] = [
   {
     title: "Huyula AV",
     category: "web",
-    platforms: "Mobile (Flutter & Kotlin), Backend (Go), Web Admin (Flutter)",
+    platforms: {
+      en: "Mobile (Flutter & Kotlin), Backend (Go), Web Admin (Flutter)",
+      id: "Seluler (Flutter & Kotlin), Backend (Go), Admin Web (Flutter)",
+    },
     tech: ["Flutter", "Kotlin", "Go", "Android Dialer Role", "Security Scan"],
     description: {
       en: "A comprehensive Android digital defense ecosystem with antivirus, URL filtering, call spam blocker, and admin portal.",
@@ -177,7 +195,10 @@ const projectsData: Project[] = [
   {
     title: "Huyula Caller",
     category: "web",
-    platforms: "Mobile (Flutter & Kotlin), Backend (Go), Web Admin (Flutter)",
+    platforms: {
+      en: "Mobile (Flutter & Kotlin), Backend (Go), Web Admin (Flutter)",
+      id: "Seluler (Flutter & Kotlin), Backend (Go), Admin Web (Flutter)",
+    },
     tech: ["Flutter", "Kotlin", "Go", "Caller ID", "Spam Spam Block"],
     description: {
       en: "A privacy-focused caller identification app that filters spam, telemarketing, and fraud calls.",
@@ -201,7 +222,10 @@ const projectsData: Project[] = [
   {
     title: "Bandung Bedas",
     category: "web",
-    platforms: "Mobile (Flutter), Web Live Dashboard, Backend (Go / GoFiber)",
+    platforms: {
+      en: "Mobile (Flutter), Web Live Dashboard, Backend (Go / GoFiber)",
+      id: "Seluler (Flutter), Dasbor Web Langsung, Backend (Go / GoFiber)",
+    },
     tech: ["Flutter", "Go", "GoFiber", "Realtime Dashboard", "High Traffic"],
     description: {
       en: "A secure vote tallying system used by witnesses across 5,859 voting stations during the 2024 Indonesian Regional Elections.",
@@ -227,7 +251,10 @@ const projectsData: Project[] = [
   {
     title: "sociatools.com",
     category: "web",
-    platforms: "Web (Next.js)",
+    platforms: {
+      en: "Web (Next.js)",
+      id: "Web (Next.js)",
+    },
     tech: ["Next.js", "React", "SEO", "Tailwind CSS"],
     description: {
       en: "A comprehensive social media toolkit site for content creators to optimize content, boost engagement, and monitor analytics.",
@@ -250,7 +277,10 @@ const projectsData: Project[] = [
   {
     title: "Si-Gesit Lansia",
     category: "mobile",
-    platforms: "Mobile (Android/iOS)",
+    platforms: {
+      en: "Mobile (Android/iOS)",
+      id: "Seluler (Android/iOS)",
+    },
     tech: ["Flutter", "BRIN Partnership", "Accessibility Design", "Elderly UX"],
     description: {
       en: "A mobile app developed in collaboration with BRIN to help elderly users and health workers log and monitor health suggestions.",
@@ -273,7 +303,10 @@ const projectsData: Project[] = [
   {
     title: "PATuSBa",
     category: "mobile",
-    platforms: "Mobile (Android/iOS)",
+    platforms: {
+      en: "Mobile (Android/iOS)",
+      id: "Seluler (Android/iOS)",
+    },
     tech: ["Flutter", "Growth Tracker", "TB Assessment", "BRIN Collaboration"],
     description: {
       en: "A mobile application developed with BRIN to assist parents in toddler growth tracking and early stunting detection.",
@@ -296,7 +329,10 @@ const projectsData: Project[] = [
   {
     title: "Lovie",
     category: "mobile",
-    platforms: "Mobile (Android/iOS)",
+    platforms: {
+      en: "Mobile (Android/iOS)",
+      id: "Seluler (Android/iOS)",
+    },
     tech: ["Flutter", "Figma to Code", "Healthcare Platform", "App Store Release"],
     description: {
       en: "A mobile healthcare homecare platform consisting of separate Customer and Provider apps.",
@@ -317,7 +353,10 @@ const projectsData: Project[] = [
   {
     title: "sholat-ml",
     category: "ml",
-    platforms: "Accelerometer (Mi Band 5), Mobile RNN",
+    platforms: {
+      en: "Accelerometer (Mi Band 5), Mobile RNN",
+      id: "Akselerometer (Mi Band 5), RNN Seluler",
+    },
     tech: ["Machine Learning", "RNN", "GRU", "TensorFlow Lite", "Accelerometer"],
     description: {
       en: "A machine learning model running on-device to classify Islamic prayer movements using accelerometer data.",
@@ -340,7 +379,10 @@ const projectsData: Project[] = [
   {
     title: "murojaah-ml",
     category: "ml",
-    platforms: "Audio Classification, Web App (CNN)",
+    platforms: {
+      en: "Audio Classification, Web App (CNN)",
+      id: "Klasifikasi Audio, Aplikasi Web (CNN)",
+    },
     tech: ["Machine Learning", "CNN", "TensorFlow", "Keras", "Audio Processing"],
     description: {
       en: "A machine learning model classifying the recitation of Quranic verses using Convolutional Neural Networks.",
@@ -364,7 +406,10 @@ const projectsData: Project[] = [
   {
     title: "Sholawatan",
     category: "mobile",
-    platforms: "Android, iOS, Web",
+    platforms: {
+      en: "Android, iOS, Web",
+      id: "Android, iOS, Web",
+    },
     tech: ["Flutter", "BLoC", "DDD Architecture", "Firebase", "GetIt"],
     description: {
       en: "A lyric app that allows users to find and listen to shalawat (praises) to the Prophet Muhammad.",
@@ -385,7 +430,10 @@ const projectsData: Project[] = [
   {
     title: "OutClass Mobile",
     category: "mobile",
-    platforms: "Android, iOS",
+    platforms: {
+      en: "Android, iOS",
+      id: "Android, iOS",
+    },
     tech: ["Flutter", "GoFiber", "MongoDB", "Redis", "JWT"],
     description: {
       en: "A mobile app that helps students organize their classwork and collaborate with each other.",
@@ -408,7 +456,10 @@ const projectsData: Project[] = [
   {
     title: "CompressIt",
     category: "mobile",
-    platforms: "Android",
+    platforms: {
+      en: "Android",
+      id: "Android",
+    },
     tech: ["Flutter", "Dart", "On-Device Compression", "Image/Audio Process"],
     description: {
       en: "A local image and audio compression and conversion app, processing files completely on-device.",
@@ -431,7 +482,10 @@ const projectsData: Project[] = [
   {
     title: "OutClass API",
     category: "backend",
-    platforms: "Go (GoFiber), MongoDB, Redis",
+    platforms: {
+      en: "Go (GoFiber), MongoDB, Redis",
+      id: "Go (GoFiber), MongoDB, Redis",
+    },
     tech: ["Go", "GoFiber", "MongoDB", "Redis", "JWT Auth", "REST API"],
     description: {
       en: "A RESTful API providing high-performance backend services for the OutClass mobile application.",
@@ -454,7 +508,10 @@ const projectsData: Project[] = [
   {
     title: "Dart Restaurant API",
     category: "backend",
-    platforms: "Dart (Shelf package)",
+    platforms: {
+      en: "Dart (Shelf package)",
+      id: "Dart (paket Shelf)",
+    },
     tech: ["Dart", "Shelf package", "Backend", "REST API"],
     description: {
       en: "A lightweight REST API designed for a Restaurant Application built in pure Dart.",
@@ -471,7 +528,10 @@ const projectsData: Project[] = [
   {
     title: "SIP (Sistem Informasi Pendidikan)",
     category: "mobile",
-    platforms: "Mobile (Android/iOS)",
+    platforms: {
+      en: "Mobile (Android/iOS)",
+      id: "Seluler (Android/iOS)",
+    },
     tech: ["Flutter", "Navigation Design", "Educational Tech"],
     description: {
       en: "An educational information system mobile application.",
@@ -548,7 +608,9 @@ function WorksComponent() {
 
                   <h3 className="text-2xl font-bold tracking-tight mb-2">{project.title}</h3>
 
-                  <p className="text-xs text-muted mb-4 font-medium italic">{project.platforms}</p>
+                  <p className="text-xs text-muted mb-4 font-medium italic">
+                    {project.platforms[lang]}
+                  </p>
 
                   <p className="text-muted text-sm mb-6 leading-relaxed">
                     {lang === "en" ? project.description.en : project.description.id}
@@ -594,7 +656,7 @@ function WorksComponent() {
                         className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors duration-200"
                       >
                         <Globe className="h-3.5 w-3.5" />
-                        Website
+                        {t("website")}
                       </a>
                     )}
                     {project.links.webapp && (
@@ -605,7 +667,7 @@ function WorksComponent() {
                         className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors duration-200"
                       >
                         <Globe className="h-3.5 w-3.5" />
-                        Web App
+                        {t("webApp")}
                       </a>
                     )}
                     {project.links.playstore && (
@@ -616,7 +678,7 @@ function WorksComponent() {
                         className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors duration-200"
                       >
                         <Smartphone className="h-3.5 w-3.5" />
-                        Play Store
+                        {t("playStore")}
                       </a>
                     )}
                     {project.links.appstore && (
@@ -627,7 +689,7 @@ function WorksComponent() {
                         className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors duration-200"
                       >
                         <Smartphone className="h-3.5 w-3.5" />
-                        App Store
+                        {t("appStore")}
                       </a>
                     )}
                     {project.links.github && (
@@ -638,7 +700,7 @@ function WorksComponent() {
                         className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors duration-200"
                       >
                         <Github className="h-3.5 w-3.5" />
-                        GitHub
+                        {t("github")}
                       </a>
                     )}
                   </div>

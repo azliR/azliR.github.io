@@ -2,6 +2,7 @@ import { Outlet, HeadContent, Scripts, createRootRoute } from "@tanstack/react-r
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import appCss from "../styles/globals.css?url";
+import { useEffect } from "react";
 
 import { LanguageProvider, useLanguage } from "../components/layout/LanguageProvider";
 
@@ -58,7 +59,18 @@ export const Route = createRootRoute({
 });
 
 function RootDocumentContent() {
-  const { lang } = useLanguage();
+  const { lang, t } = useLanguage();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.title = t("metaTitle");
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", t("metaDescription"));
+      }
+    }
+  }, [lang, t]);
+
   return (
     <html lang={lang} className="light" style={{ colorScheme: "light" }}>
       <head>

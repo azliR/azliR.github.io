@@ -184,7 +184,7 @@ export default function Header() {
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      Website
+                      {t("visitWebsite")}
                     </a>
                     <a
                       href="https://inclass.azlir.dev/"
@@ -192,7 +192,7 @@ export default function Header() {
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      Web App
+                      {t("openWebApp")}
                     </a>
                     <a
                       href="https://play.google.com/store/apps/details?id=dev.azlir.inclass"
@@ -200,7 +200,7 @@ export default function Header() {
                       rel="noopener noreferrer"
                       className="hover:underline"
                     >
-                      Play Store
+                      {t("getPlayStore")}
                     </a>
                   </div>
                 </div>

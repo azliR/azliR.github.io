@@ -49,6 +49,10 @@ export default function SelectedWorkSection() {
             />
           </AnimatedSection>
         ))}
+
+        {regularProjects.length % 2 !== 0 && (
+          <div className="hidden md:block bg-card w-full h-full" />
+        )}
       </div>
 
       <div className="flex justify-center p-8 md:p-12 border-t border-border">

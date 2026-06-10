@@ -106,102 +106,203 @@ export const translations = {
     backendCategory: "Backend",
     mlCategory: "Machine Learning",
     keyHighlights: "Key Highlights",
+    technicalExpertise: "Technical Expertise",
+    fiverrClientFeedback: "Fiverr Client Feedback",
+    heroTitleLine1: "Engineering scalable",
+    heroTitleLine2: "mobile apps",
+    heroTitleLine3: "& backend systems.",
+    mobileEngineering: "Mobile Engineering",
+    backendSystems: "Backend Systems",
+    realtimePlatforms: "Real-time Platforms",
+    aiIntegration: "AI Integration",
+    viewCaseStudy: "View Case Study",
+    emailMe: "Email me",
+    website: "Website",
+    webApp: "Web App",
+    playStore: "Play Store",
+    appStore: "App Store",
+    github: "GitHub",
+    metaTitle: "azlir.dev — Premium Product Engineering",
+    metaDescription:
+      "Engineering premium landing pages, high-performance dashboards, and mobile apps for startups.",
   },
   id: {
     work: "Karya",
-    works: "Karya",
+    works: "Portofolio",
     products: "Produk",
     about: "Tentang",
     viewAllWorks: "Lihat Semua Karya",
     featuredProduct: "Produk Unggulan",
-    liveBadge: "Aktif",
-    inClassDesc: "Platform manajemen kelas & pendidikan digital real-time berbasis AI.",
+    liveBadge: "Live",
+
+    inClassDesc:
+      "Platform pendidikan digital dan manajemen kelas real-time berbasis AI.",
+
     inClassDetailedDesc:
-      "Ekosistem kelas berbasis AI dengan penilaian otomatis, ujian terproktor waktu nyata, dan sinkronisasi instan siswa-guru.",
-    visitWebsite: "Website",
-    openWebApp: "Web App",
-    getPlayStore: "Play Store",
+      "Ekosistem pembelajaran berbasis AI dengan penilaian otomatis, ujian terpantau secara real-time, serta sinkronisasi instan antara guru dan siswa.",
+
+    visitWebsite: "Kunjungi Website",
+    openWebApp: "Buka Web App",
+    getPlayStore: "Google Play",
+
     capabilities: "Kapabilitas",
+
     capabilitiesTitle:
-      "Merekayasa sistem di seluruh infrastruktur mobile, backend, real-time, dan AI.",
-    reviews: "Ulasan",
+      "Membangun sistem mobile, backend, infrastruktur real-time, dan integrasi AI.",
+
+    reviews: "Testimoni",
     faq: "FAQ",
     startProject: "Mulai Proyek",
-    heroTitle: "Merekayasa aplikasi\nmobile & sistem\nbackend yang scalable.",
+
+    heroTitle:
+      "Membangun aplikasi mobile\n& sistem backend\nberkinerja tinggi.",
+
     heroDescription:
-      "Produk siap rilis untuk startup, platform real-time, dan sistem berkinerja tinggi.",
+      "Produk siap produksi untuk startup, platform real-time, dan sistem berskala besar.",
+
     heroCTASelectedWork: "Karya Pilihan",
-    projectsBuilt: "Proyek dibangun",
+
+    projectsBuilt: "Proyek Dibangun",
+
     projectsBuiltDesc:
-      "Portofolio beragam dari aplikasi web, aplikasi mobile, API kustom, dan model machine learning yang dibangun dari awal.",
+      "Portofolio aplikasi web, mobile, API kustom, hingga model machine learning yang dikembangkan dari nol.",
+
     fiverrRating: "Rating Fiverr",
+
     fiverrRatingDesc:
-      "Penilaian luar biasa dari klien internasional, mencerminkan kualitas profesional, komunikasi, dan pengiriman tepat waktu.",
-    productionSystems: "Sistem produksi",
+      "Penilaian tinggi dari klien internasional yang mencerminkan kualitas kerja, komunikasi profesional, dan ketepatan waktu.",
+
+    productionSystems: "Sistem Live",
+
     productionSystemsDesc:
-      "Aplikasi dan platform yang saat ini berjalan di produksi, aktif melayani pengguna atau menjalankan sistem langsung.",
-    selectedFocus: "01 / Fokus Pilihan",
-    coreStack: "02 / Teknologi Utama",
-    recentWork: "03 / Karya Terbaru",
-    recentWork1: "Platform 39rb+ pengguna",
-    recentWork2: "Sistem hitung cepat pemilu",
+      "Platform dan aplikasi yang aktif digunakan di lingkungan produksi serta melayani pengguna secara nyata.",
+
+    selectedFocus: "01 / Fokus Utama",
+    coreStack: "02 / Teknologi Inti",
+    recentWork: "03 / Proyek Terbaru",
+
+    recentWork1: "Platform dengan 39K+ pengguna",
+    recentWork2: "Sistem real count pemilu",
     recentWork3: "Infrastruktur VoIP",
+
     trustedBy: "Dipercaya oleh perusahaan inovatif",
-    metricsKicker: "Skala Terbukti",
-    metricsTitle: "Skala & dampak dunia nyata",
-    metricsDescription: "Angka riil yang dicapai oleh platform produksi dan penerapan aktif kami.",
+
+    metricsKicker: "Skala Nyata",
+
+    metricsTitle:
+      "Skala penggunaan & dampak di dunia nyata",
+
+    metricsDescription:
+      "Pencapaian nyata dari platform produksi dan deployment aktif.",
+
     workKicker: "Karya Pilihan",
-    workTitle: "Pameran sistem produksi, platform, dan produk yang dibangun untuk pengguna nyata.",
-    scopeOfWork: "Cakupan Pekerjaan:",
+
+    workTitle:
+      "Kumpulan platform, sistem, dan produk yang dikembangkan untuk kebutuhan nyata.",
+
+    scopeOfWork: "Ruang Lingkup:",
+
     processKicker: "Proses",
-    processTitle: "Cara kami bekerja",
+
+    processTitle: "Cara Kami Bekerja",
+
     processDescription:
-      "Proses rekayasa terfokus yang dirancang untuk bergerak cepat tanpa mengorbankan kualitas.",
+      "Proses engineering yang fokus, cepat, dan tetap menjaga kualitas produk.",
+
     step1Title: "Discovery",
-    step1Desc: "Memahami tujuan produk, batasan, dan arah teknis.",
-    step2Title: "Rekayasa",
-    step2Desc: "Membangun sistem yang scalable, mudah dipelihara, dan siap produksi.",
-    step3Title: "Rilis & Iterasi",
-    step3Desc: "Penyebaran (deployment), pemantauan, peningkatan, dan iterasi.",
-    reviewsKicker: "Ulasan",
-    reviewsTitle: "Dipercaya oleh founder",
-    reviewsDescription: "Umpan balik pilihan dari klien dan kolaborator.",
-    faqKicker: "FAQ",
-    faqTitle: "Pertanyaan yang sering diajukan",
-    faqDescription: "Jawaban jelas tentang kemampuan rekayasa, proses, dan konfigurasi kami.",
-    ctaTitle: "Mari kita bangun sesuatu yang bermanfaat.",
+    step1Desc:
+      "Memahami tujuan produk, kebutuhan bisnis, serta arah teknis.",
+
+    step2Title: "Development",
+    step2Desc:
+      "Membangun sistem yang skalabel, maintainable, dan siap produksi.",
+
+    step3Title: "Launch & Improvement",
+    step3Desc:
+      "Deployment, monitoring, optimasi, dan iterasi berkelanjutan.",
+
+    reviewsKicker: "Testimoni",
+
+    reviewsTitle: "Dipercaya oleh Founder",
+
+    reviewsDescription:
+      "Pilihan ulasan dari klien dan kolaborator.",
+
+    faqTitle: "Pertanyaan Umum",
+
+    faqDescription:
+      "Jawaban singkat mengenai kemampuan engineering, alur kerja, dan kolaborasi.",
+
+    ctaTitle:
+      "Mari bangun sesuatu yang berdampak.",
+
     ctaDescription:
-      "Baik Anda sedang membangun MVP, meningkatkan platform yang ada, atau menskalakan infrastruktur — azlir.dev dapat membantu.",
-    viewWork: "Lihat Karya",
-    footerDesc: "Merekayasa produk yang scalable.",
+      "Mulai dari MVP, pengembangan platform, hingga scaling infrastructure — azlir.dev siap membantu.",
+
+    footerDesc:
+      "Membangun produk digital yang skalabel.",
+
     aboutTitle: "Tentang Rizal",
+
     aboutBio:
-      "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang berdedikasi untuk membangun ekosistem produk berkualitas tinggi. Saya menangani segalanya mulai dari aplikasi mobile/frontend berkinerja tinggi hingga backend real-time yang aman dan berlatensi rendah.",
-    aboutSubtitle: "Membangun ekosistem produk premium dari awal.",
+      "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang fokus membangun ekosistem produk digital berkualitas tinggi — mulai dari aplikasi mobile berperforma tinggi hingga backend real-time yang aman dan efisien.",
+
+    aboutSubtitle:
+      "Membangun ekosistem produk premium dari nol.",
+
     pillarFullstackTitle: "Sistem Full-Stack",
+
     pillarFullstackDesc:
-      "Merekayasa ekosistem web dan mobile lengkap dengan integrasi lancar dan sinkronisasi real-time.",
+      "Mengembangkan ekosistem web dan mobile secara end-to-end dengan integrasi mulus dan sinkronisasi real-time.",
+
     pillarMobileTitle: "Aplikasi Mobile",
+
     pillarMobileDesc:
-      "Mengembangkan aplikasi iOS & Android berkualitas tinggi menggunakan Flutter dan React Native (Expo).",
-    pillarBackendTitle: "Backend yang Scalable",
+      "Membangun aplikasi iOS & Android berkualitas tinggi menggunakan Flutter dan React Native (Expo).",
+
+    pillarBackendTitle: "Backend Skalabel",
+
     pillarBackendDesc:
-      "Membangun API yang aman, algoritma pencarian kecocokan, dan arsitektur realtime di Go dan Node.",
+      "Mengembangkan API aman, sistem matchmaking kustom, dan arsitektur real-time menggunakan Go dan Node.js.",
+
     pillarMLTitle: "Machine Learning",
+
     pillarMLDesc:
-      "Merancang dan menerapkan model RNN dan CNN teroptimasi untuk perangkat mobile dan edge.",
-    fiverrRatingText: "Developer Bintang 5.0 di Fiverr",
-    viewFiverrProfile: "Profil Fiverr",
-    worksTitle: "Semua Karya",
+      "Merancang dan menerapkan model RNN serta CNN yang dioptimalkan untuk perangkat mobile dan edge computing.",
+
+    fiverrRatingText:
+      "Developer dengan rating 5.0★ di Fiverr",
+
+    viewFiverrProfile:
+      "Lihat Profil Fiverr",
+
+    worksTitle: "Seluruh Karya",
+
     worksDescription:
-      "Daftar lengkap sistem produksi, platform, dan produk yang dibangun untuk klien serta proyek independen.",
-    allCategory: "Semua",
-    webCategory: "Full-Stack & Web",
-    mobileCategory: "Flutter & Mobile",
-    backendCategory: "Backend",
-    mlCategory: "Machine Learning",
+      "Daftar lengkap platform, sistem, dan produk yang dikembangkan untuk klien maupun proyek independen.",
+
     keyHighlights: "Sorotan Utama",
-  },
+    technicalExpertise: "Keahlian Teknis",
+    fiverrClientFeedback: "Ulasan Klien Fiverr",
+
+    heroTitleLine1: "Membangun aplikasi",
+    heroTitleLine2: "mobile & sistem",
+    heroTitleLine3: "backend berkinerja tinggi.",
+
+    mobileEngineering: "Mobile Engineering",
+    backendSystems: "Backend Systems",
+    realtimePlatforms: "Platform Real-time",
+    aiIntegration: "Integrasi AI",
+
+    viewCaseStudy: "Lihat Studi Kasus",
+    emailMe: "Hubungi via Email",
+
+    metaTitle:
+      "azlir.dev — Premium Product Engineering",
+
+    metaDescription:
+      "Membangun landing page premium, dashboard berperforma tinggi, dan aplikasi mobile untuk startup.",
+  }
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {

@@ -42,11 +42,7 @@ export default function ProjectCard({
 
   const resolvedDescription = description[lang];
   const resolvedImpact = impact ? impact[lang] : undefined;
-  const resolvedCtaText = ctaText
-    ? ctaText[lang]
-    : lang === "en"
-      ? "View Case Study"
-      : "Lihat Studi Kasus";
+  const resolvedCtaText = ctaText ? ctaText[lang] : t("viewCaseStudy");
 
   return (
     <CardWrapper

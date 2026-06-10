@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function HeroSection() {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
   const [activeTooltip, setActiveTooltip] = React.useState<number | null>(null);
 
   React.useEffect(() => {
@@ -45,23 +45,11 @@ export default function HeroSection() {
               Flutter &bull; Go &bull; Real-time &bull; AI
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[72px] leading-[0.95] md:leading-[0.95]">
-              {lang === "en" ? (
-                <>
-                  Engineering scalable
-                  <br />
-                  mobile apps
-                  <br />
-                  &amp; backend systems.
-                </>
-              ) : (
-                <>
-                  Merekayasa aplikasi
-                  <br />
-                  mobile &amp; sistem
-                  <br />
-                  backend yang scalable.
-                </>
-              )}
+              {t("heroTitleLine1")}
+              <br />
+              {t("heroTitleLine2")}
+              <br />
+              {t("heroTitleLine3")}
             </h1>
             <p className="text-lg text-muted md:text-[20px] leading-relaxed max-w-xl">
               {t("heroDescription")}
@@ -168,10 +156,10 @@ export default function HeroSection() {
               {t("selectedFocus")}
             </div>
             <div className="flex flex-col gap-2 text-sm text-foreground">
-              <div>{lang === "en" ? "Mobile Engineering" : "Rekayasa Mobile"}</div>
-              <div>{lang === "en" ? "Backend Systems" : "Sistem Backend"}</div>
-              <div>{lang === "en" ? "Real-time Platforms" : "Platform Real-time"}</div>
-              <div>{lang === "en" ? "AI Integration" : "Integrasi AI"}</div>
+              <div>{t("mobileEngineering")}</div>
+              <div>{t("backendSystems")}</div>
+              <div>{t("realtimePlatforms")}</div>
+              <div>{t("aiIntegration")}</div>
             </div>
           </div>
 
