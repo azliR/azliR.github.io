@@ -22,7 +22,12 @@ export default function TrustMetricsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border-t border-border w-full">
         {metrics.map((metric, index) => (
           <AnimatedSection key={metric.label.en} delay={0.1 + index * 0.08}>
-            <MetricCard value={metric.value} label={metric.label[lang]} className="h-full" />
+            <MetricCard
+              value={metric.value}
+              label={metric.label[lang]}
+              project={metric.project?.[lang]}
+              className="h-full"
+            />
           </AnimatedSection>
         ))}
       </div>
