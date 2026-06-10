@@ -9,33 +9,53 @@ import { Link } from "@tanstack/react-router";
 interface Testimonial {
   author: string;
   location: string;
-  review: { en: string; id: string };
+  review: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     author: "venom96",
     location: "Nepal",
-    review: {
-      en: "Rizal H exceeded my expectations in every aspect! The professionalism and bug-free delivery were top-notch, and his attention to detail was impeccable. Working with him was an absolute pleasure—the fluency in communication and his level of cooperation were truly outstanding.",
-      id: "Rizal H melampaui harapan saya dalam setiap aspek! Profesionalisme dan pengiriman bebas bug-nya sangat berkualitas tinggi, dan perhatiannya terhadap detail sangat sempurna. Bekerja dengannya adalah kesenangan mutlak—kelancaran komunikasi dan tingkat kerja samanya benar-benar luar biasa.",
-    },
+    review:
+      "Rizal H exceeded my expectations in every aspect! The professionalism and bug-free delivery were top-notch, and his attention to detail was impeccable. Working with him was an absolute pleasure—the fluency in communication and his level of cooperation were truly outstanding.",
   },
   {
     author: "drivooo",
-    location: "United States (3 Projects)",
-    review: {
-      en: "Amazing person and very experienced person. Know exactly what he is doing and don't let any chance of improvement go away. Always giving suggestions about how we can improve. Highly recommended. Loved working with him.",
-      id: "Orang yang luar biasa dan sangat berpengalaman. Tahu persis apa yang dia lakukan dan tidak membiarkan kesempatan untuk perbaikan terlewat. Selalu memberikan saran tentang bagaimana kita bisa berkembang. Sangat direkomendasikan. Senang bekerja dengannya.",
-    },
+    location: "United States (Project 1)",
+    review:
+      "Amazing person and very experienced person. Know exactly what he is doing and don't let any chance of improvement go away. Always giving suggestions about how we can improve. Highly recommended. Loved working with him. He is quite experienced and knows his job.",
+  },
+  {
+    author: "drivooo",
+    location: "United States (Project 2)",
+    review:
+      "Always the best, I always work with him and the results are excellent. Professional and always ready to help the customer. It is a guarantee of success.",
+  },
+  {
+    author: "drivooo",
+    location: "United States (Project 3)",
+    review:
+      "This seller is patient, responsive, and professional. I would recommend him to anyone. Thank you so much!",
   },
   {
     author: "amineandaloussi",
-    location: "Morocco (2 Projects)",
-    review: {
-      en: "Quick, honest, very friendly; the price is great. Really recommended. Second time and not the last.",
-      id: "Cepat, jujur, sangat ramah; harganya sangat bagus. Sangat direkomendasikan. Kedua kalinya dan bukan yang terakhir.",
-    },
+    location: "Morocco (Project 1)",
+    review: "Quick, honest, very friendly; the price is great. Really recommended",
+  },
+  {
+    author: "amineandaloussi",
+    location: "Morocco (Project 2)",
+    review: "Second time and not the last",
+  },
+  {
+    author: "kozarni42",
+    location: "Myanmar (Burma)",
+    review: "You are very smart and very smart. I liked what you did bro..",
+  },
+  {
+    author: "harry_yau",
+    location: "Morocco",
+    review: "Good delivery from the seller",
   },
 ];
 
@@ -147,15 +167,13 @@ function AboutComponent() {
                 {t("fiverrRatingText")}
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-muted/30 scrollbar-track-transparent">
               {testimonials.map((test, idx) => (
                 <div
                   key={idx}
-                  className="p-6 border border-border bg-card/50 flex flex-col justify-between"
+                  className="min-w-[300px] md:min-w-[360px] max-w-[400px] snap-start p-6 border border-border bg-card/50 hover:bg-card transition-colors duration-200 flex flex-col justify-between"
                 >
-                  <p className="text-sm text-muted italic mb-6 leading-relaxed">
-                    "{lang === "en" ? test.review.en : test.review.id}"
-                  </p>
+                  <p className="text-sm text-muted italic mb-6 leading-relaxed">"{test.review}"</p>
                   <div>
                     <h4 className="font-bold text-foreground text-sm">{test.author}</h4>
                     <p className="text-xs text-muted">{test.location}</p>
