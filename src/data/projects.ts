@@ -107,10 +107,6 @@ export const projects: Project[] = [
     },
     tags: ["Kotlin", "Android SDK", "Flutter", "Go", "GoFiber"],
     isFeatured: false,
-    ctaText: {
-      en: "View Case Study",
-      id: "Lihat Studi Kasus",
-    },
   },
   {
     id: "bandung-bedas",

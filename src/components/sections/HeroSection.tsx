@@ -98,7 +98,7 @@ export default function HeroSection() {
               {t("coreStack")}
             </div>
             <div className="flex flex-wrap gap-2 text-xs">
-              {["Flutter", "React", "Go", "TanStack", "Postgres", "Redis"].map((tech) => (
+              {["Flutter", "React", "Go", "TanStack", "Next.js", "Postgres"].map((tech) => (
                 <span
                   key={tech}
                   className="border border-border px-2.5 py-1.5 bg-background text-muted"

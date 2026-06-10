@@ -105,17 +105,19 @@ export default function ProjectCard({
           )}
         </div>
 
-        <div
-          className={cn(
-            "shrink-0 flex items-center justify-between lg:justify-start gap-3 pt-6 lg:pt-0 border-t border-border/40 lg:border-t-0",
-            isFeatured ? "lg:pl-8 lg:border-l lg:border-border/40" : "",
-          )}
-        >
-          <span className="text-sm font-semibold text-foreground group-hover:underline">
-            {resolvedCtaText}
-          </span>
-          <ArrowUpRight className="h-5 w-5 text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-        </div>
+        {href && (
+          <div
+            className={cn(
+              "shrink-0 flex items-center justify-between lg:justify-start gap-3 pt-6 lg:pt-0 border-t border-border/40 lg:border-t-0",
+              isFeatured ? "lg:pl-8 lg:border-l lg:border-border/40" : "",
+            )}
+          >
+            <span className="text-sm font-semibold text-foreground group-hover:underline">
+              {resolvedCtaText}
+            </span>
+            <ArrowUpRight className="h-5 w-5 text-muted group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+          </div>
+        )}
       </div>
     </CardWrapper>
   );

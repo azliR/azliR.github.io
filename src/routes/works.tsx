@@ -4,8 +4,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Container from "../components/layout/Container";
 import { useLanguage } from "../components/layout/LanguageProvider";
-import { Globe, Github, Smartphone, ArrowLeft } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Globe, Github, Smartphone } from "lucide-react";
 
 interface Project {
   title: string;
@@ -504,13 +503,6 @@ function WorksComponent() {
         <Container>
           {/* Header */}
           <div className="mb-10">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200 mb-6"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {lang === "en" ? "Back to Home" : "Kembali ke Beranda"}
-            </Link>
             <h1 className="text-4xl font-extrabold tracking-tight mb-3">{t("worksTitle")}</h1>
             <p className="text-muted text-lg max-w-2xl">{t("worksDescription")}</p>
           </div>

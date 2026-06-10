@@ -3,8 +3,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Container from "../components/layout/Container";
 import { useLanguage } from "../components/layout/LanguageProvider";
-import { ArrowLeft, Server, Layers, Cpu, ArrowUpRight, Smartphone } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Server, Layers, Cpu, ArrowUpRight, Smartphone } from "lucide-react";
 
 interface Testimonial {
   author: string;
@@ -95,13 +94,6 @@ function AboutComponent() {
       <main className="flex-1 py-12 flex flex-col gap-16">
         <Container>
           <div className="mb-10">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors duration-200 mb-6"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {lang === "en" ? "Back to Home" : "Kembali ke Beranda"}
-            </Link>
             <h1 className="text-4xl font-extrabold tracking-tight mb-3">{t("aboutTitle")}</h1>
             <p className="text-muted text-lg max-w-2xl">{t("aboutSubtitle")}</p>
           </div>
@@ -111,10 +103,10 @@ function AboutComponent() {
               <img
                 src="/rizal.webp"
                 alt="Rizal Hadiyansah"
-                className="h-32 w-32 object-cover border border-border mb-4"
+                className="h-32 object-cover border border-border mb-4"
               />
               <span className="text-sm font-mono font-bold bg-foreground text-background px-3 py-1 uppercase">
-                azliR
+                Rizal Hadiyansah
               </span>
             </div>
             <div className="md:col-span-2 flex flex-col justify-center">
