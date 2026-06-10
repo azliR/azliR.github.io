@@ -153,155 +153,96 @@ export const translations = {
     viewAllWorks: "Lihat Semua Karya",
     featuredProduct: "Produk Unggulan",
     liveBadge: "Live",
-
     inClassDesc: "Platform pendidikan digital dan manajemen kelas real-time berbasis AI.",
-
     inClassDetailedDesc:
       "Ekosistem pembelajaran berbasis AI dengan penilaian otomatis, ujian terpantau secara real-time, serta sinkronisasi instan antara guru dan siswa.",
-
     visitWebsite: "Kunjungi Website",
     openWebApp: "Buka Web App",
     getPlayStore: "Google Play",
-
     capabilities: "Kapabilitas",
-
     capabilitiesTitle:
       "Membangun sistem mobile, backend, infrastruktur real-time, dan integrasi AI.",
-
     reviews: "Testimoni",
     faq: "FAQ",
     startProject: "Mulai Proyek",
-
     heroTitle: "Membangun aplikasi mobile\n& sistem backend\nberkinerja tinggi.",
-
     heroDescription:
       "Produk siap produksi untuk startup, platform real-time, dan sistem berskala besar.",
-
     heroCTASelectedWork: "Karya Pilihan",
-
     projectsBuilt: "Proyek Dibangun",
-
     projectsBuiltDesc:
       "Portofolio aplikasi web, mobile, API kustom, hingga model machine learning yang dikembangkan dari nol.",
-
     fiverrRating: "Rating Fiverr",
-
     fiverrRatingDesc:
       "Penilaian tinggi dari klien internasional yang mencerminkan kualitas kerja, komunikasi profesional, dan ketepatan waktu.",
-
     productionSystems: "Sistem Live",
-
     productionSystemsDesc:
       "Platform dan aplikasi yang aktif digunakan di lingkungan produksi serta melayani pengguna secara nyata.",
-
     selectedFocus: "01 / Fokus Utama",
     coreStack: "02 / Teknologi Inti",
     recentWork: "03 / Proyek Terbaru",
-
     recentWork1: "Platform dengan 39K+ pengguna",
     recentWork2: "Sistem real count pemilu",
     recentWork3: "Infrastruktur VoIP",
-
     trustedBy: "Dipercaya oleh perusahaan inovatif",
-
     metricsKicker: "Skala Nyata",
-
     metricsTitle: "Skala penggunaan & dampak di dunia nyata",
-
     metricsDescription: "Pencapaian nyata dari platform produksi dan deployment aktif.",
-
     workKicker: "Karya Pilihan",
-
     workTitle: "Kumpulan platform, sistem, dan produk yang dikembangkan untuk kebutuhan nyata.",
-
     scopeOfWork: "Ruang Lingkup:",
-
     processKicker: "Proses",
-
     processTitle: "Cara Kami Bekerja",
-
     processDescription: "Proses engineering yang fokus, cepat, dan tetap menjaga kualitas produk.",
-
     step1Title: "Discovery",
     step1Desc: "Memahami tujuan produk, kebutuhan bisnis, serta arah teknis.",
-
     step2Title: "Development",
     step2Desc: "Membangun sistem yang skalabel, maintainable, dan siap produksi.",
-
     step3Title: "Launch & Improvement",
     step3Desc: "Deployment, monitoring, optimasi, dan iterasi berkelanjutan.",
-
     reviewsKicker: "Testimoni",
-
     reviewsTitle: "Dipercaya oleh Founder",
-
     reviewsDescription: "Pilihan ulasan dari klien dan kolaborator.",
-
     faqTitle: "Pertanyaan Umum",
-
     faqDescription: "Jawaban singkat mengenai kemampuan engineering, alur kerja, dan kolaborasi.",
-
     ctaTitle: "Mari bangun sesuatu yang berdampak.",
-
     ctaDescription:
       "Mulai dari MVP, pengembangan platform, hingga scaling infrastructure — azlir.dev siap membantu.",
-
     footerDesc: "Membangun produk digital yang skalabel.",
-
     aboutTitle: "Tentang Rizal",
-
     aboutBio:
       "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang fokus membangun ekosistem produk digital berkualitas tinggi — mulai dari aplikasi mobile berperforma tinggi hingga backend real-time yang aman dan efisien.",
-
     aboutSubtitle: "Membangun ekosistem produk premium dari nol.",
-
     pillarFullstackTitle: "Sistem Full-Stack",
-
     pillarFullstackDesc:
       "Mengembangkan ekosistem web dan mobile secara end-to-end dengan integrasi mulus dan sinkronisasi real-time.",
-
     pillarMobileTitle: "Aplikasi Mobile",
-
     pillarMobileDesc:
       "Membangun aplikasi iOS & Android berkualitas tinggi menggunakan Flutter dan React Native (Expo).",
-
     pillarBackendTitle: "Backend Skalabel",
-
     pillarBackendDesc:
       "Mengembangkan API aman, sistem matchmaking kustom, dan arsitektur real-time menggunakan Go dan Node.js.",
-
     pillarMLTitle: "Machine Learning",
-
     pillarMLDesc:
       "Merancang dan menerapkan model RNN serta CNN yang dioptimalkan untuk perangkat mobile dan edge computing.",
-
     fiverrRatingText: "Developer dengan rating 5.0★ di Fiverr",
-
     viewFiverrProfile: "Lihat Profil Fiverr",
-
     worksTitle: "Seluruh Karya",
-
     worksDescription:
       "Daftar lengkap platform, sistem, dan produk yang dikembangkan untuk klien maupun proyek independen.",
-
     keyHighlights: "Sorotan Utama",
     technicalExpertise: "Keahlian Teknis",
     fiverrClientFeedback: "Ulasan Klien Fiverr",
-
     heroTitleLine1: "Membangun aplikasi",
     heroTitleLine2: "mobile & sistem",
     heroTitleLine3: "backend berkinerja tinggi.",
-
     mobileEngineering: "Mobile Engineering",
     backendSystems: "Backend Systems",
     realtimePlatforms: "Platform Real-time",
     aiIntegration: "Integrasi AI",
-
     viewCaseStudy: "Lihat Studi Kasus",
     emailMe: "Hubungi via Email",
-
     metaTitle: "azlir.dev — Premium Product Engineering",
-
     metaDescription:
       "Membangun landing page premium, dashboard berperforma tinggi, dan aplikasi mobile untuk startup.",
     contactTitle: "Mulai Proyek",
