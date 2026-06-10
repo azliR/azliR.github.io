@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import AnimatedSection from "../ui/AnimatedSection";
 import SectionHeading from "../ui/SectionHeading";
 import ProjectCard from "../ui/ProjectCard";
@@ -47,6 +49,16 @@ export default function SelectedWorkSection() {
             />
           </AnimatedSection>
         ))}
+      </div>
+
+      <div className="flex justify-center p-8 md:p-12 border-t border-border">
+        <Link
+          to="/works"
+          className="inline-flex items-center gap-2 rounded-none border border-border bg-transparent px-6 py-3 text-sm font-semibold text-foreground hover:bg-accent hover:border-foreground transition-all duration-200 group cursor-pointer"
+        >
+          {t("viewAllWorks")}
+          <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" />
+        </Link>
       </div>
     </section>
   );
