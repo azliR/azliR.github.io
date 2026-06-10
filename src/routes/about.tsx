@@ -167,7 +167,7 @@ function AboutComponent() {
                 {t("fiverrRatingText")}
               </a>
             </div>
-            <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
+            <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-28 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-28 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
               <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
                 {[...testimonials, ...testimonials].map((test, idx) => (
                   <div
