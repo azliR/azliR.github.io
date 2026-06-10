@@ -3,7 +3,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Container from "../components/layout/Container";
 import { useLanguage } from "../components/layout/LanguageProvider";
-import { ArrowLeft, User, Server, Layers, Cpu, ArrowUpRight, Smartphone } from "lucide-react";
+import { ArrowLeft, Server, Layers, Cpu, ArrowUpRight, Smartphone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 interface Testimonial {
@@ -108,9 +108,11 @@ function AboutComponent() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-border py-12 mb-12">
             <div className="md:col-span-1 flex flex-col items-center md:items-start">
-              <div className="h-32 w-32 bg-accent/20 border border-border flex items-center justify-center mb-4">
-                <User className="h-16 w-16 text-muted" />
-              </div>
+              <img
+                src="/rizal.webp"
+                alt="Rizal Hadiyansah"
+                className="h-32 w-32 object-cover border border-border mb-4"
+              />
               <span className="text-sm font-mono font-bold bg-foreground text-background px-3 py-1 uppercase">
                 azliR
               </span>
