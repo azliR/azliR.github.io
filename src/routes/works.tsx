@@ -48,7 +48,7 @@ const projectsData: Project[] = [
     },
     links: {
       website: "https://inclass.azlir.dev/",
-      webapp: "https://app.inclass.azlir.dev/",
+      webapp: "https://inclass.azlir.dev/",
       playstore: "https://play.google.com/store/apps/details?id=dev.azlir.inclass",
     },
   },

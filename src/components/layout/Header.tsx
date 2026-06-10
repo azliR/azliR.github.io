@@ -67,7 +67,7 @@ export default function Header() {
                       {t("visitWebsite")}
                     </a>
                     <a
-                      href="https://app.inclass.azlir.dev/"
+                      href="https://inclass.azlir.dev/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
@@ -187,7 +187,7 @@ export default function Header() {
                       Website
                     </a>
                     <a
-                      href="https://app.inclass.azlir.dev/"
+                      href="https://inclass.azlir.dev/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"

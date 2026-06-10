@@ -51,7 +51,7 @@ export const projects: Project[] = [
       en: "View Project",
       id: "Lihat Proyek",
     },
-    href: "https://app.inclass.azlir.dev/",
+    href: "https://inclass.azlir.dev/",
   },
   {
     id: "wucs",
