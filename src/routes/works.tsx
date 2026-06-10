@@ -81,6 +81,31 @@ const projectsData: Project[] = [
     },
   },
   {
+    title: "iSIU.AI",
+    category: "mobile",
+    platforms: "Mobile (Android/iOS)",
+    tech: ["Flutter", "Computer Vision", "Real-Time Alerts", "Edge Intelligence"],
+    description: {
+      en: "A mobile companion app for Green Grid Inc.'s iSIU® platform, monitoring powerlines using computer vision.",
+      id: "Aplikasi pendamping seluler untuk platform iSIU® Green Grid Inc., memantau kabel listrik menggunakan visi komputer.",
+    },
+    highlights: {
+      en: [
+        "Real-time hazard alerts (vegetation, equipment damage).",
+        "Controls remote cameras and displays live weather analytics.",
+      ],
+      id: [
+        "Peringatan bahaya waktu nyata (kontak vegetasi, kerusakan peralatan).",
+        "Mengontrol kamera jarak jauh dan menampilkan analitik cuaca langsung.",
+      ],
+    },
+    links: {
+      website: "https://isiu.ai/",
+      playstore: "https://play.google.com/store/apps/details?id=com.greengridinc.isiu",
+      appstore: "https://apps.apple.com/us/app/isiu/id6471646259",
+    },
+  },
+  {
     title: "mutualan.com",
     category: "web",
     platforms: "Mobile (Flutter), Web Admin, Backend (Go / GoFiber)",
@@ -103,29 +128,6 @@ const projectsData: Project[] = [
     },
     links: {
       website: "https://mutualan.com/",
-    },
-  },
-  {
-    title: "sociatools.com",
-    category: "web",
-    platforms: "Web (Next.js)",
-    tech: ["Next.js", "React", "SEO", "Tailwind CSS"],
-    description: {
-      en: "A comprehensive social media toolkit site for content creators to optimize content, boost engagement, and monitor analytics.",
-      id: "Situs perangkat media sosial komprehensif bagi pembuat konten untuk mengoptimalkan konten, meningkatkan keterlibatan, dan memantau analitik.",
-    },
-    highlights: {
-      en: [
-        "Emphasized SEO, page speed, and responsive layouts.",
-        "Features watermark-free TikTok Downloader and Hashtags Tracker.",
-      ],
-      id: [
-        "Menekankan SEO, kecepatan halaman, dan tata letak responsif.",
-        "Fitur Pengunduh TikTok tanpa tanda air dan Pelacak Tagar.",
-      ],
-    },
-    links: {
-      website: "https://sociatools.com/",
     },
   },
   {
@@ -170,6 +172,7 @@ const projectsData: Project[] = [
     },
     links: {
       playstore: "https://play.google.com/store/apps/details?id=com.huyula.av",
+      appstore: "https://apps.apple.com/us/app/huyula-protection/id6756511336",
     },
   },
   {
@@ -193,10 +196,11 @@ const projectsData: Project[] = [
     },
     links: {
       playstore: "https://play.google.com/store/apps/details?id=com.huyula.caller",
+      appstore: "https://apps.apple.com/us/app/huyula-caller/id6756532550",
     },
   },
   {
-    title: "Pilkada Real Count & Witness App 2024",
+    title: "Bandung Bedas",
     category: "web",
     platforms: "Mobile (Flutter), Web Live Dashboard, Backend (Go / GoFiber)",
     tech: ["Flutter", "Go", "GoFiber", "Realtime Dashboard", "High Traffic"],
@@ -222,95 +226,26 @@ const projectsData: Project[] = [
     },
   },
   {
-    title: "Sholawatan",
-    category: "mobile",
-    platforms: "Android, iOS, Web",
-    tech: ["Flutter", "BLoC", "DDD Architecture", "Firebase", "GetIt"],
+    title: "sociatools.com",
+    category: "web",
+    platforms: "Web (Next.js)",
+    tech: ["Next.js", "React", "SEO", "Tailwind CSS"],
     description: {
-      en: "A lyric app that allows users to find and listen to shalawat (praises) to the Prophet Muhammad.",
-      id: "Aplikasi lirik yang memungkinkan pengguna mencari dan mendengarkan shalawat kepada Nabi Muhammad.",
+      en: "A comprehensive social media toolkit site for content creators to optimize content, boost engagement, and monitor analytics.",
+      id: "Situs perangkat media sosial komprehensif bagi pembuat konten untuk mengoptimalkan konten, meningkatkan keterlibatan, dan memantau analitik.",
     },
     highlights: {
       en: [
-        "Built using Domain-Driven Design (DDD) principles.",
-        "Uses BLoC state management and Firebase integration.",
+        "Emphasized SEO, page speed, and responsive layouts.",
+        "Features watermark-free TikTok Downloader and Hashtags Tracker.",
       ],
       id: [
-        "Dibangun menggunakan prinsip Domain-Driven Design (DDD).",
-        "Menggunakan manajemen status BLoC dan integrasi Firebase.",
-      ],
-    },
-    links: {},
-  },
-  {
-    title: "OutClass Mobile",
-    category: "mobile",
-    platforms: "Android, iOS",
-    tech: ["Flutter", "GoFiber", "MongoDB", "Redis", "JWT"],
-    description: {
-      en: "A mobile app that helps students organize their classwork and collaborate with each other.",
-      id: "Aplikasi seluler yang membantu siswa mengatur tugas kelas dan berkolaborasi satu sama lain.",
-    },
-    highlights: {
-      en: [
-        "Dependency injection with Injectable and GetIt.",
-        "Integrated with a custom GoFiber, MongoDB, and Redis API.",
-      ],
-      id: [
-        "Injeksi ketergantungan dengan Injectable dan GetIt.",
-        "Terintegrasi dengan API khusus berbasis GoFiber, MongoDB, dan Redis.",
+        "Menekankan SEO, kecepatan halaman, dan tata letak responsif.",
+        "Fitur Pengunduh TikTok tanpa tanda air dan Pelacak Tagar.",
       ],
     },
     links: {
-      github: "https://github.com/azliR/flutter_outclass",
-    },
-  },
-  {
-    title: "CompressIt",
-    category: "mobile",
-    platforms: "Android",
-    tech: ["Flutter", "Dart", "On-Device Compression", "Image/Audio Process"],
-    description: {
-      en: "A local image and audio compression and conversion app, processing files completely on-device.",
-      id: "Aplikasi kompresi dan konversi gambar dan audio lokal, memproses berkas sepenuhnya di perangkat.",
-    },
-    highlights: {
-      en: [
-        "On-device local conversion (JPEG, PNG, HEIC, WebP, MP3, WAV).",
-        "Zero-server dependency ensuring user privacy.",
-      ],
-      id: [
-        "Konversi lokal langsung di perangkat (JPEG, PNG, HEIC, WebP, MP3, WAV).",
-        "Ketergantungan nol server memastikan privasi pengguna.",
-      ],
-    },
-    links: {
-      github: "https://github.com/azliR/flutter_compress_it",
-    },
-  },
-  {
-    title: "iSIU.AI",
-    category: "mobile",
-    platforms: "Mobile (Android/iOS)",
-    tech: ["Flutter", "Computer Vision", "Real-Time Alerts", "Edge Intelligence"],
-    description: {
-      en: "A mobile companion app for Green Grid Inc.'s iSIU® platform, monitoring powerlines using computer vision.",
-      id: "Aplikasi pendamping seluler untuk platform iSIU® Green Grid Inc., memantau kabel listrik menggunakan visi komputer.",
-    },
-    highlights: {
-      en: [
-        "Real-time hazard alerts (vegetation, equipment damage).",
-        "Controls remote cameras and displays live weather analytics.",
-      ],
-      id: [
-        "Peringatan bahaya waktu nyata (kontak vegetasi, kerusakan peralatan).",
-        "Mengontrol kamera jarak jauh dan menampilkan analitik cuaca langsung.",
-      ],
-    },
-    links: {
-      website: "https://isiu.ai/",
-      playstore: "https://play.google.com/store/apps/details?id=com.greengridinc.isiu",
-      appstore: "https://apps.apple.com/us/app/isiu/id6471646259",
+      website: "https://sociatools.com/",
     },
   },
   {
@@ -381,61 +316,6 @@ const projectsData: Project[] = [
     links: {},
   },
   {
-    title: "SIP (Sistem Informasi Pendidikan)",
-    category: "mobile",
-    platforms: "Mobile (Android/iOS)",
-    tech: ["Flutter", "Navigation Design", "Educational Tech"],
-    description: {
-      en: "An educational information system mobile application.",
-      id: "Aplikasi seluler sistem informasi pendidikan.",
-    },
-    highlights: {
-      en: ["Designed comprehensive use case diagrams and structured navigation routes."],
-      id: ["Merancang diagram use case komprehensif dan menyusun rute navigasi."],
-    },
-    links: {},
-  },
-  {
-    title: "OutClass API",
-    category: "backend",
-    platforms: "Go (GoFiber), MongoDB, Redis",
-    tech: ["Go", "GoFiber", "MongoDB", "Redis", "JWT Auth", "REST API"],
-    description: {
-      en: "A RESTful API providing high-performance backend services for the OutClass mobile application.",
-      id: "API RESTful yang menyediakan layanan backend berkinerja tinggi untuk aplikasi seluler OutClass.",
-    },
-    highlights: {
-      en: [
-        "Fast GoFiber backend handles classroom payloads.",
-        "Integrated with Redis caching and secure JWT tokens.",
-      ],
-      id: [
-        "Backend GoFiber cepat menangani payload ruang kelas.",
-        "Terintegrasi dengan caching Redis dan token JWT yang aman.",
-      ],
-    },
-    links: {
-      github: "https://github.com/azliR/gofiber_outclass-api",
-    },
-  },
-  {
-    title: "Dart Restaurant API",
-    category: "backend",
-    platforms: "Dart (Shelf package)",
-    tech: ["Dart", "Shelf package", "Backend", "REST API"],
-    description: {
-      en: "A lightweight REST API designed for a Restaurant Application built in pure Dart.",
-      id: "API REST ringan yang dirancang untuk Aplikasi Restoran yang dibangun dengan Dart murni.",
-    },
-    highlights: {
-      en: ["Uses the Dart Shelf package for clean microservice handling."],
-      id: ["Menggunakan paket Dart Shelf untuk penanganan mikroservis yang bersih."],
-    },
-    links: {
-      github: "https://github.com/azliR/dart_restaurant_api",
-    },
-  },
-  {
     title: "sholat-ml",
     category: "ml",
     platforms: "Accelerometer (Mi Band 5), Mobile RNN",
@@ -481,6 +361,128 @@ const projectsData: Project[] = [
       website: "https://murojaah.netlify.app/",
       github: "https://github.com/azliR/murojaah-ml",
     },
+  },
+  {
+    title: "Sholawatan",
+    category: "mobile",
+    platforms: "Android, iOS, Web",
+    tech: ["Flutter", "BLoC", "DDD Architecture", "Firebase", "GetIt"],
+    description: {
+      en: "A lyric app that allows users to find and listen to shalawat (praises) to the Prophet Muhammad.",
+      id: "Aplikasi lirik yang memungkinkan pengguna mencari dan mendengarkan shalawat kepada Nabi Muhammad.",
+    },
+    highlights: {
+      en: [
+        "Built using Domain-Driven Design (DDD) principles.",
+        "Uses BLoC state management and Firebase integration.",
+      ],
+      id: [
+        "Dibangun menggunakan prinsip Domain-Driven Design (DDD).",
+        "Menggunakan manajemen status BLoC dan integrasi Firebase.",
+      ],
+    },
+    links: {},
+  },
+  {
+    title: "OutClass Mobile",
+    category: "mobile",
+    platforms: "Android, iOS",
+    tech: ["Flutter", "GoFiber", "MongoDB", "Redis", "JWT"],
+    description: {
+      en: "A mobile app that helps students organize their classwork and collaborate with each other.",
+      id: "Aplikasi seluler yang membantu siswa mengatur tugas kelas dan berkolaborasi satu sama lain.",
+    },
+    highlights: {
+      en: [
+        "Dependency injection with Injectable and GetIt.",
+        "Integrated with a custom GoFiber, MongoDB, and Redis API.",
+      ],
+      id: [
+        "Injeksi ketergantungan dengan Injectable dan GetIt.",
+        "Terintegrasi dengan API khusus berbasis GoFiber, MongoDB, dan Redis.",
+      ],
+    },
+    links: {
+      github: "https://github.com/azliR/flutter_outclass",
+    },
+  },
+  {
+    title: "CompressIt",
+    category: "mobile",
+    platforms: "Android",
+    tech: ["Flutter", "Dart", "On-Device Compression", "Image/Audio Process"],
+    description: {
+      en: "A local image and audio compression and conversion app, processing files completely on-device.",
+      id: "Aplikasi kompresi dan konversi gambar dan audio lokal, memproses berkas sepenuhnya di perangkat.",
+    },
+    highlights: {
+      en: [
+        "On-device local conversion (JPEG, PNG, HEIC, WebP, MP3, WAV).",
+        "Zero-server dependency ensuring user privacy.",
+      ],
+      id: [
+        "Konversi lokal langsung di perangkat (JPEG, PNG, HEIC, WebP, MP3, WAV).",
+        "Ketergantungan nol server memastikan privasi pengguna.",
+      ],
+    },
+    links: {
+      github: "https://github.com/azliR/flutter_compress_it",
+    },
+  },
+  {
+    title: "OutClass API",
+    category: "backend",
+    platforms: "Go (GoFiber), MongoDB, Redis",
+    tech: ["Go", "GoFiber", "MongoDB", "Redis", "JWT Auth", "REST API"],
+    description: {
+      en: "A RESTful API providing high-performance backend services for the OutClass mobile application.",
+      id: "API RESTful yang menyediakan layanan backend berkinerja tinggi untuk aplikasi seluler OutClass.",
+    },
+    highlights: {
+      en: [
+        "Fast GoFiber backend handles classroom payloads.",
+        "Integrated with Redis caching and secure JWT tokens.",
+      ],
+      id: [
+        "Backend GoFiber cepat menangani payload ruang kelas.",
+        "Terintegrasi dengan caching Redis dan token JWT yang aman.",
+      ],
+    },
+    links: {
+      github: "https://github.com/azliR/gofiber_outclass-api",
+    },
+  },
+  {
+    title: "Dart Restaurant API",
+    category: "backend",
+    platforms: "Dart (Shelf package)",
+    tech: ["Dart", "Shelf package", "Backend", "REST API"],
+    description: {
+      en: "A lightweight REST API designed for a Restaurant Application built in pure Dart.",
+      id: "API REST ringan yang dirancang untuk Aplikasi Restoran yang dibangun dengan Dart murni.",
+    },
+    highlights: {
+      en: ["Uses the Dart Shelf package for clean microservice handling."],
+      id: ["Menggunakan paket Dart Shelf untuk penanganan mikroservis yang bersih."],
+    },
+    links: {
+      github: "https://github.com/azliR/dart_restaurant_api",
+    },
+  },
+  {
+    title: "SIP (Sistem Informasi Pendidikan)",
+    category: "mobile",
+    platforms: "Mobile (Android/iOS)",
+    tech: ["Flutter", "Navigation Design", "Educational Tech"],
+    description: {
+      en: "An educational information system mobile application.",
+      id: "Aplikasi seluler sistem informasi pendidikan.",
+    },
+    highlights: {
+      en: ["Designed comprehensive use case diagrams and structured navigation routes."],
+      id: ["Merancang diagram use case komprehensif dan menyusun rute navigasi."],
+    },
+    links: {},
   },
 ];
 

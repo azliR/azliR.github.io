@@ -40,49 +40,51 @@ export default function Header() {
             </button>
 
             {isProductHovered && (
-              <div className="absolute top-full left-0 mt-1 w-[380px] border border-border bg-card/95 backdrop-blur-md p-6 shadow-2xl z-50 flex flex-col gap-4">
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-muted/80">
-                    {t("featuredProduct")}
-                  </span>
-                  <div className="flex items-center gap-2 mt-1.5 mb-2">
-                    <h4 className="font-extrabold text-foreground text-lg">inClass</h4>
-                    <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold bg-green-500/10 text-green-500 border border-green-500/20">
-                      <span className="h-1 w-1 rounded-full bg-green-500 animate-pulse"></span>
-                      {t("liveBadge")}
+              <div className="absolute top-full left-0 pt-1.5 w-[380px] z-50">
+                <div className="border border-border bg-card/95 backdrop-blur-md p-6 shadow-2xl flex flex-col gap-4">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-muted/80">
+                      {t("featuredProduct")}
                     </span>
+                    <div className="flex items-center gap-2 mt-1.5 mb-2">
+                      <h4 className="font-extrabold text-foreground text-lg">inClass</h4>
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold bg-green-500/10 text-green-500 border border-green-500/20">
+                        <span className="h-1 w-1 rounded-full bg-green-500 animate-pulse"></span>
+                        {t("liveBadge")}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted leading-relaxed">{t("inClassDetailedDesc")}</p>
                   </div>
-                  <p className="text-xs text-muted leading-relaxed">{t("inClassDetailedDesc")}</p>
-                </div>
 
-                <div className="grid grid-cols-3 gap-2 border-t border-border pt-4 text-[10px] font-bold uppercase tracking-wider text-center">
-                  <a
-                    href="https://inclass.azlir.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
-                  >
-                    <Globe className="h-4 w-4 text-muted" />
-                    {t("visitWebsite")}
-                  </a>
-                  <a
-                    href="https://app.inclass.azlir.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
-                  >
-                    <Monitor className="h-4 w-4 text-muted" />
-                    {t("openWebApp")}
-                  </a>
-                  <a
-                    href="https://play.google.com/store/apps/details?id=dev.azlir.inclass"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
-                  >
-                    <Smartphone className="h-4 w-4 text-muted" />
-                    {t("getPlayStore")}
-                  </a>
+                  <div className="grid grid-cols-3 gap-2 border-t border-border pt-4 text-[10px] font-bold uppercase tracking-wider text-center">
+                    <a
+                      href="https://inclass.azlir.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
+                    >
+                      <Globe className="h-4 w-4 text-muted" />
+                      {t("visitWebsite")}
+                    </a>
+                    <a
+                      href="https://app.inclass.azlir.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
+                    >
+                      <Monitor className="h-4 w-4 text-muted" />
+                      {t("openWebApp")}
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=dev.azlir.inclass"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-1.5 p-2 border border-border hover:bg-accent transition-colors duration-200"
+                    >
+                      <Smartphone className="h-4 w-4 text-muted" />
+                      {t("getPlayStore")}
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
