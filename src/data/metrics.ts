@@ -8,6 +8,10 @@ export interface Metric {
     en: string;
     id: string;
   };
+  desc?: {
+    en: string;
+    id: string;
+  };
 }
 
 export const metrics: Metric[] = [
@@ -21,6 +25,10 @@ export const metrics: Metric[] = [
       en: "on mutualan.com",
       id: "di mutualan.com",
     },
+    desc: {
+      en: "The total number of registered active users on mutualan.com social media growth exchange platform.",
+      id: "Jumlah total pengguna aktif terdaftar di platform pertukaran pertumbuhan media sosial mutualan.com.",
+    },
   },
   {
     value: "450K+",
@@ -31,6 +39,10 @@ export const metrics: Metric[] = [
     project: {
       en: "on mutualan.com",
       id: "di mutualan.com",
+    },
+    desc: {
+      en: "Follow exchange transactions processed daily with low latency and high availability on mutualan.com.",
+      id: "Transaksi pertukaran follow yang diproses setiap hari dengan latensi rendah dan ketersediaan tinggi di mutualan.com.",
     },
   },
   {
@@ -43,6 +55,10 @@ export const metrics: Metric[] = [
       en: "for Bandung Bedas",
       id: "untuk Bandung Bedas",
     },
+    desc: {
+      en: "Voting stations covered and synchronized concurrently in real-time during the 2024 Regional Elections.",
+      id: "Tempat pemungutan suara yang tercakup dan disinkronkan secara bersamaan dalam waktu nyata selama Pilkada 2024.",
+    },
   },
   {
     value: "99.99%",
@@ -53,6 +69,10 @@ export const metrics: Metric[] = [
     project: {
       en: "for Bandung Bedas",
       id: "untuk Bandung Bedas",
+    },
+    desc: {
+      en: "High-precision data matching the official KPU results with a difference of only 3 votes out of 1.04M+ votes.",
+      id: "Data presisi tinggi yang sesuai dengan hasil resmi KPU dengan selisih hanya 3 suara dari 1,04 juta lebih suara.",
     },
   },
 ];

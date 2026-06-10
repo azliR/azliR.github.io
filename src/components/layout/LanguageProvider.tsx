@@ -35,9 +35,15 @@ export const translations = {
     heroDescription:
       "Production-ready products for startups, real-time platforms, and high-performance systems.",
     heroCTASelectedWork: "Selected Work",
-    usersServed: "Users served",
-    dailyActions: "Daily actions",
+    projectsBuilt: "Projects built",
+    projectsBuiltDesc:
+      "A diverse portfolio of web apps, mobile apps, custom APIs, and machine learning models built from scratch.",
+    fiverrRating: "Fiverr rating",
+    fiverrRatingDesc:
+      "Exceptional rating from international clients, reflecting professional quality, communication, and timely delivery.",
     productionSystems: "Production systems",
+    productionSystemsDesc:
+      "Apps and platforms currently deployed in production, actively serving users or running live systems.",
     selectedFocus: "01 / Selected Focus",
     coreStack: "02 / Core Stack",
     recentWork: "03 / Recent Work",
@@ -125,9 +131,15 @@ export const translations = {
     heroDescription:
       "Produk siap rilis untuk startup, platform real-time, dan sistem berkinerja tinggi.",
     heroCTASelectedWork: "Karya Pilihan",
-    usersServed: "Pengguna terlayani",
-    dailyActions: "Aksi harian",
+    projectsBuilt: "Proyek dibangun",
+    projectsBuiltDesc:
+      "Portofolio beragam dari aplikasi web, aplikasi mobile, API kustom, dan model machine learning yang dibangun dari awal.",
+    fiverrRating: "Rating Fiverr",
+    fiverrRatingDesc:
+      "Penilaian luar biasa dari klien internasional, mencerminkan kualitas profesional, komunikasi, dan pengiriman tepat waktu.",
     productionSystems: "Sistem produksi",
+    productionSystemsDesc:
+      "Aplikasi dan platform yang saat ini berjalan di produksi, aktif melayani pengguna atau menjalankan sistem langsung.",
     selectedFocus: "01 / Fokus Pilihan",
     coreStack: "02 / Teknologi Utama",
     recentWork: "03 / Karya Terbaru",

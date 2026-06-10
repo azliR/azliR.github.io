@@ -25,7 +25,8 @@ export default function TrustMetricsSection() {
             <MetricCard
               value={metric.value}
               label={metric.label[lang]}
-              project={metric.project?.[lang]}
+              desc={metric.desc?.[lang]}
+              index={index}
               className="h-full"
             />
           </AnimatedSection>

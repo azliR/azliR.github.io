@@ -1,8 +1,40 @@
+import * as React from "react";
 import AnimatedSection from "../ui/AnimatedSection";
 import { useLanguage } from "../layout/LanguageProvider";
+import { Info } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function HeroSection() {
   const { lang, t } = useLanguage();
+  const [activeTooltip, setActiveTooltip] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest(".metric-info-btn")) {
+        setActiveTooltip(null);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  const heroMetrics = [
+    {
+      value: "20+",
+      labelKey: "projectsBuilt" as const,
+      descKey: "projectsBuiltDesc" as const,
+    },
+    {
+      value: "5.0 ★",
+      labelKey: "fiverrRating" as const,
+      descKey: "fiverrRatingDesc" as const,
+    },
+    {
+      value: "10+",
+      labelKey: "productionSystems" as const,
+      descKey: "productionSystemsDesc" as const,
+    },
+  ];
 
   return (
     <section className="relative overflow-hidden w-full">
@@ -51,30 +83,82 @@ export default function HeroSection() {
           </div>
 
           <div className="grid grid-cols-3 divide-x divide-border border-t border-border -mx-6 md:-mx-8 lg:-mx-12 -mb-6 md:-mb-8 lg:-mb-12 mt-12 w-[calc(100%+3rem)] md:w-[calc(100%+4rem)] lg:w-[calc(100%+6rem)] bg-card/50">
-            <div className="p-6 md:p-8">
-              <div className="text-3xl lg:text-[40px] font-bold tracking-tight text-foreground">
-                39K+
-              </div>
-              <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                {t("usersServed")}
-              </div>
-            </div>
-            <div className="p-6 md:p-8">
-              <div className="text-3xl lg:text-[40px] font-bold tracking-tight text-foreground">
-                450K+
-              </div>
-              <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                {t("dailyActions")}
-              </div>
-            </div>
-            <div className="p-6 md:p-8">
-              <div className="text-3xl lg:text-[40px] font-bold tracking-tight text-foreground">
-                10+
-              </div>
-              <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
-                {t("productionSystems")}
-              </div>
-            </div>
+            {heroMetrics.map((metric, index) => {
+              const isOpen = activeTooltip === index;
+              const positionClass =
+                index === 0
+                  ? "left-4 origin-bottom-left"
+                  : index === 2
+                    ? "right-4 origin-bottom-right"
+                    : "left-1/2 -translate-x-1/2 origin-bottom";
+
+              const arrowClass =
+                index === 0 ? "left-12" : index === 2 ? "right-6" : "left-1/2 -translate-x-1/2";
+
+              return (
+                <div
+                  key={index}
+                  className="relative p-6 md:p-8 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-start justify-between">
+                      <div className="text-3xl lg:text-[40px] font-bold tracking-tight text-foreground">
+                        {metric.value}
+                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveTooltip(isOpen ? null : index);
+                        }}
+                        onMouseEnter={() => setActiveTooltip(index)}
+                        onMouseLeave={() => setActiveTooltip(null)}
+                        className="metric-info-btn text-muted hover:text-foreground transition-colors p-1 -m-1 rounded-full focus:outline-none focus:ring-1 focus:ring-ring cursor-pointer"
+                        aria-label={`Explain ${t(metric.labelKey)}`}
+                        aria-expanded={isOpen}
+                      >
+                        <Info className="h-4 w-4" />
+                      </button>
+                    </div>
+                    <div className="text-xs text-muted uppercase tracking-wider font-semibold mt-1">
+                      {t(metric.labelKey)}
+                    </div>
+                  </div>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.15 }}
+                        className={`absolute bottom-full mb-3 w-[240px] sm:w-[260px] md:w-[280px] bg-card border border-border p-4 shadow-xl z-50 text-xs text-foreground leading-relaxed font-sans normal-case ${positionClass}`}
+                      >
+                        <svg
+                          className={`absolute -bottom-[5px] w-3 h-1.5 text-card ${arrowClass}`}
+                          viewBox="0 0 12 6"
+                          fill="currentColor"
+                        >
+                          <path d="M0 0 L6 6 L12 0 Z" />
+                          <path
+                            d="M0 0 L6 6 L12 0"
+                            stroke="var(--color-border)"
+                            strokeWidth="1"
+                            fill="none"
+                          />
+                        </svg>
+                        <div className="font-semibold mb-1 text-foreground border-b border-border/50 pb-1 flex items-center gap-1.5">
+                          <Info className="h-3.5 w-3.5 text-muted shrink-0" />
+                          {t(metric.labelKey)}
+                        </div>
+                        <p className="text-muted/90 text-[11px] leading-relaxed pt-1">
+                          {t(metric.descKey)}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
 
