@@ -1,8 +1,10 @@
 import AnimatedSection from "../ui/AnimatedSection";
 import { useLanguage } from "../layout/LanguageProvider";
+import { useContact } from "../layout/ContactProvider";
 
 export default function CTASection() {
   const { t } = useLanguage();
+  const { openContact } = useContact();
 
   return (
     <section className="w-full py-16 md:py-24 px-6 md:px-8 lg:px-12 flex justify-center bg-card/10">
@@ -14,12 +16,12 @@ export default function CTASection() {
           {t("ctaDescription")}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <a
-            href="mailto:hello@azlir.dev"
-            className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"
+          <button
+            onClick={openContact}
+            className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-transparent bg-foreground text-sm font-semibold text-background hover:bg-foreground/90 transition-colors duration-200 cursor-pointer"
           >
             {t("startProject")}
-          </a>
+          </button>
           <a
             href="#work"
             className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"

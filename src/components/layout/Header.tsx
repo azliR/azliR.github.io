@@ -2,11 +2,13 @@ import { Link } from "@tanstack/react-router";
 import Container from "./Container";
 import { Menu, X, Globe, Monitor, Smartphone, ChevronDown } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
+import { useContact } from "./ContactProvider";
 import { cn } from "#/lib/cn";
 import { useState } from "react";
 
 export default function Header() {
   const { lang, setLang, t } = useLanguage();
+  const { openContact } = useContact();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProductExpanded, setMobileProductExpanded] = useState(false);
   const [isProductHovered, setIsProductHovered] = useState(false);
@@ -132,12 +134,12 @@ export default function Header() {
             </button>
           </div>
 
-          <a
-            href="mailto:hello@azlir.dev"
-            className="hidden sm:inline-flex items-center gap-2 rounded-none border border-border bg-transparent px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"
+          <button
+            onClick={openContact}
+            className="hidden sm:inline-flex items-center gap-2 rounded-none border border-transparent bg-foreground px-4 py-2 text-sm font-semibold text-background hover:bg-foreground/90 transition-colors duration-200 cursor-pointer"
           >
             {t("startProject")}
-          </a>
+          </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -225,12 +227,15 @@ export default function Header() {
           </div>
 
           <div className="border-t border-border pt-6 flex flex-col gap-4">
-            <a
-              href="mailto:hello@azlir.dev"
-              className="inline-flex items-center justify-center gap-2 rounded-none border border-border bg-transparent px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200 w-full animate-in fade-in"
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openContact();
+              }}
+              className="inline-flex items-center justify-center gap-2 rounded-none border border-transparent bg-foreground px-4 py-2.5 text-sm font-semibold text-background hover:bg-foreground/90 transition-colors duration-200 w-full animate-in fade-in cursor-pointer"
             >
               {t("startProject")}
-            </a>
+            </button>
           </div>
         </div>
       )}

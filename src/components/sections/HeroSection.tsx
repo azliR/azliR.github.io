@@ -1,11 +1,13 @@
 import * as React from "react";
 import AnimatedSection from "../ui/AnimatedSection";
 import { useLanguage } from "../layout/LanguageProvider";
+import { useContact } from "../layout/ContactProvider";
 import { Info } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function HeroSection() {
   const { t } = useLanguage();
+  const { openContact } = useContact();
   const [activeTooltip, setActiveTooltip] = React.useState<number | null>(null);
 
   React.useEffect(() => {
@@ -55,12 +57,12 @@ export default function HeroSection() {
               {t("heroDescription")}
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <a
-                href="mailto:hello@azlir.dev"
-                className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"
+              <button
+                onClick={openContact}
+                className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-transparent bg-foreground text-sm font-semibold text-background hover:bg-foreground/90 transition-colors duration-200 cursor-pointer"
               >
                 {t("startProject")}
-              </a>
+              </button>
               <a
                 href="#work"
                 className="inline-flex items-center justify-center h-12 px-8 rounded-none border border-border bg-transparent text-sm font-semibold text-foreground hover:bg-accent transition-colors duration-200"

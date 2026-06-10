@@ -5,6 +5,7 @@ import appCss from "../styles/globals.css?url";
 import { useEffect } from "react";
 
 import { LanguageProvider, useLanguage } from "../components/layout/LanguageProvider";
+import { ContactProvider } from "../components/layout/ContactProvider";
 
 const THEME_INIT_SCRIPT = `(function(){try{var root=document.documentElement;root.classList.remove('light','dark');root.classList.add('light');root.style.colorScheme='light';}catch(e){}})();`;
 
@@ -99,7 +100,9 @@ function RootDocumentContent() {
 function RootDocument() {
   return (
     <LanguageProvider>
-      <RootDocumentContent />
+      <ContactProvider>
+        <RootDocumentContent />
+      </ContactProvider>
     </LanguageProvider>
   );
 }

@@ -125,6 +125,25 @@ export const translations = {
     metaTitle: "azlir.dev — Premium Product Engineering",
     metaDescription:
       "Engineering premium landing pages, high-performance dashboards, and mobile apps for startups.",
+    contactTitle: "Start a Project",
+    contactDescription:
+      "Have an idea or a project in mind? Let's build something great together. Choose how you'd like to get in touch.",
+    copyEmail: "Copy Email Address",
+    copied: "Copied!",
+    openEmailClient: "Open Email Client",
+    sendQuickMessage: "Or Send a Quick Message",
+    fieldName: "Your Name",
+    fieldEmail: "Your Email",
+    fieldMessage: "Your Message",
+    fieldMessagePlaceholder: "Tell me about your project, goals, or timeline...",
+    send: "Send Message",
+    sending: "Sending...",
+    errorNameRequired: "Name is required",
+    errorEmailRequired: "Email is required",
+    errorInvalidEmail: "Please enter a valid email address",
+    errorMessageRequired: "Message is required",
+    messageSentSuccess: "Message ready! Opening your email client...",
+    close: "Close",
   },
   id: {
     work: "Karya",
@@ -135,8 +154,7 @@ export const translations = {
     featuredProduct: "Produk Unggulan",
     liveBadge: "Live",
 
-    inClassDesc:
-      "Platform pendidikan digital dan manajemen kelas real-time berbasis AI.",
+    inClassDesc: "Platform pendidikan digital dan manajemen kelas real-time berbasis AI.",
 
     inClassDetailedDesc:
       "Ekosistem pembelajaran berbasis AI dengan penilaian otomatis, ujian terpantau secara real-time, serta sinkronisasi instan antara guru dan siswa.",
@@ -154,8 +172,7 @@ export const translations = {
     faq: "FAQ",
     startProject: "Mulai Proyek",
 
-    heroTitle:
-      "Membangun aplikasi mobile\n& sistem backend\nberkinerja tinggi.",
+    heroTitle: "Membangun aplikasi mobile\n& sistem backend\nberkinerja tinggi.",
 
     heroDescription:
       "Produk siap produksi untuk startup, platform real-time, dan sistem berskala besar.",
@@ -189,16 +206,13 @@ export const translations = {
 
     metricsKicker: "Skala Nyata",
 
-    metricsTitle:
-      "Skala penggunaan & dampak di dunia nyata",
+    metricsTitle: "Skala penggunaan & dampak di dunia nyata",
 
-    metricsDescription:
-      "Pencapaian nyata dari platform produksi dan deployment aktif.",
+    metricsDescription: "Pencapaian nyata dari platform produksi dan deployment aktif.",
 
     workKicker: "Karya Pilihan",
 
-    workTitle:
-      "Kumpulan platform, sistem, dan produk yang dikembangkan untuk kebutuhan nyata.",
+    workTitle: "Kumpulan platform, sistem, dan produk yang dikembangkan untuk kebutuhan nyata.",
 
     scopeOfWork: "Ruang Lingkup:",
 
@@ -206,49 +220,40 @@ export const translations = {
 
     processTitle: "Cara Kami Bekerja",
 
-    processDescription:
-      "Proses engineering yang fokus, cepat, dan tetap menjaga kualitas produk.",
+    processDescription: "Proses engineering yang fokus, cepat, dan tetap menjaga kualitas produk.",
 
     step1Title: "Discovery",
-    step1Desc:
-      "Memahami tujuan produk, kebutuhan bisnis, serta arah teknis.",
+    step1Desc: "Memahami tujuan produk, kebutuhan bisnis, serta arah teknis.",
 
     step2Title: "Development",
-    step2Desc:
-      "Membangun sistem yang skalabel, maintainable, dan siap produksi.",
+    step2Desc: "Membangun sistem yang skalabel, maintainable, dan siap produksi.",
 
     step3Title: "Launch & Improvement",
-    step3Desc:
-      "Deployment, monitoring, optimasi, dan iterasi berkelanjutan.",
+    step3Desc: "Deployment, monitoring, optimasi, dan iterasi berkelanjutan.",
 
     reviewsKicker: "Testimoni",
 
     reviewsTitle: "Dipercaya oleh Founder",
 
-    reviewsDescription:
-      "Pilihan ulasan dari klien dan kolaborator.",
+    reviewsDescription: "Pilihan ulasan dari klien dan kolaborator.",
 
     faqTitle: "Pertanyaan Umum",
 
-    faqDescription:
-      "Jawaban singkat mengenai kemampuan engineering, alur kerja, dan kolaborasi.",
+    faqDescription: "Jawaban singkat mengenai kemampuan engineering, alur kerja, dan kolaborasi.",
 
-    ctaTitle:
-      "Mari bangun sesuatu yang berdampak.",
+    ctaTitle: "Mari bangun sesuatu yang berdampak.",
 
     ctaDescription:
       "Mulai dari MVP, pengembangan platform, hingga scaling infrastructure — azlir.dev siap membantu.",
 
-    footerDesc:
-      "Membangun produk digital yang skalabel.",
+    footerDesc: "Membangun produk digital yang skalabel.",
 
     aboutTitle: "Tentang Rizal",
 
     aboutBio:
       "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang fokus membangun ekosistem produk digital berkualitas tinggi — mulai dari aplikasi mobile berperforma tinggi hingga backend real-time yang aman dan efisien.",
 
-    aboutSubtitle:
-      "Membangun ekosistem produk premium dari nol.",
+    aboutSubtitle: "Membangun ekosistem produk premium dari nol.",
 
     pillarFullstackTitle: "Sistem Full-Stack",
 
@@ -270,11 +275,9 @@ export const translations = {
     pillarMLDesc:
       "Merancang dan menerapkan model RNN serta CNN yang dioptimalkan untuk perangkat mobile dan edge computing.",
 
-    fiverrRatingText:
-      "Developer dengan rating 5.0★ di Fiverr",
+    fiverrRatingText: "Developer dengan rating 5.0★ di Fiverr",
 
-    viewFiverrProfile:
-      "Lihat Profil Fiverr",
+    viewFiverrProfile: "Lihat Profil Fiverr",
 
     worksTitle: "Seluruh Karya",
 
@@ -297,12 +300,30 @@ export const translations = {
     viewCaseStudy: "Lihat Studi Kasus",
     emailMe: "Hubungi via Email",
 
-    metaTitle:
-      "azlir.dev — Premium Product Engineering",
+    metaTitle: "azlir.dev — Premium Product Engineering",
 
     metaDescription:
       "Membangun landing page premium, dashboard berperforma tinggi, dan aplikasi mobile untuk startup.",
-  }
+    contactTitle: "Mulai Proyek",
+    contactDescription:
+      "Punya ide atau rencana proyek? Mari kita bangun sesuatu yang hebat bersama. Pilih cara Anda untuk menghubungi saya.",
+    copyEmail: "Salin Alamat Email",
+    copied: "Disalin!",
+    openEmailClient: "Buka Aplikasi Email",
+    sendQuickMessage: "Atau Kirim Pesan Cepat",
+    fieldName: "Nama Anda",
+    fieldEmail: "Email Anda",
+    fieldMessage: "Pesan Anda",
+    fieldMessagePlaceholder: "Ceritakan tentang proyek, tujuan, atau linimasa Anda...",
+    send: "Kirim Pesan",
+    sending: "Mengirim...",
+    errorNameRequired: "Nama wajib diisi",
+    errorEmailRequired: "Email wajib diisi",
+    errorInvalidEmail: "Masukkan alamat email yang valid",
+    errorMessageRequired: "Pesan wajib diisi",
+    messageSentSuccess: "Pesan siap! Membuka aplikasi email Anda...",
+    close: "Tutup",
+  },
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -332,7 +353,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = React.useCallback(
     (key: keyof typeof translations.en) => {
-      return translations[lang][key] || translations.en[key];
+      const translationSet = translations[lang] as Record<string, string>;
+      return translationSet[key] || translations.en[key];
     },
     [lang],
   );
