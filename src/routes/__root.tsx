@@ -20,7 +20,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "azlir.dev — Premium Product Engineering",
+        title: "azlir.dev - Premium Product Engineering",
       },
       {
         name: "description",

@@ -76,7 +76,7 @@ export const translations = {
     faqDescription: "Clear answers about our engineering capabilities, process, and setups.",
     ctaTitle: "Let's build something useful.",
     ctaDescription:
-      "Whether you're building an MVP, improving an existing platform, or scaling infrastructure — azlir.dev can help.",
+      "Whether you're building an MVP, improving an existing platform, or scaling infrastructure, azlir.dev can help.",
     viewWork: "View Work",
     footerDesc: "Engineering scalable products.",
     aboutTitle: "About Rizal",
@@ -122,7 +122,7 @@ export const translations = {
     playStore: "Play Store",
     appStore: "App Store",
     github: "GitHub",
-    metaTitle: "azlir.dev — Premium Product Engineering",
+    metaTitle: "azlir.dev - Premium Product Engineering",
     metaDescription:
       "Engineering premium landing pages, high-performance dashboards, and mobile apps for startups.",
     contactTitle: "Start a Project",
@@ -207,11 +207,11 @@ export const translations = {
     faqDescription: "Jawaban singkat mengenai kemampuan engineering, alur kerja, dan kolaborasi.",
     ctaTitle: "Mari bangun sesuatu yang berdampak.",
     ctaDescription:
-      "Mulai dari MVP, pengembangan platform, hingga scaling infrastructure — azlir.dev siap membantu.",
+      "Mulai dari MVP, pengembangan platform, hingga scaling infrastructure, azlir.dev siap membantu.",
     footerDesc: "Membangun produk digital yang skalabel.",
     aboutTitle: "Tentang Rizal",
     aboutBio:
-      "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang fokus membangun ekosistem produk digital berkualitas tinggi — mulai dari aplikasi mobile berperforma tinggi hingga backend real-time yang aman dan efisien.",
+      "Saya Rizal Hadiyansah (azliR), seorang Mobile & Backend Developer yang fokus membangun ekosistem produk digital berkualitas tinggi, mulai dari aplikasi mobile berperforma tinggi hingga backend real-time yang aman dan efisien.",
     aboutSubtitle: "Membangun ekosistem produk premium dari nol.",
     pillarFullstackTitle: "Sistem Full-Stack",
     pillarFullstackDesc:
@@ -242,7 +242,7 @@ export const translations = {
     aiIntegration: "Integrasi AI",
     viewCaseStudy: "Lihat Studi Kasus",
     emailMe: "Hubungi via Email",
-    metaTitle: "azlir.dev — Premium Product Engineering",
+    metaTitle: "azlir.dev - Premium Product Engineering",
     metaDescription:
       "Membangun landing page premium, dashboard berperforma tinggi, dan aplikasi mobile untuk startup.",
     contactTitle: "Mulai Proyek",

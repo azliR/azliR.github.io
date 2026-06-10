@@ -29,8 +29,8 @@ export const faqItems: FAQItem[] = [
       id: "Apakah Anda bekerja sama dengan startup?",
     },
     answer: {
-      en: "Yes — from MVP to production-scale systems.",
-      id: "Ya — mulai dari pengembangan MVP hingga sistem yang siap digunakan di skala produksi.",
+      en: "Yes, from MVP to production-scale systems.",
+      id: "Ya, mulai dari pengembangan MVP hingga sistem yang siap digunakan di skala produksi.",
     },
   },
   {
@@ -51,8 +51,8 @@ export const faqItems: FAQItem[] = [
       id: "Apakah Anda menyediakan layanan end-to-end development?",
     },
     answer: {
-      en: "Yes — from frontend to backend systems.",
-      id: "Ya — mulai dari frontend, backend, hingga integrasi sistem secara menyeluruh.",
+      en: "Yes, from frontend to backend systems.",
+      id: "Ya, mulai dari frontend, backend, hingga integrasi sistem secara menyeluruh.",
     },
   },
   {
