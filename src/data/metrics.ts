@@ -4,6 +4,10 @@ export interface Metric {
     en: string;
     id: string;
   };
+  project?: {
+    en: string;
+    id: string;
+  };
 }
 
 export const metrics: Metric[] = [
@@ -13,12 +17,20 @@ export const metrics: Metric[] = [
       en: "Users served",
       id: "Pengguna terlayani",
     },
+    project: {
+      en: "on mutualan.com",
+      id: "di mutualan.com",
+    },
   },
   {
     value: "450K+",
     label: {
       en: "Daily actions",
       id: "Aksi harian",
+    },
+    project: {
+      en: "on mutualan.com",
+      id: "di mutualan.com",
     },
   },
   {
@@ -27,12 +39,20 @@ export const metrics: Metric[] = [
       en: "Polling stations",
       id: "Tempat pemungutan suara (TPS)",
     },
+    project: {
+      en: "for Bandung Bedas",
+      id: "untuk Bandung Bedas",
+    },
   },
   {
     value: "99.99%",
     label: {
       en: "Accuracy",
       id: "Akurasi",
+    },
+    project: {
+      en: "for Bandung Bedas",
+      id: "untuk Bandung Bedas",
     },
   },
 ];
